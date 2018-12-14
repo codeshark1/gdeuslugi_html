@@ -1,0 +1,80 @@
+$screen-xs:                  0;
+$screen-xs-min:              $screen-xs;
+$screen-phone:               $screen-xs-min;
+
+$screen-sm:                  576px;
+$screen-sm-min:              $screen-sm;
+$screen-tablet:              $screen-sm-min;
+
+$screen-md:                  768px;
+$screen-md-min:              $screen-md;
+$screen-desktop:             $screen-md-min;
+
+$screen-lg:                  992px;
+$screen-lg-min:              $screen-lg;
+$screen-lg-desktop:          $screen-lg-min;
+
+$screen-xl:                  1140px;
+$screen-xl-min:              $screen-xl;
+
+
+$screen-xs-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);
+$screen-lg-max:              ($screen-xl-min - 1);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+
+
+.visible-xs {
+    @media (max-width: $screen-xs) {}
+}
+.visible-sm {
+    @media (min-width: $screen-xs+1) {}
+}
+
+@mixin resetUl() {list-style: none;padding: 0;margin: 0;}
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {clear: both;}
+}
+
+@mixin shadow() {
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+@mixin row-mod() {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+$base-text: #333;
+$main: #47AB2F;
+$gray-text: #999999;
+
+$base-text-lighter: #555555;
+$link-text: $base-text;
+$gray: #969696;
+$action: #ffca3c;
+$red: #ff0000;
+$green: #67b279;
+$blue: #90c6f4;
+$border: #d8d8d8;
