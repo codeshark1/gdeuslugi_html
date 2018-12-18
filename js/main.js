@@ -147,40 +147,6 @@ jQuery(document).ready(function($){
         duration: 0
     }); */
 
-    $(".plan-wrapper").swipe( {
-        swipeStatus: function(event, phase, direction, distance, duration, fingerCount) {
-            var swipeWidth = $(this).find('.plan-actions').width();            
-
-            if (phase == "move") {
-                if (direction == "left") {                   
-                    $(this).addClass('swiped').children('.plan-content').css({
-                        'margin-left' : '-'+swipeWidth+'px'
-                    });
-                                 
-                } else if (direction == "right") {                  
-                    $(this).removeClass('swiped').children('.plan-content').css({
-                        'margin-left' : 0+'px'
-                    });
-                    
-                }
-            }
-        },
-        allowPageScroll: 'vertical',
-        tap:function(event, target) {
-            
-            var swipeWidth = $(this).find('.plan-actions').width();            
-            
-            if( $(this).hasClass('swiped')) {
-                $(this).removeClass('swiped').children('.plan-content').css({
-                    'margin-left' : 0+'px'
-                });
-            } else {
-                $(this).addClass('swiped').children('.plan-content').css({
-                    'margin-left' : '-'+swipeWidth+'px'
-                });
-            }
-        }
-    });
 
 
     /* SEARCH FORM */
@@ -318,23 +284,4 @@ jQuery(document).ready(function($){
     })  
 
     
-    /* SCROLL TO TOP */
-    function scrollFunction() {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            document.getElementById("btn-top").style.opacity = 1;
-        } else {
-            document.getElementById("btn-top").style.opacity = 0;
-        }
-    }
-    window.onscroll = function() {scrollFunction()};
-
-    function scrollToSection(){
-        $('html, body').animate({
-             scrollTop: $('.header-site').offset().top
-        }, 500);
-    }
-
-    $('#btn-top').click(function(){
-        scrollToSection();
-    });
 });

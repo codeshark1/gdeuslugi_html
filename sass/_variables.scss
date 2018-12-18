@@ -68,13 +68,19 @@ $container-max-widths: (
 
 $base-text: #333;
 $main: #47AB2F;
+$main-hover: #3C9027;
+$main-active: #307420;
+$main-light: #E2F2DE;
 $gray-text: #999999;
+$gray-light: #E8E7E6;
+$gray-light-button: #D4D3D2;
+$link-text: $main;
+$red: #EB5757;
+
 
 $base-text-lighter: #555555;
-$link-text: $base-text;
 $gray: #969696;
 $action: #ffca3c;
-$red: #ff0000;
 $green: #67b279;
 $blue: #90c6f4;
 $border: #d8d8d8;

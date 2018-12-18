@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Редактирование заказа</title>
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+<!--[if lt IE 10]>
+    <p class="browserupgrade">Вы используете <b>устаревший</b> браузер. Пожалуйста, <a href="http://browsehappy.com/?locale=ru_ru">обновите свой браузер</a> чтобы улучшить опыт работы с сайтом.</p>
+<![endif]-->
+
+<header class="header-site">
+    <div class="bx-action">
+        <a href="#" class="back"><svg data-src="img/arrow-back.svg"></svg></a>
+    </div><!-- /.bx-action -->
+    <a href="#" class="logo">U</a>
+    <div class="bx-user">
+        <a href="#" class="userpic">
+            А
+        </a>
+    </div><!-- /.bx-user -->
+</header>
+
+<main class="container">
+    <form action="#" class="form-order form-main">
+        <h1 class="h-main">Редактирование заказа</h1>
+
+        <label class="form-row">
+            <span class="lbl">Название заказа</span>
+            <input type="text" value="Подключить вытяжку">
+        </label>
+
+        <label class="form-row">
+            <span class="lbl">Описание задачи</span>
+            <textarea>Сделайте мне аккуратно и надежно, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. </textarea>
+        </label>
+
+        <label class="form-row">
+            <span class="lbl">Город</span>
+            <select>
+                <option>Санкт-Петербург</option>
+            </select>
+        </label>
+
+        <label class="form-row">
+            <span class="lbl">Категория работ</span>                    
+            <select>
+                <option>Кухонная техника</option>
+            </select>                    
+        </label>   
+        
+        <label class="form-row">
+            <span class="lbl">Стоимость</span>
+            <input type="text" placeholder="Укажите максимальный бюджет">
+        </label>     
+        
+        <label class="form-row">
+            <span class="lbl">Выполнить до</span>
+            <input type="date" placeholder="Укажите дату" date-format="dd/mm/yyyy" value="2018-12-31">
+        </label>
+
+        <div class="form-row">
+            <span class="lbl">Выберите фото</span>
+            <div class="photos-uploaded">
+                <div class="item">
+                    <div class="photo"></div>
+                    <a href="#" class="link">Удалить</a>
+                </div>
+                <div class="item item-add">
+                    <div class="photo"></div>
+                    <a href="#" class="link">Добавить</a>
+                </div>
+            </div><!-- /.photos-uploaded -->
+        </div><!-- /.form-row -->
+
+        <hr class="form-row">
+
+        <div class="form-bottom-buttons">
+            <button type="submit" class="btn btn-main btn-full-mb">Сохранить</button>
+
+            <a href="#" class="btn btn-sub btn-full-mb">Cнять с публикации</a>
+        </div><!-- /.form-bottom-buttons -->
+    </form>
+</main><!-- /.container -->
+
+<div class="footer-placehodler"></div>
+
+</body>
+</html>
