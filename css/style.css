@@ -388,8 +388,8 @@ label.radio:after {
 
 .btn-close {
   border: none;
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   padding: 0;
   background: none;
   cursor: pointer; }
@@ -1624,19 +1624,13 @@ a, svg, path, button {
   .btn-open-menu .logo {
     margin-right: 10px; }
 
-.btn-close {
+.bx-user .btn-close {
   width: 32px;
   text-align: center; }
 
 /* ==========================================================================
 	NAVIGATION
 ========================================================================== */
-.h-popup {
-  font-weight: 500;
-  font-size: 18px;
-  color: #000;
-  margin: 0; }
-
 .menu-main__item {
   position: relative; }
 .menu-main a {
@@ -2022,34 +2016,68 @@ a, svg, path, button {
     border-color: #EB5757; }
 
 /* POPUP MODAL */
+.h-popup {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0; }
+
 .popup-mob {
-  background: #d4f0f7; }
+  background: #fff;
+  width: 400px;
+  height: 600px;
+  margin: 0 auto;
+  border-radius: 8px;
+  /*header*/
+  /* content */ }
   .popup-mob .wrapper {
     position: relative;
-    padding: 55px 0 80px; }
-  .popup-mob .popup-header, .popup-mob .popup-footer {
-    position: absolute;
-    left: 15px;
-    right: 15px; }
+    height: 100%; }
   .popup-mob .popup-header {
-    top: 20px; }
-  .popup-mob .popup-content {
-    overflow: auto;
-    max-height: 680px; }
-  .popup-mob .popup-footer {
-    bottom: 25px; }
-    .popup-mob .popup-footer-buttons {
-      display: flex;
-      justify-content: space-between; }
-      .popup-mob .popup-footer-buttons .btn {
-        width: 47%;
-        padding: 10px 0; }
-  .popup-mob .h-popup {
-    font-size: 18px; }
+    padding: 40px 16px 10px 16px; }
+  .popup-mob.menu-open .h-popup {
+    background: no-repeat url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 1.41L5.66802 0L0 6L5.66802 12L7 10.59L2.67341 6L7 1.41Z' fill='%23333333'/%3E%3C/svg%3E%0A") 0 50%;
+    cursor: pointer;
+    padding-left: 25px; }
   .popup-mob .btn-close {
     position: absolute;
-    right: 0;
-    bottom: 0; }
+    right: 16px;
+    top: 44px; }
+  .popup-mob .search-field {
+    margin-bottom: 24px; }
+  .popup-mob .popup-content {
+    overflow: auto;
+    padding: 16px;
+    max-height: 100%;
+    max-height: 520px; }
+  .popup-mob .heading {
+    color: #999999;
+    font-size: 16px;
+    margin-bottom: 8px; }
+  .popup-mob hr {
+    margin-bottom: 20px; }
+  .popup-mob .menu-item {
+    margin: 0 -16px;
+    display: block; }
+    .popup-mob .menu-item a {
+      padding: 14px 16px;
+      display: block;
+      border-radius: 8px;
+      color: #333; }
+    .popup-mob .menu-item a:hover {
+      background: #E8E7E6; }
+  .popup-mob .sub-menu {
+    background: #f6f6f6;
+    position: absolute;
+    left: 400px;
+    width: 400px;
+    top: 75px;
+    bottom: 0;
+    transition: all .15s; }
+    .popup-mob .sub-menu .menu-item {
+      margin: 0; }
+  .popup-mob .active a {
+    color: #fff;
+    background: #47AB2F !important; }
 
 @media (max-width: 0) {
   .search-listing-filter {
@@ -2668,58 +2696,6 @@ a, svg, path, button {
       max-height: 70px;
       overflow: hidden; } }
 
-.article-feed {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  justify-content: space-between;
-  min-height: 100%;
-  margin-bottom: 10px;
-  position: relative; }
-  @media (max-width: 575px) {
-    .article-feed {
-      padding: 15px; } }
-  @media (min-width: 576px) {
-    .article-feed {
-      margin-bottom: 30px; } }
-  .article-feed .col-img {
-    width: 22%;
-    min-width: 66px;
-    flex-shrink: 0;
-    background-position: center center; }
-    .article-feed .col-img:after {
-      content: '';
-      display: block;
-      padding-bottom: 100%; }
-  .article-feed .col-content {
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; }
-  .article-feed .h-article {
-    margin: 0;
-    font-size: 14px;
-    font-weight: 500; }
-    @media (min-width: 576px) {
-      .article-feed .h-article {
-        font-size: 18px; } }
-  .article-feed .excerpt {
-    color: #555555; }
-  .article-feed .article-prev--footer {
-    margin: 0; }
-    .article-feed .article-prev--footer p {
-      margin-bottom: 0; }
-  .article-feed .article-prev--footer, .article-feed .h-article {
-    position: relative;
-    z-index: 2; }
-  .article-feed .link-wrapper {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    display: block; }
-
 .link-arrow a:hover .arrow {
   left: 40px; }
 .link-arrow .arrow {
@@ -3193,33 +3169,5 @@ section + .view-all {
     transform: scale(1);
     opacity: 1;
     filter: alpha(opacity=100); } }
-.popup-mob {
-  background: #d4f0f7; }
-  .popup-mob .wrapper {
-    position: relative;
-    padding: 55px 0 80px; }
-  .popup-mob .popup-header, .popup-mob .popup-footer {
-    position: absolute;
-    left: 15px;
-    right: 15px; }
-  .popup-mob .popup-header {
-    top: 20px; }
-  .popup-mob .popup-content {
-    overflow: auto;
-    max-height: 680px; }
-  .popup-mob .popup-footer {
-    bottom: 25px; }
-    .popup-mob .popup-footer-buttons {
-      display: flex;
-      justify-content: space-between; }
-      .popup-mob .popup-footer-buttons .btn {
-        width: 47%;
-        padding: 10px 0; }
-  .popup-mob .h-popup {
-    font-size: 18px; }
-  .popup-mob .btn-close {
-    position: absolute;
-    right: 0;
-    bottom: 0; }
 
 /*# sourceMappingURL=style.css.map */

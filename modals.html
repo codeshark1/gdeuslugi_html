@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Попапы</title>
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="popup-mob popup-categs" id="popup-categs">
+        <div class="wrapper">
+            <div class="popup-header">
+                <h3 class="h-popup">Выбор категории</h3>
+                <button type="button" class="close btn-close">
+                    <svg data-src="img/x.svg"></svg>
+                </button> 
+            </div>
+            
+            <div class="popup-content">
+                <input type="search" class="search-field" placeholder="Введите категорию">
+                
+                <div id="menu-categs-popup">               
+                    <ul>
+                        <li class="menu-item"><a href="#">ИТ-услуги</a></li>
+                        <li class="menu-item"><a href="#">Бытовые услуги, ремонт техники</a></li>
+                        <li class="menu-item"><a href="#">Отделочные работы</a></li>
+                        <li class="menu-item"><a href="#">Услуги пошива</a></li>
+                        <li class="menu-item"><a href="#">Деловые услуги</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item"><a href="#">Все категории</a></li>
+                                <li class="menu-item"><a href="#">Юридические Услуги</a></li>
+                                <li class="menu-item"><a href="#">Нотариальные услуги</a></li>
+                                <li class="menu-item"><a href="#">Аудиторские услуги</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a href="#">ИТ-услуги</a></li>
+                        <li class="menu-item"><a href="#">Бытовые услуги, ремонт техники</a></li>
+                        <li class="menu-item"><a href="#">Отделочные работы</a></li>
+                        <li class="menu-item"><a href="#">Услуги пошива</a></li>
+                        <li class="menu-item"><a href="#">Деловые услуги</a></li>
+                    </ul>
+                </div>
+            </div><!-- /.popup-content -->
+            <div id="panel" class="popup-categs-panel">
+                
+            </div>
+        </div><!-- /.wrapper -->
+    </div><!-- /#popup-mob-->
+    
+    <script>
+        $('#menu-categs-popup').find('.menu-item').has('.sub-menu').click(function(){
+            $(this).children('.sub-menu').css('left', 0);
+            $(this).parents('.popup-mob').addClass('menu-open');
+        });
+
+        $('.menu-open .popup-header').click();
+    </script>
+<hr>
+
+    <div class="popup-mob popup-city" id="popup-cities">
+        <div class="wrapper">
+            <div class="popup-header">
+                <h3 class="h-popup">Выбор города</h3>
+                <button type="button" class="close btn-close">
+                    <svg data-src="img/x.svg"></svg>
+                </button> 
+            </div>
+            
+            <div class="popup-content">
+                <input type="search" class="search-field" placeholder="Введите город">
+                <p class="heading">Популярные города</p>
+                <ul>
+                    <li class="menu-item"><a href="#">Москва</a></li>
+                    <li class="menu-item active"><a href="#">Санкт-Петербург</a></li>
+                    <li class="menu-item"><a href="#">Новосибирск</a></li>
+                    <li class="menu-item"><a href="#">Екатеринбург</a></li>
+                    <li class="menu-item"><a href="#">Нижний Новгород</a></li>
+                    <li class="menu-item"><a href="#">Казань</a></li>
+                    <li class="menu-item"><a href="#">Челябинск</a></li>
+                    <li class="menu-item"><a href="#">Омск</a></li>
+                </ul>
+                <hr>
+                <p class="heading">Центр</p>
+                <ul>
+                    <li class="menu-item"><a href="#">Москва</a></li>
+                    <li class="menu-item"><a href="#">Санкт-Петербург</a></li>
+                    <li class="menu-item"><a href="#">Новосибирск</a></li>
+                    <li class="menu-item"><a href="#">Екатеринбург</a></li>
+                    <li class="menu-item"><a href="#">Нижний Новгород</a></li>
+                    <li class="menu-item"><a href="#">Казань</a></li>
+                    <li class="menu-item"><a href="#">Челябинск</a></li>
+                    <li class="menu-item"><a href="#">Омск</a></li>
+                </ul>                
+            </div><!-- /.popup-content -->
+        </div><!-- /.wrapper -->
+    </div><!-- /#popup-mob-->
+
+
+</body>
+</html>
