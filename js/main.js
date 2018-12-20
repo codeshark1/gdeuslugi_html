@@ -131,21 +131,7 @@ jQuery(document).ready(function($){
 
 	}
 
-    drop_menu('.drop-menu-trigger', '.drop-menu', '.drop-menu a', '.drop-menu-wrapper');
-    drop_menu('.ipoteka-types-current', '.row-ipoteka-types', '.ipoteka-type', '.ipoteka-types-wrapper');
 
-/*     $(".plan-wrapper").swipe( {
-        swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-            if ((direction == "left") && ! $(this).hasClass('swiped') )  {
-                $(this).addClass('swiped');             
-            }
-            if ( (direction == "right") && $(this).hasClass('swiped') ) {
-                $(this).removeClass('swiped');
-            }
-        },
-        threshold:0,
-        duration: 0
-    }); */
 
 
 
@@ -189,39 +175,7 @@ jQuery(document).ready(function($){
     new SVGInjector().inject(document.querySelectorAll('svg[data-src]'));
 
 
-    function setControlWidth() {
-        $('.listing-controls--wrap').width( $('.plan-content').width() ); //потреб, авто
-        $('.sort-bank').width( $('.td_bankname').width() ); //потреб, авто
-        $('.sort-offer').outerWidth( $('.td_offer').width() ); //потреб, авто
-        $('.sort-rate').width( $('.td_rate').width() ); //потреб, авто
-        $('.sort-amount').width( $('.td_amount').width() ); //потреб, авто
-        $('.sort-time').width( $('.td_time').width() ); //вклады
 
-        $('.sort-overpay').width( $('.td_overpay').width() ); //авто        
-        $('.plan_wide-title .td_title').css( 'padding-left', $('.td_bankname').width() ); //авто        
-
-        
-        $('.sort-limit').width( $('.td_limit').width() ); //кредитки        
-        $('.sort-period').width( $('.td_period').width() ); //кредитки        
-        $('.sort-price').width( $('.td_price').width() ); //кредитки               
-
-        $('.sort-docs').width( $('.td_docs').width() ); //results               
-        $('.sort-prob').width( $('.td_prob').width() + 20 ); //results               
-    }    
-    setControlWidth();
-    
-    function setButtonMoreWidth() {
-        $('.btn-more-vertical').each(function(){
-            $(this).width( $(this).parents('.plan-wrapper').height() );
-
-        });
-    };
-    //setButtonMoreWidth();
-
-    $(window).resize(function(){
-        setControlWidth();
-        //setButtonMoreWidth();
-    });
 
     
 
@@ -235,12 +189,6 @@ jQuery(document).ready(function($){
     $('#js-btn-cities').click(function(e){        
         hide_location_hint();
     });
-
-    //клонирование
-    /* function cloneSubscribe(element,target) {
-        $(element).clone().removeClass('hidden-xs').insertAfter(target).addClass('visible-xs');
-    }
-    cloneSubscribe('.subscribe-main','.sidebar-main'); */
 
 
     function customCheckbox() {
@@ -270,18 +218,90 @@ jQuery(document).ready(function($){
     });    
 
 
-    /* PLAN CHILDREN */
-    $('.js-btn-plan-children').click(function(){
-        var block = $(this).parents('.plan').next('.js-plan-children');
 
-        if ( $(block).is(':visible')){
-            $(block).slideUp(100).removeClass('active');
-            $(this).removeClass('active');
-        } else {
-            $(this).addClass('active');
-            $(block).slideDown(100).addClass('active');
-        }
-    })  
 
-    
+    /* modal open-close */
+    function modal_open_close(){
+        $('.modal-trigger').click(function(e){
+            e.preventDefault();
+            //$($(this).data('trigger')).fadeIn(100);
+            $($(this).data('trigger')).addClass('opened');
+        });
+
+        $('.btn-close').click(function(e){
+            e.preventDefault();
+            //$(this).parents('.modal-container').fadeOut(100);
+            $(this).parents('.modal-container').removeClass('opened');
+        });
+    }
+    modal_open_close('#myInput','#modal-categs');
+
+
+    function modal_menu_link_click() {
+        $('#menu-categs-popup a, #modal-cities a').click(function(e){
+            e.preventDefault();
+            var target_data = "#" + $(this).parents('.modal-container').attr('id');
+            
+            $(this).parent('.menu-item').addClass('active').siblings().removeClass('active');
+            if( ! $(this).next('.sub-menu').length ) {
+                $(this).parents('.modal-container').fadeOut(100);                    
+
+                $('body').find("[data-trigger='"+target_data+"']").val($(this).text());
+            }
+        });
+    }
+    modal_menu_link_click();
+
+    function categ_select() {
+        /*link click submenu*/
+        $('#menu-categs-popup').find('.menu-item').has('.sub-menu').children('a').click(function(){
+            $(this).parents('.modal-window').find('.h-modal').text($(this).text());
+            $(this).parents('.modal-window').find('.sub-menu.current').removeClass('current');
+
+            if ($(this).parents('.modal-window').hasClass('menu-open-1')) {
+                $(this).parents('.modal-window').removeClass('menu-open-1').addClass('menu-open-2');
+            } else {
+                $(this).parents('.modal-window').addClass('menu-open-1')
+            }
+
+            $(this).next('.sub-menu').css('left', 0).addClass('current');
+        });
+
+        /*window heading (back button) click*/
+        $('.h-modal').click(function(){
+            if( $(this).parents('.modal-window').hasClass('menu-open-2') ) {
+                $(this).parents('.modal-window').removeClass('menu-open-2').addClass('menu-open-1');
+            } else if ( $(this).parents('.modal-window').hasClass('menu-open-1') ) {
+                $(this).parents('.modal-window').removeClass('menu-open-1');
+            }
+
+            $(this)
+            .parents('.modal-window')
+            .find('.sub-menu.current')
+            .removeClass('current')
+            .css('left', '100%')
+            .parents('.sub-menu')
+            .addClass('current');
+
+            if ($('.sub-menu.current').length ) {
+                $(this).text( $('.sub-menu.current').siblings('a').text() );
+            } else {
+                $(this).text('Выбор категории');
+                $(this).parents('.modal-window').find('.menu-item.active').removeClass('active');
+            }
+        });
+    }
+    categ_select();
+
+    /*categ search live filter:*/
+    function categs_filter(element) {
+        var value = ($(element).val()).toLowerCase();
+        
+        jQuery.expr[':'].contains = function(a, i, m) {
+            return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+        };
+
+        $('#menu-categs-popup > ul > li>a:not(:contains(' + value + '))').hide(); 
+        $('#menu-categs-popup > ul > li>a:contains(' + value + ')').show();
+    }      
 });
