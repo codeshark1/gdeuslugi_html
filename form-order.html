@@ -87,7 +87,7 @@
                     </div>
                     
                     <div class="modal-content">
-                        <input type="search" class="search-field" placeholder="Введите категорию" onkeyup="categs_filter(this)">
+                        <input type="search" class="search-field" placeholder="Введите категорию" onkeyup="list_filter(this, '#menu-categs-popup')">
                         
                         <div id="menu-categs-popup">
                             <ul>
@@ -190,7 +190,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </div>
+                        </div><!-- menu-categs-popup -->
                     </div><!-- /.modal-content -->
                 </div><!-- /.wrapper -->
             </div><!-- /#modal-window-->
@@ -209,30 +209,32 @@
                     </div>
                     
                     <div class="modal-content">
-                        <input type="search" class="search-field" placeholder="Введите город">
+                        <input type="search" class="search-field" placeholder="Введите город" onkeyup="list_filter(this, '#menu-cities-popup')">
                         <p class="heading">Популярные города</p>
-                        <ul>
-                            <li class="menu-item"><a href="#">Москва</a></li>
-                            <li class="menu-item active"><a href="#">Санкт-Петербург</a></li>
-                            <li class="menu-item"><a href="#">Новосибирск</a></li>
-                            <li class="menu-item"><a href="#">Екатеринбург</a></li>
-                            <li class="menu-item"><a href="#">Нижний Новгород</a></li>
-                            <li class="menu-item"><a href="#">Казань</a></li>
-                            <li class="menu-item"><a href="#">Челябинск</a></li>
-                            <li class="menu-item"><a href="#">Омск</a></li>
-                        </ul>
-                        <hr>
-                        <p class="heading">Центр</p>
-                        <ul>
-                            <li class="menu-item"><a href="#">Москва</a></li>
-                            <li class="menu-item"><a href="#">Санкт-Петербург</a></li>
-                            <li class="menu-item"><a href="#">Новосибирск</a></li>
-                            <li class="menu-item"><a href="#">Екатеринбург</a></li>
-                            <li class="menu-item"><a href="#">Нижний Новгород</a></li>
-                            <li class="menu-item"><a href="#">Казань</a></li>
-                            <li class="menu-item"><a href="#">Челябинск</a></li>
-                            <li class="menu-item"><a href="#">Омск</a></li>
-                        </ul>                
+                        <div id="menu-cities-popup">
+                            <ul>
+                                <li class="menu-item"><a href="#">Москва</a></li>
+                                <li class="menu-item active"><a href="#">Санкт-Петербург</a></li>
+                                <li class="menu-item"><a href="#">Новосибирск</a></li>
+                                <li class="menu-item"><a href="#">Екатеринбург</a></li>
+                                <li class="menu-item"><a href="#">Нижний Новгород</a></li>
+                                <li class="menu-item"><a href="#">Казань</a></li>
+                                <li class="menu-item"><a href="#">Челябинск</a></li>
+                                <li class="menu-item"><a href="#">Омск</a></li>
+                            </ul>
+                            <hr>
+                            <p class="heading">Центр</p>
+                            <ul>
+                                <li class="menu-item"><a href="#">Москва</a></li>
+                                <li class="menu-item"><a href="#">Санкт-Петербург</a></li>
+                                <li class="menu-item"><a href="#">Новосибирск</a></li>
+                                <li class="menu-item"><a href="#">Екатеринбург</a></li>
+                                <li class="menu-item"><a href="#">Нижний Новгород</a></li>
+                                <li class="menu-item"><a href="#">Казань</a></li>
+                                <li class="menu-item"><a href="#">Челябинск</a></li>
+                                <li class="menu-item"><a href="#">Омск</a></li>
+                            </ul>                
+                        </div><!-- /#menu-cities-popup -->
                     </div><!-- /.modal-content -->
                 </div><!-- /.wrapper -->
             </div><!-- /#modal-window-->    

@@ -306,15 +306,20 @@ jQuery(document).ready(function($){
     }
     categ_select();
 
+
+
+
     /*categ search live filter:*/
-    function categs_filter(element) {
+    function list_filter(element, id) {
         var value = ($(element).val()).toLowerCase();
         
         jQuery.expr[':'].contains = function(a, i, m) {
             return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
         };
 
-        $('#menu-categs-popup > ul > li>a:not(:contains(' + value + '))').hide(); 
-        $('#menu-categs-popup > ul > li>a:contains(' + value + ')').show();
-    }      
+        $(id + '> ul > li>a:not(:contains(' + value + '))').hide(); 
+        $(id + '> ul > li>a:contains(' + value + ')').show();
+    }  
+    
+    window.list_filter = list_filter;
 });
