@@ -1481,12 +1481,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .cf {
   *zoom: 1; }
 
-.h-elements {
-  border-bottom: 1px solid #333;
-  padding-bottom: 16px; }
-
-.space {
-  height: 23px; }
+.list-pages li {
+  margin-bottom: 20px; }
 
 /********************************************************************
  * Text meant only for screen readers

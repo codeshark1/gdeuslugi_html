@@ -10,8 +10,9 @@
 .cf:after{clear:both}
 .cf{*zoom:1}
 
-.h-elements {border-bottom: 1px solid $base-text; padding-bottom: 16px;}
-.space {height: 23px}
+.list-pages {
+    li {margin-bottom: 20px;}
+}
 /********************************************************************
  * Text meant only for screen readers
  */
