@@ -221,20 +221,33 @@ jQuery(document).ready(function($){
 
 
     /* modal open-close */
+    function close_modal() {
+        $('.modal-container.opened').removeClass('opened');
+        $('body').removeClass('modal-opened');
+    }
+
     function modal_open_close(){
         $('.modal-trigger').click(function(e){
             e.preventDefault();
-            //$($(this).data('trigger')).fadeIn(100);
             $($(this).data('trigger')).addClass('opened');
+            $('body').addClass('modal-opened');
         });
 
         $('.btn-close').click(function(e){
             e.preventDefault();
-            //$(this).parents('.modal-container').fadeOut(100);
-            $(this).parents('.modal-container').removeClass('opened');
+            //$(this).parents('.modal-container').removeClass('opened');
+            close_modal();
         });
     }
-    modal_open_close('#myInput','#modal-categs');
+    modal_open_close();    
+
+    $('.modal-container').click(function(){
+        close_modal();
+    });
+    $('.modal-window').click(function(e){
+        e.stopPropagation();
+    });
+    
 
 
     function modal_menu_link_click() {
@@ -244,8 +257,8 @@ jQuery(document).ready(function($){
             
             $(this).parent('.menu-item').addClass('active').siblings().removeClass('active');
             if( ! $(this).next('.sub-menu').length ) {
-                $(this).parents('.modal-container').fadeOut(100);                    
-
+                //$(this).parents('.modal-container').removeClass('opened');
+                close_modal();
                 $('body').find("[data-trigger='"+target_data+"']").val($(this).text());
             }
         });
@@ -268,7 +281,7 @@ jQuery(document).ready(function($){
         });
 
         /*window heading (back button) click*/
-        $('.h-modal').click(function(){
+        $('#modal-categs .h-modal').click(function(){
             if( $(this).parents('.modal-window').hasClass('menu-open-2') ) {
                 $(this).parents('.modal-window').removeClass('menu-open-2').addClass('menu-open-1');
             } else if ( $(this).parents('.modal-window').hasClass('menu-open-1') ) {
