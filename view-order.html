@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Карточка заказа</title>
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+<!--[if lt IE 10]>
+    <p class="browserupgrade">Вы используете <b>устаревший</b> браузер. Пожалуйста, <a href="http://browsehappy.com/?locale=ru_ru">обновите свой браузер</a> чтобы улучшить опыт работы с сайтом.</p>
+<![endif]-->
+
+<header class="header-site">
+    <div class="bx-action">
+        <a href="#" class="back"><svg data-src="img/arrow-back.svg"></svg></a>
+    </div><!-- /.bx-action -->
+    <a href="#" class="logo">U</a>
+    <div class="bx-user">
+        <a href="#" class="btn btn-pill">Войти</a>
+    </div><!-- /.bx-user -->
+</header>
+
+<main class="container">    
+    <div class="row justify-content-between row-main">
+        <div class="col-sm-7 col-md-6 col-content">
+            <article class="order-full">
+                <p class="order-num">Заказ #1q2w3e</p>
+                <h1 class="h-main h-order">Черновая кладка стен полнотелым кирпичем</h1>
+                <p class="order-price">150 000 P</p> 
+                <p class="order-location">Санкт-Петербург</p>
+                <a href="#" class="order-categ">Строительство домов и коттеджей</a>
+
+                <div class="order-gallery">
+                    <div class="img-main">
+                        <img src="img/prev-big1.jpg" alt="pic">
+                    </div>
+                    <div class="img-preview-row">
+                        <div class="img-thumbnail"><img src="img/prev-sm2.jpg" alt="pic"></div>
+                        <div class="img-thumbnail"><img src="img/prev-sm3.jpg" alt="pic"></div>
+                        <div class="img-thumbnail"><img src="img/prev-sm4.jpg" alt="pic"></div>
+                        <div class="img-thumbnail"><img src="img/prev-sm5.jpg" alt="pic"></div>
+                    </div>
+                </div><!-- /.order-gallery -->
+
+                <div class="order-description">
+                    <p>Сделайте мне аккуратно и надежно, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. Очень аккуратно и надежно, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно.  Устраивался на работу потому что там график как говорили.</p>
+                </div><!-- /.order-description -->
+
+                <div class="order-actions">
+                    <button type="button" class="btn btn-main">Редактировать</button>
+                    <button type="button" class="btn btn-dots">...</button>
+                </div><!-- /.order-actions -->
+            </article>
+        </div><!-- /.col -->
+        <aside class="col-sm-5 col-md-5 col-sidebar">
+            <h2 class="h-section">Рекомендуем</h2>
+
+            <ul class="nav-tabs js-nav-tabs">
+                <li class="menu-item active"><a href="#tab-masters">Мастера</a></li>
+                <li class="menu-item"><a href="#tab-services">Услуги</a></li>
+            </ul>
+            <div class="tabcontent-wrapper js-tabcontent-wrapper">
+                <div class="tabcontent" id="tab-masters">
+                    <div class="card-master-sidebar">
+                        <div class="user-header">
+                            <a href="#" class="userpic">К</a>
+                            <p>Константин</p>
+                            <div class="rating">
+                                <span class="rating-num">4.7</span>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <span class="rating-rates">65</span>
+                            </div><!-- rating -->
+                        </div><!-- /.user-header -->                        
+                        <p class="city">Санкт-Петербург</p>
+                        <p class="description">Отделка окон, Отделка дверей, Монтаж теплых полов, Сантехнические услуги, Слаботочные системы, Водители</p>
+                    </div><!-- /.card-master-listing -->
+                </div><!-- /.tabcontent -->
+            </div><!-- /.tabcontent-wrapper -->                      
+        </aside><!-- /.col -->
+    </div><!-- /.row -->
+</main><!-- /.container -->
+
+<div class="footer-placehodler"></div>
+</body>
+</html>
