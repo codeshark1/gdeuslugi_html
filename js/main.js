@@ -96,14 +96,6 @@ jQuery(document).ready(function($){
             $('.tabcontent:not('+$(this).val()+')').css('display','none');
             $('.tabcontent'+$(this).val()).fadeIn(300);
         })
-       
-
-        $('html').click(function(){
-            $('.js-nav-tabs').css('display','none');
-        });        
-        $('.nav-tabs-wrapper').click(function(e){
-            e.stopPropagation();
-        });
     }
     tabs();
 
@@ -125,9 +117,7 @@ jQuery(document).ready(function($){
                 .html($(this).html())
                 .siblings(menu)
                 .hide();			
-        });
-
-        
+        });        
 
 	}
 
@@ -233,7 +223,7 @@ jQuery(document).ready(function($){
             $('body').addClass('modal-opened');
         });
 
-        $('.btn-close').click(function(e){
+        $('.modal-container .close').click(function(e){
             e.preventDefault();
             //$(this).parents('.modal-container').removeClass('opened');
             close_modal();
