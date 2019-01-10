@@ -350,6 +350,15 @@ $sect-mg-neg: 39px;
 		max-width: 630px;
 	}	
 }
+.form-login {
+	@media (min-width: $screen-md-min) {
+		max-width: 360px;
+	}		
+	@media (min-width: $screen-lg-min) {		
+		max-width: 410px;
+	}	
+}
+
 .user-entered {
 	.h-content {
 		margin-bottom: 10px; 
@@ -377,15 +386,21 @@ input[type="date"] {
 	}
 }
 
+input[type=text],input[type=password] {margin-bottom: 25px;}
 .form-row, .link-input {
 	margin: 0 0 25px 0;
 	display: block;
 	@media (min-width: $screen-lg-min) {
 	  margin-bottom: 35px;
 	}
+	input {margin-bottom: 0;}
   }
 
 .link-input {margin-top: -10px;}
+
+.row-mg {
+	
+}
 
 .btn-full-mb {
 	@media (max-width: $screen-xs-max) {
