@@ -70,14 +70,12 @@ $sect-mg-neg: 39px;
 		display: flex;
 		justify-content: flex-end;
 	}
-
-	.userpic {
-		width: 32px;height: 32px;
-		font-size: 16px;
-		line-height: 32px;
-	}
 }
-
+.header-site .userpic, .userpic-mini {
+	width: 32px;height: 32px;
+	font-size: 16px;
+	line-height: 32px;
+}
 
 .btn-open-menu {
 	display: flex;
@@ -576,6 +574,8 @@ body.modal-opened {overflow: hidden;}
 			>a {color: #fff;background: $main !important;}
 		}
 }
+
+
 .h-modal {font-weight: bold;font-size: 24px; margin: 0;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -590,7 +590,20 @@ body.modal-opened {overflow: hidden;}
 		a {display: block;color: $base-text; padding: 16px ;}
 	}
 }
-
+#modal-tel {
+	.btn-close {top: 24px;right: 24px;}
+	.modal-window {text-align: center;}
+	.h-modal {padding: 0; margin-bottom: 24px;}
+	
+	.modal-content {padding-top: 60px;}
+	.tel {
+		font-size: 24px;
+		letter-spacing: 3px;		
+		margin-bottom: 24px;
+	}
+	.btn-text {margin-bottom: 24px;}
+	.btn-main {width: 100%;}
+}
 
 .search-listing-filter {
 	@media (max-width: $screen-xs) {
@@ -641,14 +654,34 @@ body.modal-opened {overflow: hidden;}
 /*КАРТОЧКА ЗАКАЗА*/
 
 .order-full {
-	.order-num {margin-top: -30px;}
+	@media (min-width: $screen-md-min) {
+		.order-num {margin-top: -30px;}
+	}
 }
-.order-header {margin-bottom: 25px;}
+.user-summary {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	.col-details {}
+	.order-user, .order-time, .order-location {display: inline-block;}
+	.order-user {
+		&:after {
+			content: "•";
+			margin: 0 5px 0 10px;
+		}
+	}
+	.order-time {color: $gray-text}
+	.order-location {}
+	.col-user {width: 75px; flex-shrink: 0; @include clearfix();}
+		.rating-mini {float: left;}
+		.userpic {float: right;}	
+}
+.order-header {margin-bottom: 25px;	}
 .order-num {color: $gray-text;font-size: 14px;}
 .h-order {margin: 8px 0}
 .order-price {}
 .order-location,.order-categ {font-size: 16px;}
-.order-categ {color: $gray-text;line-height: .7;display: flex}
+.order-categ {color: $gray-text;line-height: 14px;display: flex}
 
 .order-gallery {
 	margin-bottom: 30px;
@@ -656,14 +689,26 @@ body.modal-opened {overflow: hidden;}
 .img-main, .img-thumbnail {
 	img {border-radius: 8px;}
 }
-.img-main {margin-bottom: 5px;}
-.img-thumbnail {width: 80px;height: 80px; display: inline-block; margin-right: 10px;
+.img-main {margin-bottom: 5px;display: block;}
+.img-preview-wrapper {
+	overflow: auto;
+	.img-preview-row {
+		display: flex;
+	}
+}
+.img-thumbnail {
+	width: 80px;
+	height: 80px; 
+	display: inline-block; 
+	display: inline-flex; 
+	margin-right: 16px;
 	&:last-child {margin-right: 0;}
 }
 .order-description {margin-bottom: 40px;}
 
 .order-actions {
 	margin-bottom: 30px;
+	display: flex;
 	.btn-main {margin-right: 10px;}
 }
 .btn-dots {
@@ -675,7 +720,7 @@ body.modal-opened {overflow: hidden;}
 
 /* SIDEBAR */
 
-.card-master-sidebar, .card-service-sidebar {
+.card-master-sidebar, .card-service-sidebar, .card-order-sidebar {
 	border-bottom: 1px solid $gray-light;
 	padding-bottom: 16px;
 	margin-bottom: 16px;
@@ -692,26 +737,32 @@ body.modal-opened {overflow: hidden;}
 	.userpic {position: absolute; left: 0;top: 0;}
 	.name {font-weight: bold;margin: 0 0 5px 0; color: $base-text; display: block;
 		a {color: $base-text}
-		&:hover, a:hover {color: $green}
+		&:hover, a:hover {color: $main}
 	}
 	.rating {font-size: 16px;}
-		.rating-num {color: $green;margin-right: 5px;}
+		.rating-num {color: $main;margin-right: 5px;}
 		.star {margin-right: 5px;vertical-align: middle;}
 		.rating-rates {color: $gray-text}
 }
 
-.card-service-sidebar {	
-	.title {font-weight: bold;margin: 0 0 5px 0; color: $base-text;
-		a {color: $base-text}
-		&:hover, a:hover {color: $green}
-	}
-	.price {margin-bottom: 10px;}
+.rating-mini {
+	font-size: 16px;
+	text-align: center;
+	width: 40px;
+	.rating-num {color: $main; display: block;line-height: 14px;padding-top: 2px;}
+	.star {display: block; line-height: 0}
 }
-.img-preview-wrapper {
-	overflow: auto;
-	.img-preview-row {
-		width: 365px; //set by js
-	}
+
+.card-service-sidebar, .card-order-sidebar {	
+	.title {font-weight: bold;margin: 0 0 5px 0; color: $base-text; line-height: 1.2; display: block;
+		a {color: $base-text}
+		&:hover, a:hover {color: $main}
+	}	
+}
+.card-service-sidebar .price {margin-bottom: 10px;}
+
+.card-order-sidebar {
+	.user-summary {margin-bottom: 16px;}
 }
 
 
@@ -746,7 +797,7 @@ body.modal-opened {overflow: hidden;}
 		//&:hover a {color: #000 !important}
 		&.active, &:hover {
 			a:after {
-				background: $green;
+				background: $main;
 				width: 100%;
 			}				
 		}
@@ -816,7 +867,7 @@ body.modal-opened {overflow: hidden;}
    ========================================================================== */
 .col-sidebar {
 	@media (max-width: $screen-sm-max) {		
-		padding-top: 3 0px;
+		padding-top: 30px;
 		position: relative; 
 		&:before {
 			content: "";

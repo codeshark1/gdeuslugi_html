@@ -312,4 +312,16 @@ jQuery(document).ready(function($){
     }  
     
     window.list_filter = list_filter;
+
+
+    function gallery_prev_width() {
+        $('.img-preview-row').each(function(){
+            var width = 0;
+            $(this).find('.img-thumbnail').each(function() {
+                width += $(this).outerWidth(true);
+            });
+            $(this).width(width);
+        });
+    }
+    gallery_prev_width();    
 });

@@ -285,12 +285,14 @@ label.radio {
   vertical-align: middle;
   border-radius: 2px;
   background-color: transparent;
-  transition: all .3s;
+  transition: all .3s;  
   &:hover {
     cursor: pointer;
   }
 
   svg {margin-left: 4px;display: inline-block; max-width: 100%; min-height: 100%;}
+  font-size: .85rem;
+  @media (min-width: $screen-sm-min) {font-size: 1rem;}
 }
 
 
@@ -311,12 +313,15 @@ label.radio {
 }
 .btn-main, .btn-sub {
   border-radius: 8px;
-  font-size: 18px;
+  //font-size: 18px;
   padding: 13px 32px;
 }
 .btn-sub {
   background: #fff;
   color: $main;
+}
+.btn-text {color: $main;
+  &:hover {color: $main-hover}
 }
 
 @mixin btn-pill() {
@@ -383,7 +388,7 @@ label.radio {
 }
 
 .btn-top {
-  background: $action;
+  //background: $action;
   //display: none;
   opacity: 0;
   position: fixed;
@@ -467,7 +472,7 @@ label.radio {
       height: 1px;
       width: 100%;
       left: 0;bottom: 0;right: 0;
-      background: $action;
+      //background: $action;
       position: absolute;
     }
   }
@@ -665,130 +670,10 @@ h1, h2, h3, h4 {line-height: 1.1; font-weight: 500}
 /* ==========================================================================
    ARTICLE
    ========================================================================== */
-@mixin border($color) {
-  border-left: 4px solid $color;
-  padding: 4px 0 4px 16px;
-}
 
-.b-author-article {
-  @include clearfix;
-  margin-bottom: 14px;
-  .userpic {
-    width: 60px;
-    border-radius: 100%;
-    @include shadow;
-    float: left;
-    margin-right: 8px;
-  }
-  .article-author {font-weight: 500; margin-top: 12px;display: block;}
-  .article-date {color: rgba($base-text, .75)}
-}
 
-hr {background: #dcdcdc; height: 1px; border: none;}
-.article-main {
-  hr {margin-bottom: 24px;}
-}
-.article-main--body {
-  p, blockquote, ul, ol, figure, img, table {
-    margin-bottom: 24px;
-  }
-  h2 {font-size: 1.5rem; margin-top: 32px;}
-  p {line-height: 1.5;}
-  .toc {
-    @include border($base-text);
-    &_title {margin: 0 0 8px; font-size: 1.1rem; font-weight: 500;}
-    &_list {
-      list-style: number;
-      padding-left: 16px;
-      margin-bottom: 0 !important;
-      li {margin-bottom: 16px;
-        &:last-child {margin-bottom: 0;}
-      }
-      a {border-bottom: 1px dashed}
-    }
-  }
 
-  blockquote {
-    margin-left: 0;
-    position: relative;
-    @include border($base-text);
-    &:before {
-      content: '“';
-      font-family: Georgia;
-      position: absolute;
-      left: 16px;
-      top: -8px;
-      font-size: 80px;
-      line-height: 1;
-    }
-    p:first-letter {margin-left: 38px;}
-    p {margin-bottom: 0 !important;}
-  }
 
-  figure {
-    text-align: center;
-    img {margin-bottom: 8px !important;}
-    figcaption {color: rgba($base-text, .75); font-weight: 500;}
-  }
-  
-  ul, ol {
-    padding-left: 36px;
-    li {margin-bottom: 8px;}
-  }
-  ul {list-style: circle;}
-  
-  table {
-    border-collapse: collapse;
-    text-align: center;
-    vertical-align: middle;
-
-    @media (max-width: $screen-sm-max) {
-      display: block;
-      max-width: min-content;    
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      white-space: nowrap;
-    }
-  }
-  th, td {border: 1px solid $gray; padding: 8px;}
-  th {background: rgba($gray, .5)}
-
-  .title {font-weight: 500;}
-}
-.article-main--rating, .article-main--sharing {  
-  .title {font-weight: 500;}
-}
-.article-main--rating {
-  margin-bottom: 16px;
-  .title {margin: 0 8px 8px 0;display: inline-block;}
-  .stars {display: inline-block; color: orange; font-size: 24px;}
-}
-.article-main--sharing {
-  margin-bottom: 24px;
-  .title {margin: 0 0 8px 0;}
-}
-.article-main--categs {
-  margin-bottom: 24px;
-  @include border($base-text);
-  .title {font-weight: 500;}
-}
-
-.comment-list {padding-left: 0;list-style: none;
-  ol {list-style: none;}
-}
-
-.comment-box {
-  margin-bottom: 16px;
-  @include clearfix();
-}
-.comment-text {margin-bottom: 8px;}
-.comment-reply-link {
-  float: right; 
-  cursor: pointer; 
-  color: $action;
-  font-size: 14px;
-  font-weight: 500;
-}
 
 /* ==========================================================================
    CARDS
