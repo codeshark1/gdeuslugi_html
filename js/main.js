@@ -324,4 +324,15 @@ jQuery(document).ready(function($){
         });
     }
     gallery_prev_width();    
+
+    function show_pass() {
+        $('.btn-passtoggle').click(function(){
+            if ( $(this).siblings('input').attr('type') == 'password' ) {
+                $(this).addClass('active').siblings('input').attr('type', 'text');
+            } else {
+                $(this).removeClass('active').siblings('input').attr('type', 'password');
+            }
+        });
+    }
+    show_pass();
 });

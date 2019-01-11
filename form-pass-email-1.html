@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Вход</title>
+    <title>Восстановление пароля по email 1</title>
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -17,41 +17,24 @@
 
 <header class="header-site">
     <div class="bx-action">
-        <a href="#" class="btn-open-menu">
-            <span class="logo">U</span>
-            <svg data-src="img/arrow-down.svg"></svg>
-        </a>
+        <a href="#" class="back"><svg data-src="img/arrow-back.svg"></svg></a>
     </div><!-- /.bx-action -->
-    
+    <a href="#" class="logo">U</a>
     <div class="bx-user">
-        <a href="#" class="">Зарегистрироваться</a>
+        <a href="#" class="btn btn-pill">Войти</a>
     </div><!-- /.bx-user -->
 </header>
 
 <main class="container">
     <form action="#" class="form-login form-main">
-        <h1 class="h-main">Вход</h1>
+        <p>Введите электронную почту или номер телефона указанный при регистрации.</p>
 
         <div class="form-row">
             <input type="text" placeholder="Электронная почта или номер телефона">        
-        </div>
-
-        <div class="form-row">
-            <input type="password" placeholder="Пароль">
-        </div>
+            <p class="error-text">Не найдено аккаунтов связанных с указанной электронной почтой</p>
+        </div>        
         
-        <div class="row-mod centered form-row">
-            <button type="submit" class="btn btn-main">Войти</button>
-            <a href="#">Забыли пароль</a>
-        </div><!-- /.row-mod -->
-
-        <h2 class="h-content">Войти через социальные сети</h2>
-        <ul class="menu-login-social">
-            <li class="menu-item"><a href="#" class="vk"><svg data-src="img/vk.svg"></svg></a></li>
-            <li class="menu-item"><a href="#" class="fb"><svg data-src="img/fb.svg"></svg></a></li>
-            <li class="menu-item"><a href="#" class="ok"><svg data-src="img/ok.svg"></svg></a></li>
-            <li class="menu-item"><a href="#" class="google"><svg data-src="img/google.svg"></svg></a></li>
-        </ul>
+        <button type="submit" class="btn btn-main">Восстановить пароль</button>
     </form>
 </main><!-- /.container -->
 
