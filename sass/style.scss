@@ -31,13 +31,26 @@ $sect-mg-neg: 39px;
 .userpic {
 	background: $main-light;
 	display: block;
-	overflow: hidden;
 	border-radius: 100%;
 	width: 64px;height: 64px;
 	font-size: 24px;
 	text-align: center;
 	color: $main;
-	line-height: 64px;
+	line-height: 64px;	
+	img {border-radius: 100%;}
+	&-checked {
+		position: relative;
+		&:after {
+			content:"";
+			width: 24px;height: 24px;
+			background: $main url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.00016 11.1698L1.83016 6.99984L0.410156 8.40984L6.00016 13.9998L18.0002 1.99984L16.5902 0.589844L6.00016 11.1698Z' fill='white'/%3E%3C/svg%3E%0A") 50% 50% no-repeat;
+			display: block;
+			border-radius: 100%;
+			position: absolute;
+			right: -4px;
+			bottom: -4px;
+		}
+	}
 }
 
 .header-site {
@@ -764,10 +777,23 @@ body.modal-opened {overflow: hidden;}
 	vertical-align: middle;
 }
 
+/* PROFILE */
+.content-profile {max-width: 630px;}
+
+.bx-profile-header {
+	text-align: center;
+	.userpic {display: inline-block; margin-bottom: 24px;}
+	.h-section {margin-bottom: 8px;}
+	.rating-mini-vert {margin-bottom: 8px;}
+	.location {color: $gray-text; font-size: 16px; margin-bottom: 16px;}
+	.order-actions {display: inline-flex; position: relative;
+		.btn-dots {position: absolute; right: -60px; top: 0;bottom: 0; margin: auto;}
+	}
+}
 
 /* SIDEBAR */
 
-.card-master-sidebar, .card-service-sidebar, .card-order-sidebar {
+.card-master-sidebar, .card-service-sidebar, .card-order-sidebar, .card-review-content {
 	border-bottom: 1px solid $gray-light;
 	padding-bottom: 16px;
 	margin-bottom: 16px;
@@ -791,13 +817,36 @@ body.modal-opened {overflow: hidden;}
 		.star {margin-right: 5px;vertical-align: middle;}
 		.rating-rates {color: $gray-text}
 }
+.card-review-content {
+	.user-header {
+		display: flex;
+		justify-content: space-between;
+		padding: 0 0 0 60px;
+		.main {}
+		.userpic {width: 48px;height: 48px;line-height: 48px;}
+		.name {margin: 0}
+		.date {color: $gray-text;font-size: 16px;}
+		.rating {
+			flex-shrink: 0;
+			@media (max-width: $screen-xs-max) {
+				.star {margin-right: 0;}
+			}
+		}
+	}
+}
 
-.rating-mini {
+.rating-mini, .rating-mini-vert {
 	font-size: 16px;
+	.rating-num {color: $main; }
+}
+.rating-mini {
 	text-align: center;
 	width: 40px;
-	.rating-num {color: $main; display: block;line-height: 14px;padding-top: 2px;}
+	.rating-num {display: block;line-height: 14px;padding-top: 2px;}
 	.star {display: block; line-height: 0}
+}
+.rating-mini-vert {
+	.rating-num {margin-right: 4px;}
 }
 
 .card-service-sidebar, .card-order-sidebar {	
@@ -848,10 +897,12 @@ body.modal-opened {overflow: hidden;}
 				width: 100%;
 			}				
 		}
-	}		
-	
-
+	}
 }
+.content-main .nav-tabs {
+	margin-bottom: 32px;
+}
+
 .tabcontent {display: none;}
 .tabcontent:first-child {display: block;}
 

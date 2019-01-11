@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blueimp-gallery.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/blueimp-gallery.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 10]>
+    <p class="browserupgrade">Вы используете <b>устаревший</b> браузер. Пожалуйста, <a href="http://browsehappy.com/?locale=ru_ru">обновите свой браузер</a> чтобы улучшить опыт работы с сайтом.</p>
+<![endif]-->
+    <header class="header-site">
+        <div class="bx-action">
+            <a href="#" class="btn-open-menu">
+                <span class="logo">U</span>
+                <svg data-src="img/arrow-down.svg"></svg>
+            </a>
+        </div><!-- /.bx-action -->
+        
+        <div class="bx-user">
+            <a href="#" class="userpic">
+                А
+            </a>
+        </div><!-- /.bx-user -->
+    </header>
+
+    <main class="container content-main content-profile">
+        <div class="bx-profile-header">
+            <div href="#" class="userpic userpic-checked">K</div>
+            <h1 class="h-section">Константин</h1>
+            <div class="rating-mini-vert">
+                <span class="rating-num">4.7</span>
+                <i class="star"><svg data-src="img/star.svg"></svg></i>
+            </div>
+            <p class="location">Санкт-Петербург</p>
+            <div class="order-actions">
+                <button type="button" class="btn btn-main modal-trigger" data-trigger="#modal-tel">Показать телефон</button>
+                <button type="button" class="btn btn-dots modal-trigger" data-trigger="#modal-actions">...</button>
+            </div><!-- /.order-actions -->
+        </div><!-- /.bx-profile-header -->
+
+        <ul class="nav-tabs js-nav-tabs">
+            <li class="menu-item active"><a href="#tab-reviews">Отзывы</a></li>
+            <li class="menu-item"><a href="#tab-services">Услуги</a></li>
+            <li class="menu-item"><a href="#tab-orders">Заказы</a></li>
+        </ul>
+        <div class="tabcontent-wrapper js-tabcontent-wrapper">
+            <div class="tabcontent" id="tab-reviews">
+                <div class="card-review-content">
+                    <div class="user-header">
+                        <div class="main">
+                            <a href="#" class="userpic">К</a>
+                            <a href="#" class="name">Виктория Заболотная</a>
+                            <p class="date">21 сентября 2018</p>
+                        </div><!-- /.main -->  
+                        <div class="rating">
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>                            
+                        </div><!-- rating -->
+                    </div><!-- /.user-header -->  
+                    <p class="description">Безответственный сотрудник, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. Устраивался на работу потому что там график как на работу говорили будут подстр сотрудник, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. Устраивался на работу потому что там график как говорили будут подстраиваться по... <a href="#" class="expand">Ещё</a></p>
+                </div><!-- /.card-review-content -->
+                <div class="card-review-content">
+                    <div class="user-header">
+                        <div class="main">
+                            <a href="#" class="userpic">К</a>
+                            <a href="#" class="name">Константин</a>
+                            <p class="date">21 сентября 2018</p>
+                        </div><!-- /.main -->  
+                        <div class="rating">
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>                            
+                        </div><!-- rating -->
+                    </div><!-- /.user-header -->  
+                    <p class="description">Безответственный сотрудник, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. Устраивался на работу потому что там график как на работу говорили будут подстр сотрудник, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. Устраивался на работу потому что там график как говорили будут подстраиваться по... <a href="#" class="expand">Ещё</a></p>
+                </div><!-- /.card-review-content -->                
+            </div><!-- tabcontent -->
+            <div class="tabcontent" id="tab-services">
+                <div class="card-service-sidebar">
+                    <a href="#" class="title">Черновая кладка стен полнотелым кирпичем</a>
+                    <p class="price">от 3000 P</p>
+
+                    <div class="img-preview-wrapper">
+                        <div class="img-preview-row">
+                            <div class="img-thumbnail"><img src="img/prev-sm2.jpg" alt="pic"></div>
+                            <div class="img-thumbnail"><img src="img/prev-sm3.jpg" alt="pic"></div>
+                            <div class="img-thumbnail"><img src="img/prev-sm4.jpg" alt="pic"></div>
+                            <div class="img-thumbnail"><img src="img/prev-sm5.jpg" alt="pic"></div>
+                        </div>
+                    </div><!-- /.img-preview-wrapper -->
+                    <p class="description">Делаю очень аккуратно и надежно, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. Устраивался на работу потому что там график как говорили будут подстр... <a href="#">Ещё</a></p>
+                </div><!-- /.card-service-listing -->
+                <div class="card-service-sidebar">
+                    <a href="#" class="title">Черновая кладка стен полнотелым кирпичем</a>
+                    <p class="price">от 3000 P</p>
+
+                    <div class="img-preview-wrapper">
+                        <div class="img-preview-row">
+                            <div class="img-thumbnail"><img src="img/prev-sm2.jpg" alt="pic"></div>
+                            <div class="img-thumbnail"><img src="img/prev-sm3.jpg" alt="pic"></div>
+                            <div class="img-thumbnail"><img src="img/prev-sm4.jpg" alt="pic"></div>
+                            <div class="img-thumbnail"><img src="img/prev-sm5.jpg" alt="pic"></div>
+                        </div> 
+                    </div><!-- /.img-preview-wrapper -->
+                    <p class="description">Делаю очень аккуратно и надежно, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. Устраивался на работу потому что там график как говорили будут подстр... <a href="#">Ещё</a></p>
+                </div><!-- /.card-service-listing -->
+                <div class="card-service-sidebar">
+                    <a href="#" class="title">Черновая кладка стен полнотелым кирпичем</a>
+                    <p class="price">от 3000 P</p>
+
+                    <div class="img-preview-wrapper">
+                        <div class="img-preview-row">
+                            <div class="img-thumbnail"><img src="img/prev-sm2.jpg" alt="pic"></div>
+                            <div class="img-thumbnail"><img src="img/prev-sm3.jpg" alt="pic"></div>
+                            <div class="img-thumbnail"><img src="img/prev-sm4.jpg" alt="pic"></div>
+                            <div class="img-thumbnail"><img src="img/prev-sm5.jpg" alt="pic"></div>
+                        </div>
+                    </div><!-- /.img-preview-wrapper -->
+                    <p class="description">Делаю очень аккуратно и надежно, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. Устраивался на работу потому что там график как говорили будут подстр... <a href="#">Ещё</a></p>
+                </div><!-- /.card-service-listing -->                                                            
+            </div><!-- /.tabcontent -->
+            <div class="tabcontent" id="tab-orders">
+
+            </div><!-- /.tabcontent -->            
+        </div><!-- /.tabcontent-wrapper --> 
+    </main><!-- /.container -->
+
+    <div class="footer-placehodler"></div>
+
+    <div class="modal-container" id="modal-actions">
+        <div class="modal-bg">
+            <div class="modal-window">
+                <div class="wrapper">
+                    <ul class="menu-modal-actions">
+                        <li class="menu-item"><a href="#">Поделиться</a></li>
+                        <li class="menu-item"><a href="#">Пожаловаться</a></li>
+                        <li class="menu-item"><a href="#" class="close">Отмена</a></li>
+                    </ul>
+                </div><!-- /.wrapper -->
+            </div><!-- /#modal-window-->    
+        </div><!-- /.modal-bg -->
+    </div><!-- /.modal-container -->
+
+    <div class="modal-container" id="modal-tel">
+        <div class="modal-bg">
+            <div class="modal-window">
+                <div class="wrapper">
+                    <button type="button" class="close btn-close">
+                        <svg data-src="img/x.svg"></svg>
+                    </button>
+                    <div class="modal-content">
+                        <p class="h-modal">Константин</p>
+                        <p class="tel">+7 987 654-32-12</p>
+                        <button type="button" class="btn btn-text">Скопировать</button>
+                        <button type="button" class="btn btn-main">Позвонить</button>
+                    </div><!-- modal-content -->
+                </div><!-- /.wrapper -->
+            </div><!-- /#modal-window-->    
+        </div><!-- /.modal-bg -->
+    </div><!-- /.modal-container -->
+</body>
+</html>
