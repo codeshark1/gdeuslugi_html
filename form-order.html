@@ -41,12 +41,14 @@
         <label class="form-row">
             <span class="lbl">Город</span>
             <input type="text" id="select-city" class="pseudo-select modal-trigger" value="Санкт-Петербург" data-trigger="#modal-cities" readonly>
+            <input type="hidden" id="select-city-input" class="chosen-value">
         </label>
 
         <label class="form-row">
-            <span class="lbl">Категория работ</span>                    
+            <span class="lbl">Категория работ</span>
             <input type="text" id="select-category" class="pseudo-select modal-trigger" placeholder="Выберите категорию" data-trigger="#modal-categs" readonly>
-        </label>   
+            <input type="hidden" id="select-category-input" class="chosen-value">
+        </label>
         
         <label class="form-row">
             <span class="lbl">Имя</span>
@@ -213,14 +215,14 @@
                         <p class="heading">Популярные города</p>
                         <div id="menu-cities-popup">
                             <ul>
-                                <li class="menu-item"><a href="#">Москва</a></li>
-                                <li class="menu-item active"><a href="#">Санкт-Петербург</a></li>
-                                <li class="menu-item"><a href="#">Новосибирск</a></li>
-                                <li class="menu-item"><a href="#">Екатеринбург</a></li>
-                                <li class="menu-item"><a href="#">Нижний Новгород</a></li>
-                                <li class="menu-item"><a href="#">Казань</a></li>
-                                <li class="menu-item"><a href="#">Челябинск</a></li>
-                                <li class="menu-item"><a href="#">Омск</a></li>
+                                <li class="menu-item"><a href="#" data-value="Moscow">Москва</a></li>
+                                <li class="menu-item active"><a href="#" data-value="SPB">Санкт-Петербург</a></li>
+                                <li class="menu-item"><a href="#" data-value="Novosib">Новосибирск</a></li>
+                                <li class="menu-item"><a href="#" data-value="EKB">Екатеринбург</a></li>
+                                <li class="menu-item"><a href="#" data-value="Nizhniy">Нижний Новгород</a></li>
+                                <li class="menu-item"><a href="#" data-value="Kazan">Казань</a></li>
+                                <li class="menu-item"><a href="#" data-value="Chelyabinsk">Челябинск</a></li>
+                                <li class="menu-item"><a href="#" data-value="Omsk">Омск</a></li>
                             </ul>
                             <hr>
                             <p class="heading">Центр</p>

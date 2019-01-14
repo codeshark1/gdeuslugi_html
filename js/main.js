@@ -249,7 +249,10 @@ jQuery(document).ready(function($){
             if( ! $(this).next('.sub-menu').length ) {
                 //$(this).parents('.modal-container').removeClass('opened');
                 close_modal();
-                $('body').find("[data-trigger='"+target_data+"']").val($(this).text());
+                $('body')
+                    .find("[data-trigger='"+target_data+"']").val($(this).text())
+                    .next('.chosen-value').val( $(this).data('value') )
+                ;
             }
         });
     }
