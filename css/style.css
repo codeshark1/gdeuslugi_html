@@ -2071,11 +2071,12 @@ body.modal-opened {
   justify-content: space-between;
   align-items: flex-end; }
   .user-summary .order-user, .user-summary .order-time, .user-summary .order-location {
-    display: inline-block; }
+    display: inline-block;
+    font-size: 16px; }
   .user-summary .order-user:after {
     content: "•";
     margin: 0 5px 0 10px; }
-  .user-summary .order-time {
+  .user-summary .order-time, .user-summary .order-location {
     color: #999999; }
   .user-summary .col-user {
     width: 75px;
@@ -2173,6 +2174,10 @@ body.modal-opened {
       bottom: 0;
       margin: auto; }
 
+.empty-message {
+  text-align: center;
+  color: #999999; }
+
 /* SIDEBAR */
 .card-master-sidebar, .card-service-sidebar, .card-order-sidebar, .card-review-content {
   border-bottom: 1px solid #E8E7E6;
@@ -2265,7 +2270,7 @@ body.modal-opened {
   margin-bottom: 10px; }
 
 .card-order-sidebar .user-summary {
-  margin-bottom: 16px; }
+  margin-bottom: 8px; }
 
 /* TABS */
 .nav-tabs {

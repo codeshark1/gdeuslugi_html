@@ -723,15 +723,14 @@ body.modal-opened {overflow: hidden;}
 	justify-content: space-between;
 	align-items: flex-end;
 	.col-details {}
-	.order-user, .order-time, .order-location {display: inline-block;}
+	.order-user, .order-time, .order-location {display: inline-block; font-size: 16px;}
 	.order-user {
 		&:after {
 			content: "•";
 			margin: 0 5px 0 10px;
 		}
 	}
-	.order-time {color: $gray-text}
-	.order-location {}
+	.order-time, .order-location {color: $gray-text}
 	.col-user {width: 75px; flex-shrink: 0; @include clearfix();}
 		.rating-mini {float: left;}
 		.userpic {float: right;}	
@@ -790,6 +789,8 @@ body.modal-opened {overflow: hidden;}
 		.btn-dots {position: absolute; right: -60px; top: 0;bottom: 0; margin: auto;}
 	}
 }
+.empty-message {text-align: center;color: $gray-text}
+
 
 /* SIDEBAR */
 
@@ -858,7 +859,7 @@ body.modal-opened {overflow: hidden;}
 .card-service-sidebar .price {margin-bottom: 10px;}
 
 .card-order-sidebar {
-	.user-summary {margin-bottom: 16px;}
+	.user-summary {margin-bottom: 8px;}
 }
 
 
