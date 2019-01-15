@@ -1,0 +1,38 @@
+
+    <a href="" class="btn_swap" title="">click me</a>
+
+	<form class="" id="" enctype="multipart/form-data" method="post">
+		<input type="file" id="fileInput" name="user_file" style="display: none;">
+	</form>
+
+	<div class="upload_img">
+        <img src="/upload/resize_cache/iblock/967/1000_1000_1/967a18f96af898ba82a04a703012a863.jpg" alt="">
+    </div>
+	
+    <script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$('a.btn_swap').on('click',function (e) {
+				e.preventDefault();
+				$('#fileInput').click();
+			});
+
+			$('#fileInput').on('change', function (e) {
+				showFile(e);
+			});
+		});
+		function showFile(e) {
+			var files = e.target.files;
+			for (var i = 0, f; f = files[i]; i++) {
+				if (!f.type.match('image.*')) continue;
+				var fr = new FileReader();
+				fr.onload = (function(theFile) {
+					return function(e) {
+						$(".upload_img img").attr('src', e.target.result);
+						$('.upload_img img').attr('data-default-image', e.target.result);
+					};
+				})(f);
+
+				fr.readAsDataURL(f);
+			}
+		}
+	</script>
