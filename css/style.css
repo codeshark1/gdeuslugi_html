@@ -1682,6 +1682,9 @@ a, svg, path, button {
     .content-main {
       margin-top: 55px; } }
 
+.morecontent span {
+  display: none; }
+
 .h-main {
   font-weight: bold;
   font-size: 24px; }

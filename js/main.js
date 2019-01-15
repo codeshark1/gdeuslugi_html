@@ -96,20 +96,40 @@ jQuery(document).ready(function($){
 
 
 
-    function text_trimmer() {
-        $(".text-trimmer").text(function(index, currentText) {
-            var maxLength = $(this).attr('data-maxlength');
-            var btn = $("<button>button</button>");
-            console.log(btn);
-            if(currentText.length >= maxLength) {                
-                $(btn).insertAfter( this );
-                return currentText.substr(0, maxLength) + "...";
-            } else {
-                return currentText
+    function trim_text() {
+        var ellipsestext = "...";
+        var moretext = "Ещё";
+        var lesstext = "Меньше";
+
+        $('.text-trimmer').each(function() {
+            var content = $(this).html();
+            var showChar = $(this).data('maxlength');
+            if(content.length > showChar) {
+
+                var c = $.trim(content.substr(0, showChar));
+                var h = $.trim(content.substr(showChar-1, content.length - showChar));            
+
+                var html = c + '<span class="moreellipses">' + ellipsestext + '</span><span class="morecontent"><span>' + h + '</span>&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+
+                $(this).html(html);
             }
-          });        
+
+        });
+
+        $(".morelink").click(function(){
+            if($(this).hasClass("less")) {
+                $(this).removeClass("less");
+                $(this).html(moretext);
+            } else {
+                $(this).addClass("less");
+                $(this).html(lesstext);
+            }
+            $(this).parent().prev().toggle();
+            $(this).prev().toggle();
+            return false;
+        });
     }
-    text_trimmer();
+    trim_text();
 
 
 
