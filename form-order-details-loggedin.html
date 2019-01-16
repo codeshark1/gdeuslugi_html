@@ -28,7 +28,7 @@
     </header>
 
 <main class="container">
-    <form action="#" class="form-order form-main">
+    <form action="#" class="form-order form-main" enctype="multipart/form-data" method="post">
         <h2 class="h-main">Дополните заказ</h2>
 
         <label class="form-row">
@@ -44,16 +44,59 @@
         <div class="form-row">
             <span class="lbl">Выберите фото</span>
             <div class="photos-uploaded">
-                <div class="item">
+                <!--                 
+                <div class="item photo-uploaded">
                     <div class="photo"></div>
                     <a href="#" class="link">Удалить</a>
-                </div>
+                </div> -->
                 <div class="item item-add">
                     <div class="photo"></div>
                     <a href="#" class="link">Добавить</a>
                 </div>
             </div><!-- /.photos-uploaded -->
         </div><!-- /.form-row -->
+        <div class="img-file-inputs">
+            <input type="file" class="img-input" name="user_file" style="display: none;">
+        </div><!-- /.img-file-inputs -->
+          
+
+        <script>
+            jQuery(document).ready(function($) {
+                $('.item-add').on('click',function (e) {
+                    e.preventDefault();
+                    $('.img-input:first-child').click();
+                });
+    
+                $('.img-input').on('change', function (e) {
+                    showFile(e);
+                });
+            });
+
+            function removeFile() {
+                $('.photo-uploaded').find('.link').click(function(e){
+                    e.preventDefault();
+                    $(this).parents('.photo-uploaded').remove();
+                });
+            };                       
+
+            function showFile(e) {
+                var files = e.target.files;               
+
+                for (var i = 0, f; f = files[i]; i++) {
+                    if (!f.type.match('image.*')) continue;
+                    var fr = new FileReader();
+                    fr.onload = (function(theFile) {
+                        return function(e) {
+                            $("<div class='item photo-uploaded'><div class='photo' style='background-image:url(" + e.target.result + ")'></div><a href='#' class='link'>Удалить</a></div>")
+                            .prependTo('.photos-uploaded');                            
+                            removeFile();
+                        };
+                    })(f);
+    
+                    fr.readAsDataURL(f);
+                }
+            }
+        </script>
 
         <button type="submit" class="btn btn-main btn-full-mb" disabled>Опубликовать</button>
     </form>

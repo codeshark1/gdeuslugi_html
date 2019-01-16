@@ -1816,6 +1816,9 @@ input[type=text], input[type=password] {
   width: 80px;
   margin-right: 16px;
   display: inline-block; }
+  .photos-uploaded .item .photo {
+    background-size: cover;
+    background-repeat: no-repeat; }
 .photos-uploaded .photo {
   display: block;
   width: 80px;

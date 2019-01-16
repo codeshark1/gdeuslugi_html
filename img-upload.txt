@@ -20,6 +20,7 @@
 				showFile(e);
 			});
 		});
+        
 		function showFile(e) {
 			var files = e.target.files;
 			for (var i = 0, f; f = files[i]; i++) {
