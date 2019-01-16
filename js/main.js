@@ -1,29 +1,21 @@
-$(window).load(function() {
-	$(".pulse").fadeOut();
-	$(".preloader").delay(400).fadeOut("slow");
-});
-
 jQuery(document).ready(function($){
 
     function navigation_show(button, menu, othermenu, otherbutton) { // глобальная
-        //$(menu).hide();
+        $(menu).hide();
         $(button).click(function(){
             if ( $(menu).is(':visible')){
-                $(menu).slideUp().removeClass('active');
+                $(menu).slideUp(200).removeClass('active');
                 $(this).removeClass('active');
             } else {
                 $(this).addClass('active');
-                $(menu).slideDown().addClass('active');
-                $(othermenu).slideUp().removeClass('active');
+                $(menu).slideDown(200).addClass('active');
+                $(othermenu).slideUp(200).removeClass('active');
                 $(otherbutton).removeClass('active');
             }
         });
     }
 
-    navigation_show('#js-btn-menu','#js-menu-wrapper','#search-extended','#btn-search-extended');
-    navigation_show('#js-btn-cities','#js-cities-wrapper');
-    navigation_show('#js-cities-wrapper .close','#js-cities-wrapper');
-    navigation_show('#btn-search-extended','#search-extended','#js-menu-wrapper','#js-btn-menu');
+    navigation_show('#js-btn-menu-main','#js-menu-main');
 
     
     
