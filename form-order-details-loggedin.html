@@ -44,52 +44,79 @@
         <div class="form-row">
             <span class="lbl">Выберите фото</span>
             <div class="photos-uploaded">
-                <!--                 
-                <div class="item photo-uploaded">
-                    <div class="photo"></div>
-                    <a href="#" class="link">Удалить</a>
-                </div> -->
                 <div class="item item-add">
                     <div class="photo"></div>
                     <a href="#" class="link">Добавить</a>
                 </div>
             </div><!-- /.photos-uploaded -->
         </div><!-- /.form-row -->
-        <div class="img-file-inputs">
-            <input type="file" class="img-input" name="user_file" style="display: none;">
-        </div><!-- /.img-file-inputs -->
-          
+
+        <div class="img-file-inputs"></div><!-- /.img-file-inputs -->
 
         <script>
-            jQuery(document).ready(function($) {
+            $('.item-add').on('click',function (e) {
+                e.preventDefault();
+        
+                var count = $('.photos-uploaded').find('.photo-uploaded').length || 0;                
+                var foo = $('.photos-uploaded').find('.photo-uploaded');
+                
+                $('.photos-uploaded').append("<div class='item photo-uploaded' data-count='"+count+"'><a href='#' class='link remove-photo'>Удалить</a><input type='file' class='img-input' name='user_photo' data-id='img-upload-"+count+"'></div>");
+                
+                $('input[data-id="img-upload-'+count+'"]').click();
+
+                initDialog($('input[data-id="img-upload-'+count+'"]'));
+
+                //$('.img-input:first-child').click();
+            }); 
+                
+            ///////////////////////////////////////////////////////////////////////////////////
+            
+            function initClick() {
                 $('.item-add').on('click',function (e) {
                     e.preventDefault();
                     $('.img-input:first-child').click();
                 });
-    
+            }
+            function initDialog(el) {
                 $('.img-input').on('change', function (e) {
-                    showFile(e);
+                    showFile(e, el);
                 });
-            });
+            }
 
             function removeFile() {
-                $('.photo-uploaded').find('.link').click(function(e){
-                    e.preventDefault();
-                    $(this).parents('.photo-uploaded').remove();
+                $('.remove-photo').on('click', function(){
+                    $(this).parent().remove();
                 });
-            };                       
+            };              
 
-            function showFile(e) {
+            jQuery(document).ready(function($) {
+               /*  initClick();*/
+                /* initDialog();  */
+                removeFile();
+            });                     
+
+            function showFile(e, el) {
                 var files = e.target.files;               
 
                 for (var i = 0, f; f = files[i]; i++) {
                     if (!f.type.match('image.*')) continue;
                     var fr = new FileReader();
+
                     fr.onload = (function(theFile) {
+                        var numbOfInputs = $('.img-input').length;
                         return function(e) {
-                            $("<div class='item photo-uploaded'><div class='photo' style='background-image:url(" + e.target.result + ")'></div><a href='#' class='link'>Удалить</a></div>")
-                            .prependTo('.photos-uploaded');                            
-                            removeFile();
+                    
+                            el.parent().append("<div class='photo' style='background-image:url(" + e.target.result + ")'></div>");
+                            /* if (numbOfInputs==1) {
+                                $("<div class='item photo-uploaded' data-id='img-upload-0'><div class='photo' style='background-image:url(" + e.target.result + ")'></div><a href='#' class='link'>Удалить</a></div>").prependTo('.photos-uploaded');
+                            } else {
+                                $("<div class='item photo-uploaded' data-id='img-upload-"+(numbOfInputs-1)+"'><div class='photo' style='background-image:url(" + e.target.result + ")'></div><a href='#' class='link'>Удалить</a></div>").prependTo('.photos-uploaded');
+                            
+                            }
+                            $("<input type='file' class='img-input' name='user_photo' data-id='img-upload-"+numbOfInputs+"'>").prependTo('.img-file-inputs');
+                        
+                            initDialog();*/
+                            removeFile(); 
                         };
                     })(f);
     
