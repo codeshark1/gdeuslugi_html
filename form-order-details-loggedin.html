@@ -53,69 +53,6 @@
 
         <div class="img-file-inputs"></div><!-- /.img-file-inputs -->
 
-        <script>            
-            function initClick() {
-                $('.item-add').on('click',function (e) {
-                    e.preventDefault();
-                    $('.img-input:first-child').click();
-                });
-
-            }
-            function initDialog(el) {
-                $('.img-input').on('change', function (e) {
-                  showFile(e, el);
-                });
-            }
-
-            function removeFile() {
-                $('.remove-photo').on('click', function(){
-                    $(this).parent().remove();
-                });
-            };              
-
-            function showFile(e, el) {
-                var files = e.target.files;               
-
-                for (var i = 0, f; f = files[i]; i++) {
-                    if (!f.type.match('image.*')) continue;
-                    var fr = new FileReader();
-
-                    fr.onload = (function(theFile) {
-                        var numbOfInputs = $('.img-input').length;
-                        return function(e) {
-                    
-                            el.parent().append("<div class='photo' style='background-image:url(" + e.target.result + ")'></div><a href='#' class='link remove-photo'>Удалить</a>");
-                            el.parent().addClass('active');
-                            removeFile(); 
-                        };
-                    })(f);
-    
-                    fr.readAsDataURL(f);
-                }
-            }
-
-            jQuery(document).ready(function($) {
-                removeFile();
-
-                $('.item-add').on('click',function (e) {
-                    e.preventDefault();
-                    $('.photo-uploaded').each(function(){
-                        if(!$(this).hasClass('active'))
-                            $(this).remove();
-                    });
-                    var count = $('.photos-uploaded').find('.photo-uploaded').length || 0;                
-                    var foo = $('.photos-uploaded').find('.photo-uploaded');                
-                    $('.photos-uploaded').append("<div class='item photo-uploaded' data-count='"+count+"'><input type='file' class='img-input' name='user_photo' data-id='img-upload-"+count+"'></div>");                
-                    $('input[data-id="img-upload-'+count+'"]').click();
-                    var state = initDialog($('input[data-id="img-upload-'+count+'"]'));
-                }); 
-
-
-            });                     
-
-
-        </script>
-
         <button type="submit" class="btn btn-main btn-full-mb" disabled>Опубликовать</button>
     </form>
 </main><!-- /.container -->

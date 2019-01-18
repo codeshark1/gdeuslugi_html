@@ -206,89 +206,89 @@ function show_pass() {
 }
 
 /* MODALS */
-function close_modal() {
-    $('.modal-container.opened').removeClass('opened');
-    $('body').removeClass('modal-opened');
-}
-function modal_open_close(){
-    $('.modal-trigger').click(function(e){
-        e.preventDefault();
-        $($(this).data('trigger')).addClass('opened');
-        $('body').addClass('modal-opened');
-    });
+    function close_modal() {
+        $('.modal-container.opened').removeClass('opened');
+        $('body').removeClass('modal-opened');
+    }
+    function modal_open_close(){
+        $('.modal-trigger').click(function(e){
+            e.preventDefault();
+            $($(this).data('trigger')).addClass('opened');
+            $('body').addClass('modal-opened');
+        });
 
-    $('.modal-container .close').click(function(e){
-        e.preventDefault();
-        //$(this).parents('.modal-container').removeClass('opened');
-        close_modal();
-    });
-} 
-function modal_menu_link_click() {
-    $('#menu-categs-popup a, #modal-cities a').click(function(e){
-        e.preventDefault();
-        var target_data = "#" + $(this).parents('.modal-container').attr('id');
-        
-        $(this).parent('.menu-item').addClass('active').siblings().removeClass('active');
-        if( ! $(this).next('.sub-menu').length ) {
+        $('.modal-container .close').click(function(e){
+            e.preventDefault();
             //$(this).parents('.modal-container').removeClass('opened');
             close_modal();
-            $('body')
-                .find("[data-trigger='"+target_data+"']").val($(this).text())
-                .next('.chosen-value').val( $(this).data('value') )
-            ;
-        }
-    });
-}
-function categ_select() {
-    /*link click submenu*/
-    $('#menu-categs-popup').find('.menu-item').has('.sub-menu').children('a').click(function(){
-        $(this).parents('.modal-window').find('.h-modal').text($(this).text());
-        $(this).parents('.modal-window').find('.sub-menu.current').removeClass('current');
+        });
+    } 
+    function modal_menu_link_click() {
+        $('#menu-categs-popup a, #modal-cities a').click(function(e){
+            e.preventDefault();
+            var target_data = "#" + $(this).parents('.modal-container').attr('id');
+            
+            $(this).parent('.menu-item').addClass('active').siblings().removeClass('active');
+            if( ! $(this).next('.sub-menu').length ) {
+                //$(this).parents('.modal-container').removeClass('opened');
+                close_modal();
+                $('body')
+                    .find("[data-trigger='"+target_data+"']").val($(this).text())
+                    .next('.chosen-value').val( $(this).data('value') )
+                ;
+            }
+        });
+    }
+    function categ_select() {
+        /*link click submenu*/
+        $('#menu-categs-popup').find('.menu-item').has('.sub-menu').children('a').click(function(){
+            $(this).parents('.modal-window').find('.h-modal').text($(this).text());
+            $(this).parents('.modal-window').find('.sub-menu.current').removeClass('current');
 
-        if ($(this).parents('.modal-window').hasClass('menu-open-1')) {
-            $(this).parents('.modal-window').removeClass('menu-open-1').addClass('menu-open-2');
-        } else {
-            $(this).parents('.modal-window').addClass('menu-open-1')
-        }
+            if ($(this).parents('.modal-window').hasClass('menu-open-1')) {
+                $(this).parents('.modal-window').removeClass('menu-open-1').addClass('menu-open-2');
+            } else {
+                $(this).parents('.modal-window').addClass('menu-open-1')
+            }
 
-        $(this).next('.sub-menu').css('left', 0).addClass('current');
-    });
+            $(this).next('.sub-menu').css('left', 0).addClass('current');
+        });
 
-    /*window heading (back button) click*/
-    $('#modal-categs .h-modal').click(function(){
-        if( $(this).parents('.modal-window').hasClass('menu-open-2') ) {
-            $(this).parents('.modal-window').removeClass('menu-open-2').addClass('menu-open-1');
-        } else if ( $(this).parents('.modal-window').hasClass('menu-open-1') ) {
-            $(this).parents('.modal-window').removeClass('menu-open-1');
-        }
+        /*window heading (back button) click*/
+        $('#modal-categs .h-modal').click(function(){
+            if( $(this).parents('.modal-window').hasClass('menu-open-2') ) {
+                $(this).parents('.modal-window').removeClass('menu-open-2').addClass('menu-open-1');
+            } else if ( $(this).parents('.modal-window').hasClass('menu-open-1') ) {
+                $(this).parents('.modal-window').removeClass('menu-open-1');
+            }
 
-        $(this)
-        .parents('.modal-window')
-        .find('.sub-menu.current')
-        .removeClass('current')
-        .css('left', '100%')
-        .parents('.sub-menu')
-        .addClass('current');
+            $(this)
+            .parents('.modal-window')
+            .find('.sub-menu.current')
+            .removeClass('current')
+            .css('left', '100%')
+            .parents('.sub-menu')
+            .addClass('current');
 
-        if ($('.sub-menu.current').length ) {
-            $(this).text( $('.sub-menu.current').siblings('a').text() );
-        } else {
-            $(this).text('Выбор категории');
-            $(this).parents('.modal-window').find('.menu-item.active').removeClass('active');
-        }
-    });
-}
-function list_filter(element, id) {
-    var value = ($(element).val()).toLowerCase();
-    
-    jQuery.expr[':'].contains = function(a, i, m) {
-        return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
-    };
+            if ($('.sub-menu.current').length ) {
+                $(this).text( $('.sub-menu.current').siblings('a').text() );
+            } else {
+                $(this).text('Выбор категории');
+                $(this).parents('.modal-window').find('.menu-item.active').removeClass('active');
+            }
+        });
+    }
+    function list_filter(element, id) {
+        var value = ($(element).val()).toLowerCase();
+        
+        jQuery.expr[':'].contains = function(a, i, m) {
+            return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+        };
 
-    $(id + '> ul > li>a:not(:contains(' + value + '))').hide(); 
-    $(id + '> ul > li>a:contains(' + value + ')').show();
-} 
-window.list_filter = list_filter;
+        $(id + '> ul > li>a:not(:contains(' + value + '))').hide(); 
+        $(id + '> ul > li>a:contains(' + value + ')').show();
+    } 
+    window.list_filter = list_filter;
 /* -- MODALS */
 
 /* IMAGE UPLOAD */
@@ -385,7 +385,7 @@ jQuery(document).ready(function($){
     show_pass();
 
     /* IMAGE UPLOAD */
-/*     $('.item-add').on('click',function (e) {
+    $('.item-add').on('click',function (e) {
         e.preventDefault();
         $('.photo-uploaded').each(function(){
             if(!$(this).hasClass('active'))
@@ -396,5 +396,5 @@ jQuery(document).ready(function($){
         $('.photos-uploaded').append("<div class='item photo-uploaded' data-count='"+count+"'><input type='file' class='img-input' name='user_photo' data-id='img-upload-"+count+"'></div>");                
         $('input[data-id="img-upload-'+count+'"]').click();
         var state = initDialog($('input[data-id="img-upload-'+count+'"]'));
-    });  */   
+    });    
 });
