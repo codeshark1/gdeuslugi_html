@@ -292,13 +292,6 @@ function show_pass() {
 /* -- MODALS */
 
 /* IMAGE UPLOAD */
-    function initClick() {
-        $('.item-add').on('click',function (e) {
-            e.preventDefault();
-            $('.img-input:first-child').click();
-        });
-
-    }
     function initDialog(el) {
         $('.img-input').on('change', function (e) {
         showFile(e, el);
@@ -331,6 +324,7 @@ function show_pass() {
             fr.readAsDataURL(f);
         }
     }
+
 /* ----- IMAGE UPLOAD */
 
 jQuery(document).ready(function($){
@@ -387,14 +381,20 @@ jQuery(document).ready(function($){
     /* IMAGE UPLOAD */
     $('.item-add').on('click',function (e) {
         e.preventDefault();
+        var max = 0;
         $('.photo-uploaded').each(function(){
+            var _this = $(this);
             if(!$(this).hasClass('active'))
                 $(this).remove();
+            var _count = parseInt(_this.data('count'));
+            if(_count > max)
+                max = _count;
         });
-        var count = $('.photos-uploaded').find('.photo-uploaded').length || 0;                
+        console.log(max);
+        var count = max > 0 ? (max + 1) : $('.photos-uploaded').find('.photo-uploaded').length;                
         var foo = $('.photos-uploaded').find('.photo-uploaded');                
         $('.photos-uploaded').append("<div class='item photo-uploaded' data-count='"+count+"'><input type='file' class='img-input' name='user_photo' data-id='img-upload-"+count+"'></div>");                
         $('input[data-id="img-upload-'+count+'"]').click();
-        var state = initDialog($('input[data-id="img-upload-'+count+'"]'));
-    });    
+        initDialog($('input[data-id="img-upload-'+count+'"]'));
+    }); 
 });
