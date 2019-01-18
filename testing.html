@@ -95,7 +95,7 @@
             }
 
             jQuery(document).ready(function($) {
-                removeFile();
+
 
                 $('.item-add').on('click',function (e) {
                     e.preventDefault();
@@ -110,7 +110,7 @@
                     var state = initDialog($('input[data-id="img-upload-'+count+'"]'));
                 }); 
 
-
+                removeFile();
             });                     
 
 
