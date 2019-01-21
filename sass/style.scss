@@ -625,6 +625,7 @@ body.modal-opened {overflow: hidden;}
 	.col-details {}
 	.order-user, .order-time, .order-location {display: inline-block; font-size: 16px;}
 	.order-user {
+		color: $gray-text;
 		&:after {
 			content: "•";
 			margin: 0 5px 0 10px;
