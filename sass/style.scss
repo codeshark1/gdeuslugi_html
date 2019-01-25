@@ -101,6 +101,7 @@ $sect-mg-neg: 39px;
 }
 
 .bx-user {
+	position: relative;
 	.btn-close {
 		width: 32px;
 		text-align: center;
@@ -109,6 +110,20 @@ $sect-mg-neg: 39px;
 		width: 32px;height: 32px;
 		font-size: 16px;
 		line-height: 32px;
+	}
+
+	.menu-user {
+		position: absolute;
+		top: 100%;right: 0;
+		background: #fff;
+		padding: 10px 20px;
+		box-shadow: 0 0 10px 0 rgba(#000,.1);
+		box-shadow: 4px;
+		margin-top: 5px;
+
+		.menu-item {margin-bottom: 8px;
+			&:last-child {margin-bottom: 0;}
+		}
 	}
 }
 /* ==========================================================================

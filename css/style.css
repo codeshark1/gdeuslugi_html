@@ -1390,14 +1390,29 @@ a, svg, path, button {
   .btn-open-menu .logo {
     margin-right: 10px; }
 
-.bx-user .btn-close {
-  width: 32px;
-  text-align: center; }
-.bx-user .userpic {
-  width: 32px;
-  height: 32px;
-  font-size: 16px;
-  line-height: 32px; }
+.bx-user {
+  position: relative; }
+  .bx-user .btn-close {
+    width: 32px;
+    text-align: center; }
+  .bx-user .userpic {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    line-height: 32px; }
+  .bx-user .menu-user {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 4px;
+    margin-top: 5px; }
+    .bx-user .menu-user .menu-item {
+      margin-bottom: 8px; }
+      .bx-user .menu-user .menu-item:last-child {
+        margin-bottom: 0; }
 
 /* ==========================================================================
 	NAVIGATION
