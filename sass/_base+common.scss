@@ -1,27 +1,3 @@
-@font-face {
-  font-family: 'Proxima Nova';
-  src: url('../fonts/ProximaNova-Bold.woff2') format('woff2'),
-      url('../fonts/ProximaNova-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Proxima Nova';
-  src: url('../fonts/ProximaNova-RegularIt.woff2') format('woff2'),
-      url('../fonts/ProximaNova-RegularIt.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Proxima Nova';
-  src: url('../fonts/ProximaNova-Regular.woff2') format('woff2'),
-      url('../fonts/ProximaNova-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* ==========================================================================
    BASE
    ========================================================================== */
@@ -261,7 +237,6 @@ label.checkbox {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  min-width: 64px;
   border: none;
   outline: none;
   user-select: none;
@@ -275,9 +250,8 @@ label.checkbox {
     cursor: pointer;
   }
 
-  svg {margin-left: 4px;display: inline-block; max-width: 100%; min-height: 100%;}
-  font-size: .85rem;
-  @media (min-width: $screen-sm-min) {font-size: 1rem;}
+  svg {max-width: 100%; min-height: 100%;}
+  @media (min-width: $screen-sm-min) {}
 }
 
 
@@ -320,17 +294,35 @@ label.checkbox {
   @include btn-pill();
 }
 
+.btn-search {
+  background: url('../img/search.svg') no-repeat;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;  
+}
+.btn-settings {
+  background: $main;
+  border-radius: 4px;
+  .icon {}
+}
+.btn-link {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px; //header
+  .userpic {font-size: 10px; width: 23px;height: 23px; line-height: 23px; vertical-align: bottom; margin-right: 8px;}
+}
 
 
 .btn-menu {
   padding: 0; border: none; background: none;
   cursor: pointer;
 
-  $icon-color: $base-text;
-  $burger-line-width: 24px;
+  $icon-color: $main;
+  $burger-line-width: 25px;
   $burger-line-height: 2px;
-  $burger-line-radius: 1px;
-  $burger-line-margin-v: 4px;
+  $burger-line-radius: 0px;
+  $burger-line-margin-v: 5px;
   $transform-y: $burger-line-margin-v + $burger-line-height;
 
   span {

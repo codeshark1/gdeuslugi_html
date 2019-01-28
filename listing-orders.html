@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Листинг услуг</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&amp;subset=cyrillic-ext" rel="stylesheet"> 
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -17,25 +18,33 @@
 
 <header class="header-site">
     <div class="header-level-1">
-        <div class="row-mod">
-            <a href="#" class="col-logo logo-site">Где Услуги</a>
+        <div class="row-header">
+            <div class="col-logo">
+                <a href="#" class="logo-site">Где Услуги</a>
+            </div><!-- /.col-logo -->
             <div class="col-search">
                 <form action="/" class="form-search">
-                    <input type="search" placeholder="Поиск">
+                    <input type="search" placeholder="Поиск...">
                     <button class="btn btn-search"></button>
                 </form>
-                <div class="button">
-                    <button class="btn btn-settings"><svg data-src="img/settings.svg"></svg> <i class="number"></i></button>
+                <div class="button d-lg-none">
+                    <button class="btn btn-settings"><svg class="icon" data-src="img/settings.svg"></svg> <i class="number"></i></button>
                 </div>
             </div><!-- /.col-search -->
             <div class="col-actions">
                 <div class="links d-none d-sm-block">
                     <a href="#" class="btn-link">Создать заказ</a>
-                    <a href="#" class="btn-link"><i class="userpic">В</i>мой профиль</a>
+                    <div class="user-block">
+                        <a href="#" class="btn-link"><i class="userpic">В</i>мой профиль</a>
+                        <ul class="list-user">
+                            <li class="list-item"><a href="#"><svg data-src="img/user.svg"></svg>Личный кабинет</a></li>
+                            <li class="list-item"><a href="#"><svg data-src="img/logout.svg"></svg>Выйти</a></li>
+                        </ul>
+                    </div><!-- /.user -->
                 </div>
                 <button class="btn-menu" id="js-btn-menu"><span></span><span></span><span></span></button>                
             </div><!-- /.col-actions -->
-        </div><!-- /.row-mod -->
+        </div><!-- /.row-header -->
     </div><!-- /.level-1 -->
     <div class="header-level-2"></div><!-- /.level-2 -->
 </header>
@@ -43,7 +52,7 @@
 <main>
     <div class="container">
         <div class="row-mod">
-            <div class="col-main">
+            <div class="col-content">
                 <div class="h-page">893 заказа на <a href="#" class="btn-picker">сантехнику</a> в <a href="#" class="btn-picker">Санкт-Петербурге</a></div>
 
                 <nav class="breadcrumbs">
@@ -95,15 +104,144 @@
                         <a href="#" class="page forw" title="К следующей">></a>
                     </div>
                 </div>
-            </div><!-- /.col-main -->
-            <div class="col-sidebar">
-                
-            </div><!-- /.col-sidebar -->
+            </div><!-- /.col-content -->
+
+            <aside class="col-sidebar">
+
+                <form action="/">
+                    <div class="accord-filter">
+                        <h6 class="heading-filter heading-filter-sort">Сортировка</h6>
+                        <div class="content list-filter list-filter-sort">
+                            <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По стоимости <svg class="icon" data-src="img/decr.svg"></svg></span></label>
+                            <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По стоимости <svg class="icon" data-src="img/incr.svg"></svg></span></label>
+                            <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По рейтингу <svg class="icon" data-src="img/decr.svg"></svg></span></label>
+                            <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По рейтингу <svg class="icon" data-src="img/incr.svg"></svg></span></label>
+                            <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По отзывам <svg class="icon" data-src="img/decr.svg"></svg></span></label>
+                            <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По отзывам <svg class="icon" data-src="img/incr.svg"></svg></span></label>
+                            <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По дате <svg class="icon" data-src="img/decr.svg"></svg></span></label>
+                            <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По дате <svg class="icon" data-src="img/incr.svg"></svg></span></label>
+                            <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По умолчанию</span></label>
+                        </div><!-- /.content -->
+                    </div><!-- /.accord-filter -->
+
+                    <div class="accord-filter">
+                        <h6 class="heading-filter opened">Стоимость</h6>
+                        <div class="content">
+                            <div class="values-row">
+                                <div class="value">от <input type="text" name="" id="slider-range-val-min" value="1 789"> ₽</div>
+                                <div class="value">до <input type="text" name="" id="slider-range-val-min" value="11 789"> ₽ </div>
+                            </div><!-- /.values-row -->
+                            <div id="slider-range" class="slider-range"></div>
+                        </div><!-- /.content -->
+                    </div><!-- /.accord-filter -->
+
+                    <div class="accord-filter">                    
+                        <h6 class="heading-filter">Рейтинг от</h6>
+                        <div class="content list-filter list-filter-rating">
+                            <label class="list-filter-item">
+                                <input type="radio" name="filter-rating">
+                                <span class="value rating-filter rating-5"><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg></span>
+                                <span class="value rating-filter rating-4"><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg></span>
+                                <span class="value rating-filter rating-3"><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg></span>
+                                <span class="value rating-filter rating-2"><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg></span>
+                            </label>
+                        </div><!-- /.content -->
+                    </div><!-- /.accord-filter -->
+
+                    <label class="form-row checkbox checkbox-accept"><input type="checkbox">Показать выполненные</label>                    
+                    
+                    <div>
+                        <a href="#" class="btn btn-tag">юридические услуги <span class="count">1598</span></a>
+                        <a href="#" class="btn btn-tag">Туалет <span class="count">1598</span></a>
+                        <a href="#" class="btn btn-tag">кухня <span class="count">598</span></a>
+                        <a href="#" class="btn btn-tag">ванна <span class="count">1598</span></a>
+                    </div>
+
+                    <div class="buttons">
+                        <button type="submit" class="btn btn-cancel"><svg data-src="img/x.svg"></svg> очистить фильтр</button>
+                        <button type="submit" class="btn btn-main">Показать 283 заказа</button>
+                    </div>
+                </form>                
+            </aside><!-- /.col-sidebar -->
         </div><!-- /.row-mod -->
 
+        <div class="row-mod">
+            <div class="col-content">
+                <article class="section">
+                    <h2 class="h-section">Сантехника</h2>
+                    <p>На сайте вы найдете опытного мастера по ремонту и установке сантехники. Подтверждением высокого профессионализма работников является то, что более 90% всех оставленных клиентами отзывов - положительные. Все специалисты имеют большой опыт проведения сантехнических работ, прошли проверку на сервере или сертификацию.</p>
+                    <p>Сегодня сантехник в Санкт-Петербурге – одна из самых востребованных профессий. Ведь практически в каждой квартире в столице и коттедже в подмосковье нужен эксперт по разводке труб, монтажу оборудования и устранению неисправностей. Чтобы сделать правильный выбор, стоит определить, какие именно требуется выполнить сантехработы в вашем доме, подобрать идеальных кандидатов, ознакомиться с рекомендациями и пообщаться с исполнителем.</p>
+                </article>
+
+                <section class="section">
+                    <h2 class="h-section-color">Заказы по городам</h2>
+                    <a href="#" class="btn btn-tag">Санкт-петербург</a>
+                    <a href="#" class="btn btn-tag">Выборг</a>
+                    <a href="#" class="btn btn-tag">Павловск</a>
+                    <a href="#" class="btn btn-tag">Пушкин</a>
+                    <a href="#" class="btn btn-tag">Ломоносов</a>
+                </section>
+                <section class="section">
+                    <h2 class="h-section-color">Заказы по разделам</h2>
+                    <a href="#" class="btn btn-tag">Электромонтажные работы</a>
+                    <a href="#" class="btn btn-tag">Шиномонтаж</a>
+                    <a href="#" class="btn btn-tag">Маляры</a>
+                </section>                          
+            </div><!-- /.col-content -->
+            <div class="col-sidebar"></div><!-- /.col-sidebar -->
+        </div><!-- /.row-mod -->
     </div><!-- /.container -->
 </main>
 
-<div class="footer-placehodler"></div>
+<footer class="footer-site">
+    <div class="container">
+        <div class="row-footer">
+            <section class="col-footer">
+                <h6 class="h-footer"></h6>
+                <ul class="list-footer">
+                    <li class="list-item"><a href="#">Создать заказ</a></li>
+                    <li class="list-item"><a href="#">Найти мастера</a></li>
+                    <li class="list-item"><a href="#">Каталог мастеров</a></li>
+                    <li class="list-item"><a href="#">Продвижение заказа</a></li>
+                </ul>
+            </section><!-- /.col-footer -->
+            <section class="col-footer">
+                <h6 class="h-footer"></h6>
+                <ul class="list-footer">
+                    <li class="list-item"><a href="#">Создать услугу</a></li>
+                    <li class="list-item"><a href="#">Найти заказ</a></li>
+                    <li class="list-item"><a href="#">Продвижение профиля                    </a></li>
+                </ul>
+            </section><!-- /.col-footer -->
+            <section class="col-footer col-wider">
+                <h6 class="h-footer"></h6>
+                <ul class="list-footer cols">
+                    <li class="list-item"><a href="#">О нас</a></li>
+                    <li class="list-item"><a href="#">Наши вакансии</a></li>
+                    <li class="list-item"><a href="#">Блог</a></li>
+                    <li class="list-item"><a href="#">Реклама на сайте</a></li>
+                    <li class="list-item"><a href="#">API</a></li>
+                    <li class="list-item"><a href="#">Правила работы с сайтом</a></li>
+                    <li class="list-item"><a href="#">Контакты</a></li>
+                </ul>
+            </section><!-- /.col-footer -->                        
+            <section class="col-footer">
+                <ul class="menu-social-footer">
+                    <li class="menu-item"><a href="#"><svg data-src="img/vk.svg"></svg></a></li>
+                    <li class="menu-item"><a href="#"><svg data-src="img/ok.svg"></svg></a></li>
+                    <li class="menu-item"><a href="#"><svg data-src="img/fb.svg"></svg></a></li>
+                    <li class="menu-item"><a href="#"><svg data-src="img/in.svg"></svg></a></li>
+                    <li class="menu-item"><a href="#"><svg data-src="img/tw.svg"></svg></a></li>
+                </ul>
+
+                <div class="bx_18">
+                    <p class="18p">18+</p>
+                </div>
+
+                <p class="copyright">&#169; 2018-2019</p>
+            </section><!-- /.col-footer -->            
+        </div><!-- /.row-footer -->
+    </div><!-- /.container -->
+</footer>
 </body>
 </html>

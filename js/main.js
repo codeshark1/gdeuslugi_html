@@ -397,7 +397,7 @@ jQuery(document).ready(function($){
         console.log(max);
         var count = max > 0 ? (max + 1) : $('.photos-uploaded').find('.photo-uploaded').length;                
         var foo = $('.photos-uploaded').find('.photo-uploaded');                
-        $('.photos-uploaded').append("<div class='item photo-uploaded' data-count='"+count+"'><input type='file' class='img-input' name='user_photo' data-id='img-upload-"+count+"'></div>");                
+        $('.photos-uploaded').append("<div class='item photo-uploaded' data-count='"+count+"'><input type='file' class='img-input' name='user_photo[]' data-id='img-upload-"+count+"'></div>");                
         $('input[data-id="img-upload-'+count+'"]').click();
         initDialog($('input[data-id="img-upload-'+count+'"]'));
     }); 
@@ -410,15 +410,4 @@ jQuery(document).ready(function($){
     $('.bx-user').click(function(e){
         e.stopPropagation();
     });
-
-
-
-    document.getElementById('gallery').onclick = function (event) {
-        event = event || window.event;
-        var target = event.target || event.srcElement,
-            link = target.src ? target.parentNode : target,
-            options = {index: link, event: event},
-            links = this.getElementsByTagName('a');
-        blueimp.Gallery(links, options);
-    };    
 });
