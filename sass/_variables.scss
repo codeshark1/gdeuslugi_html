@@ -66,6 +66,13 @@ $container-max-widths: (
     flex-wrap: wrap;
     &.centered {align-items: center}
 }
+@mixin link() {
+    color: $link-text;	
+	text-decoration: none;
+	&:hover {color: $main-hover !important}
+	&:active {color: $main-active !important}	    
+}
+
 
 $base-text: #333;
 $main: #47AB2F;
@@ -73,7 +80,7 @@ $main-hover: #3C9027;
 $main-active: #307420;
 $main-light: #E2F2DE;
 $gray-text: #999999;
-$gray-light: #E8E7E6;
+$gray-light: #F3F3F3;
 $gray-light-button: #D4D3D2;
 $link-text: $main;
 $red: #EB5757;

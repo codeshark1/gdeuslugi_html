@@ -11,7 +11,7 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 </head>
-<body>
+<body class="user-loggedin">
 <!--[if lt IE 10]>
     <p class="browserupgrade">Вы используете <b>устаревший</b> браузер. Пожалуйста, <a href="http://browsehappy.com/?locale=ru_ru">обновите свой браузер</a> чтобы улучшить опыт работы с сайтом.</p>
 <![endif]-->
@@ -24,8 +24,7 @@
             </div><!-- /.col-logo -->
             <div class="col-search">
                 <form action="/" class="form-search">
-                    <input type="search" placeholder="Поиск...">
-                    <button class="btn btn-search"></button>
+                    <input class="search-field" type="search" placeholder="Поиск...">
                 </form>
                 <div class="button d-lg-none">
                     <button class="btn btn-settings"><svg class="icon" data-src="img/settings.svg"></svg> <i class="number"></i></button>
@@ -35,10 +34,10 @@
                 <div class="links d-none d-sm-block">
                     <a href="#" class="btn-link">Создать заказ</a>
                     <div class="user-block">
-                        <a href="#" class="btn-link"><i class="userpic">В</i>мой профиль</a>
+                        <p href="#" class="btn-link"><i class="userpic">В</i>мой профиль</p>
                         <ul class="list-user">
-                            <li class="list-item"><a href="#"><svg data-src="img/user.svg"></svg>Личный кабинет</a></li>
-                            <li class="list-item"><a href="#"><svg data-src="img/logout.svg"></svg>Выйти</a></li>
+                            <li class="list-item"><a href="#" class="link-icon"><svg data-src="img/user.svg"></svg>Личный кабинет</a></li>
+                            <li class="list-item"><a href="#" class="link-icon"><svg data-src="img/logout.svg"></svg>Выйти</a></li>
                         </ul>
                     </div><!-- /.user -->
                 </div>
@@ -48,6 +47,51 @@
     </div><!-- /.level-1 -->
     <div class="header-level-2"></div><!-- /.level-2 -->
 </header>
+
+<nav class="menu-main menu-top" id="js-menu-main">
+    <div class="menu-main-user">
+        <div class="userpic"><img src="img/user.jpg" alt="pic"></div>
+
+        <div class="rating rating-mini-horiz">
+            <i class="star"><svg data-src="img/star.svg"></svg></i>
+            <span class="rating-num">4,7</span>
+        </div>
+
+        <div class="menu menu-main-user-heading" id="js-menu-main-user-heading">
+            <p class="user-name">Александр</p>
+            <svg class="icon" data-src="img/arrow-down.svg"></svg>
+        </div>
+
+        <div class="menu-main-user-actions" id="js-menu-main-user-actions">
+            <ul class="list-user">
+                <li class="menu-item"><a href="#" class="link-icon"><svg data-src="img/user.svg"></svg>Личный кабинет</a></li>
+                <li class="menu-item"><a href="#" class="link-icon"><svg data-src="img/logout.svg"></svg>Выйти</a></li>
+            </ul>
+        </div>
+    </div><!-- /.menu-main-user -->
+
+    <div class="location menu-item">
+        <svg class="icon" data-src="img/location.svg"></svg>
+        <p href="#" class="town modal-trigger" data-trigger="#modal-cities">Гусь-Хрустальный</p>        
+        <input type="hidden" id="select-city-input" class="chosen-value">
+    </div>
+
+    <hr>
+
+    <ul class="menu">
+        <li class="menu-item"><a href="#">Мастера</a></li>
+        <li class="menu-item"><a href="#">Услуги</a></li>
+        <li class="menu-item"><a href="#">Заказы</a></li>
+    </ul>
+
+    <hr>  
+    
+    <ul class="menu">
+        <li class="menu-item"><a href="#">Создать заказ</a></li>
+        <li class="menu-item"><a href="#">Создать услугу</a></li>
+    </ul>        
+</nav><!-- /.menu-wrapper -->
+
 
 <main>
     <div class="container">
@@ -78,7 +122,7 @@
                             <div class="rating-mini">
                                 <i class="star"><svg data-src="img/star.svg"></svg></i>
                                 <span class="rating-num">4.7</span>
-                            </div>                            
+                            </div>
                         </div><!-- /.user-summary-inline -->
 
                         <div class="footer-card">
@@ -243,5 +287,51 @@
         </div><!-- /.row-footer -->
     </div><!-- /.container -->
 </footer>
+
+<div class="modal-container" id="modal-cities">
+    <div class="modal-bg">
+        <div class="modal-window">
+            <div class="wrapper">
+                <div class="modal-header">
+                    <h3 class="h-modal">Выбор города</h3>
+                    <button type="button" class="close btn-close">
+                        <svg data-src="img/x.svg"></svg>
+                    </button> 
+                </div>
+                
+                <div class="modal-content">
+                    <input type="search" class="search-field" placeholder="Введите город" onkeyup="list_filter(this, '#menu-cities-popup')">
+                    <p class="heading">Популярные города</p>
+                    <div id="menu-cities-popup">
+                        <ul>
+                            <li class="menu-item"><a href="#" data-value="Moscow">Москва</a></li>
+                            <li class="menu-item active"><a href="#" data-value="SPB">Санкт-Петербург</a></li>
+                            <li class="menu-item"><a href="#" data-value="Novosib">Новосибирск</a></li>
+                            <li class="menu-item"><a href="#" data-value="EKB">Екатеринбург</a></li>
+                            <li class="menu-item"><a href="#" data-value="Nizhniy">Нижний Новгород</a></li>
+                            <li class="menu-item"><a href="#" data-value="Kazan">Казань</a></li>
+                            <li class="menu-item"><a href="#" data-value="Chelyabinsk">Челябинск</a></li>
+                            <li class="menu-item"><a href="#" data-value="Omsk">Омск</a></li>
+                        </ul>
+                        <hr>
+                        <p class="heading">Центр</p>
+                        <ul>
+                            <li class="menu-item"><a href="#">Москва</a></li>
+                            <li class="menu-item"><a href="#">Санкт-Петербург</a></li>
+                            <li class="menu-item"><a href="#">Новосибирск</a></li>
+                            <li class="menu-item"><a href="#">Екатеринбург</a></li>
+                            <li class="menu-item"><a href="#">Нижний Новгород</a></li>
+                            <li class="menu-item"><a href="#">Казань</a></li>
+                            <li class="menu-item"><a href="#">Челябинск</a></li>
+                            <li class="menu-item"><a href="#">Омск</a></li>
+                        </ul>                
+                    </div><!-- /#menu-cities-popup -->
+                </div><!-- /.modal-content -->
+            </div><!-- /.wrapper -->
+        </div><!-- /#modal-window-->    
+    </div><!-- /.modal-bg -->
+</div><!-- /.modal-container -->
+
+<div id="overlay-page"></div>
 </body>
 </html>
