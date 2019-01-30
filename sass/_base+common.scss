@@ -67,7 +67,7 @@ textarea {
   font-size: 16px;
   transition: all .3s ease-in-out;
   border-radius: 5px;
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: Roboto, sans-serif;
   padding: 10px 14px;
   display: block;
   &:hover {
@@ -247,6 +247,7 @@ label.checkbox {
   border-radius: 2px;
   background-color: transparent;
   transition: all .3s;  
+  font-family: Roboto, sans-serif;  
   &:hover {
     cursor: pointer;
   }
@@ -266,6 +267,7 @@ label.checkbox {
 .btn-main {
   @include btn-colors();  
   border: none !important;    
+  font-size: 14px;
   &[disabled] {
     background: $gray-light-button;
     cursor: not-allowed;

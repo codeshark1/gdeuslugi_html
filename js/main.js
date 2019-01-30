@@ -330,15 +330,16 @@ function show_pass() {
 /* ----- IMAGE UPLOAD */
 
 function overlayOn() {
-    $('#overlay-page').show();
+    $('#overlay-page').fadeIn(100);
 }
 function overlayOff() {
-    $('#overlay-page').hide();
+    $('#overlay-page').fadeOut(100);
 }
 
 function sidePanel(trigger, block) {
     $(trigger).click(function(e) {
         e.preventDefault();
+        hideSearchSuggest();
         if ( $(block).hasClass('opened') ) {
             $(this).removeClass('active');
             $(block).removeClass('opened');
@@ -353,6 +354,17 @@ function sidePanel(trigger, block) {
     });    
 }
 
+function showSearchSuggest() {
+    $('.form-search').css('z-index',3);
+    $('#js-search-suggest').slideDown(100);
+    overlayOn()
+}
+
+function hideSearchSuggest() {
+    $('.form-search').css('z-index','inherit');
+    $('#js-search-suggest').slideUp(100);
+    overlayOff()
+}    
 
 jQuery(document).ready(function($){
     new SVGInjector().inject(document.querySelectorAll('svg[data-src]'));
