@@ -25,9 +25,21 @@
             <div class="col-search">
                 <form action="/" class="form-search">
                     <input class="search-field" type="search" placeholder="Поиск...">
+                    <p class="search-field-btn"></p>
+                    <div class="form-search-suggest" id="js-search-suggest">
+                        <ul class="list-suggest">                                               
+                            <li class="list-item category"><a href="#"><mark>Уборка</mark> помещений <span class="type">Категория</span></a></li>
+                            <li class="list-item category"><a href="#"><mark>Уборка</mark> квартир <span class="type">Категория</span></a></li>
+                            <li class="list-item category"><a href="#"><mark>Уборка</mark> офисов <span class="type">Категория</span></a></li>
+                            <li class="list-item"><a href="#"><mark>Уборка</mark> территории <span class="type">Статья</span></a></li>
+                            <li class="list-item"><a href="#">Генеральная <mark>уборка</mark> бассейнов и водоемов <span class="type">Услуга</span></a></li>
+                            <li class="list-item"><a href="#"><mark>Уборка</mark> после ремонта <span class="type">Заказ</span></a></li>
+                            <li class="list-item"><a href="#">Как выбрать <mark>убор</mark>щицу <span class="type">Статья</span></a></li>
+                        </ul>
+                    </div>
                 </form>
                 <div class="button d-lg-none">
-                    <button class="btn btn-settings" id="js-btn-filter"><svg class="icon" data-src="img/settings.svg"></svg> <i class="number"></i></button>
+                    <button class="btn btn-settings" id="js-btn-filter"><svg class="icon" data-src="img/settings.svg"></svg> <i class="number">3</i></button>
                 </div>
             </div><!-- /.col-search -->
             <div class="col-actions">
@@ -92,10 +104,9 @@
     </ul>        
 </nav><!-- /.menu-wrapper -->
 
-
 <main>
     <div class="container">
-        <div class="row-mod">
+        <div class="row-main">
             <div class="col-content">
                 <div class="h-page">893 заказа на <a href="#" class="btn-picker">сантехнику</a> в <a href="#" class="btn-picker">Санкт-Петербурге</a></div>
 
@@ -110,20 +121,20 @@
 
 
                 <div class="row-listing-main">
-                    <div class="card card-order">
+                    <div class="card card-order card-link card-offer">
                         <p class="h-card"><a href="#">Ремонт и разводка сантехники или офисном помещении</a></p>                        
-                        <p class="price">до 115 500 Р</p>
+                        <p class="price">до 115 500 ₽</p>
 
-                        <div class="user-summary-inline">
+                        <a href="#" class="user-summary-inline">
                             <div class="user-mini">
-                                <span href="#" class="userpic userpic-mini">К</span> 
+                                <span href="#" class="userpic">К</span> 
                                 Апполинарий Гентшенфельд
                             </div>
-                            <div class="rating-mini">
+                            <div class="rating rating-mini-horiz">
                                 <i class="star"><svg data-src="img/star.svg"></svg></i>
                                 <span class="rating-num">4.7</span>
                             </div>
-                        </div><!-- /.user-summary-inline -->
+                        </a><!-- /.user-summary-inline -->
 
                         <div class="footer-card">
                             <p class="time-left">
@@ -207,9 +218,9 @@
                     </div>
                 </form>                
             </aside><!-- /.col-sidebar -->
-        </div><!-- /.row-mod -->
+        </div><!-- /.row-main -->
 
-        <div class="row-mod">
+        <div class="row-main">
             <div class="col-content">
                 <article class="section">
                     <h2 class="h-section">Сантехника</h2>
@@ -233,7 +244,7 @@
                 </section>                          
             </div><!-- /.col-content -->
             <div class="col-sidebar"></div><!-- /.col-sidebar -->
-        </div><!-- /.row-mod -->
+        </div><!-- /.row-main -->
     </div><!-- /.container -->
 </main>
 

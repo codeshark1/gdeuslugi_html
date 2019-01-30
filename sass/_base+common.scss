@@ -307,7 +307,8 @@ label.checkbox {
 .btn-settings {
   background: $main;
   border-radius: 4px;
-  .icon {}
+  position: relative;
+  .number {font-size: 9px; font-weight: 500;color: $main;height: 16px;width: 16px; line-height: 16px; position: absolute; right: -3px;bottom: -3px; background: #ffffff;border-radius: 100%; font-style: normal}
 }
 .btn-link {
   @include link();
@@ -317,6 +318,16 @@ label.checkbox {
   .userpic {font-size: 10px; width: 23px;height: 23px; line-height: 17px; vertical-align: bottom; margin-right: 8px;}
 }
 
+.btn-picker {
+  &:after {
+    content: "";
+    width: 12px;height: 7px;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41 0L0 1.33198L6 7L12 1.33198L10.59 0L6 4.32659L1.41 0Z' fill='%2347AB2F'/%3E%3C/svg%3E%0A");
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+}
 
 .btn-menu {
   padding: 0; border: none; background: none;
@@ -445,13 +456,14 @@ h1, h2, h3, h4 {line-height: 1.1; font-weight: 500}
 .h-card-list {font-size: 1.5rem;}
 
 .breadcrumbs {
+  color: $gray-text;
   li {
     display: inline-block;
     position: relative;
     font-size: 14px;
-    font-weight: 500;
     &:after {
-      content: ""; width: 4px;height: 4px;background: $base-text;
+      content: ""; width: 4px;height: 4px;
+      background: $gray-text;
       border-radius: 100%;
       display: inline-block;
       vertical-align: middle;
@@ -461,7 +473,7 @@ h1, h2, h3, h4 {line-height: 1.1; font-weight: 500}
       color: $gray;
       &:after {content: none}
     }
-    a {color: #000}
+    a {color: $gray-text}
   }
 
   @media (max-width: $screen-sm-max) {
