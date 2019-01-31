@@ -2128,7 +2128,8 @@ body.modal-opened {
     width: auto;
     border: none;
     background: none;
-    outline: none; }
+    outline: none;
+    max-width: 50%; }
     .values-row .value:last-child {
       text-align: right; }
 

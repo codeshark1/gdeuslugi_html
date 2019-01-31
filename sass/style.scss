@@ -981,7 +981,7 @@ body.modal-opened {overflow: hidden;}
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	.value {font-size: 12px; width: auto; border: none;background: none; outline: none;
+	.value {font-size: 12px; width: auto; border: none;background: none; outline: none; max-width: 50%;
 		&:last-child {text-align: right;}
 	}
 }
