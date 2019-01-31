@@ -119,7 +119,6 @@
                     </ul>
                 </nav>
 
-
                 <div class="row-listing-main">
                     <div class="card card-order card-link card-offer">
                         <p class="h-card"><a href="#">Ремонт и разводка сантехники или офисном помещении</a></p>                        
@@ -144,26 +143,56 @@
                             <a href="#" class="btn btn-link">контакты</a>
                         </div><!-- /.footer-card -->
                     </div><!-- /.card -->
+                    <div class="card card-order card-link card-offer">
+                        <p class="h-card"><a href="#">Ремонт и разводка сантехники или офисном помещении</a></p>                        
+                        <p class="price">до 115 500 ₽</p>
+
+                        <a href="#" class="user-summary-inline">
+                            <div class="user-mini">
+                                <span href="#" class="userpic">К</span> 
+                                Апполинарий Гентшенфельд
+                            </div>
+                            <div class="rating rating-mini-horiz">
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <span class="rating-num">4.7</span>
+                            </div>
+                        </a><!-- /.user-summary-inline -->
+
+                        <div class="footer-card">
+                            <p class="time-left urgent">
+                                <svg class="icon" data-src="img/time.svg"></svg>
+                                00:00:20
+                            </p>
+                            <a href="#" class="btn btn-link">контакты</a>
+                        </div><!-- /.footer-card -->
+                    </div><!-- /.card -->                    
                 </div><!-- /.row-listing-main -->
 
                 <div class="pagination-wrapper">
-                    <a href="#" class="page">Показать ещё 20</a>
+                    <!-- <a href="#" class="page">Показать ещё 20</a> -->
                     <div class="pagination">
-                        <a href="#" class="page back" title="К предыдущей"><</a>
+                        <a href="#" class="page back" title="К предыдущей"><svg data-src="img/arrow-back.svg"></svg></a>
                         <a href="#" class="page">1</a>
                         <span class="page current">2</span>
                         <a href="#" class="page">3</a>
-                        <a href="#" class="page">4</a>
-                        <a href="#" class="page">5</a>
+                        <span class="page dots">...</span>
                         <a href="#" class="page">6</a>
-                        <a href="#" class="page forw" title="К следующей">></a>
+                        <a href="#" class="page forw" title="К следующей"><svg data-src="img/arrow-forw.svg"></svg></a>
                     </div>
                 </div>
+
+                <div class="breadcrumbs">
+                    <ul>
+                        <li><a href="#">GdeUslugi</a></li>
+                        <li><a href="#">Заказы</a></li>
+                        <li><a href="#">Сантехника</a></li>
+                        <li>В Санкт-Петербурге</li>
+                    </ul>
+                </div>                
             </div><!-- /.col-content -->
 
             <aside class="col-sidebar">
-
-                <form action="/">
+                <form action="/" class="filter-main">
                     <div class="accord-filter">
                         <h6 class="heading-filter heading-filter-sort">Сортировка</h6>
                         <div class="content list-filter list-filter-sort">
@@ -183,8 +212,8 @@
                         <h6 class="heading-filter opened">Стоимость</h6>
                         <div class="content">
                             <div class="values-row">
-                                <div class="value">от <input type="text" name="" id="slider-range-val-min" value="1 789"> ₽</div>
-                                <div class="value">до <input type="text" name="" id="slider-range-val-min" value="11 789"> ₽ </div>
+                                <input id="slider-range-min" class="value" value="от 1 789 ₽">
+                                <input id="slider-range-min" class="value" value="до 11 789 ₽">
                             </div><!-- /.values-row -->
                             <div id="slider-range" class="slider-range"></div>
                         </div><!-- /.content -->

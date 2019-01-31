@@ -355,6 +355,31 @@ $sect-mg-neg: 39px;
 		a {width: 74px;}
 	}
 }
+
+
+/* pagination */
+.pagination-wrapper {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 75px;
+}
+.pagination {
+	.page {
+		background: #fff;
+		box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+		border-radius: 3px;			
+		display: inline-block;
+		width: 46px;
+		height: 46px;
+		line-height: 46px;
+		text-align: center;
+		font-weight: 500;
+	}
+	.current,.dots {box-shadow: none;}
+	.current {background: $main; color: #fff}
+	.dots {background: none}
+	path {fill: $gray-text}
+}
 /* ==========================================================================
    CONTENT
    ========================================================================== */
@@ -371,14 +396,46 @@ $sect-mg-neg: 39px;
 }
 .card-offer {
 	max-width: 400px;
-	.price {font-size: 17px;}
+	transition: all .3s;
+	margin-bottom: 10px;
+	&:hover {cursor: pointer; box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);}
+	.price {font-size: 17px; margin-top: 20px;}
+	.user-summary-inline {margin-top: 20px;}
 }
+.footer-card {
+	border-top: 1px solid $gray-border;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 20px;
+	margin-top: 20px;
+}
+.time-left {font-size: 14px; color: $gray-text;
+	.icon {margin-right: 5px;}
+	&.urgent {color: $red}
+}
+
 .user-summary-inline {
 	.user-mini {display: inline-block;margin-right: 10px;}
-	color: $base-text;	
-	font-size: 12px;	
+	color: $base-text;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
 	.userpic {width: 23px;height: 23px;font-size: 10px; line-height: 17px; vertical-align: middle;}
 	.rating {display: inline-block;font-size: 14px;}
+}
+
+.row-main {
+	@media (min-width: $screen-md-min) {
+		display: flex;
+		.col-content {flex-grow: 1}
+		.col-sidebar {width: 262px;flex-grow: 0;flex-shrink: 0; margin-left: 40px;}
+	}
+}
+.row-listing-main {
+	@media (min-width: $screen-sm-min) {
+		display: flex;
+		justify-content: space-between;
+	}
 }
 
 .content-main {
@@ -889,7 +946,47 @@ body.modal-opened {overflow: hidden;}
 .empty-message {text-align: center;color: $gray-text}
 
 
-/* SIDEBAR */
+/* ==========================================================================
+   SIDEBAR
+   ========================================================================== */
+.filter-main {}
+.accord-filter {
+	border-top: 1px solid $border;
+	padding-top: 10px;
+	margin-top: 10px;
+	.heading-filter {
+		position: relative;
+		font-weight: 500;
+		font-size: 15px;
+		cursor: pointer;
+		margin: 0 0 25px 0;
+		&:after {
+			content: "";
+			width: 9px;height: 6px;
+			background-image: url("data:image/svg+xml,%3Csvg width='9' height='6' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41 0L0 1.33198L6 7L12 1.33198L10.59 0L6 4.32659L1.41 0Z' fill='%2347AB2F'/%3E%3C/svg%3E%0A");
+			display: inline-block;
+			position: absolute; top: 0;right: 0;bottom: 0; margin: auto;
+		}
+		&.opened:after {transform: rotate(180deg)}
+	}
+	.content {padding-right: 50px;}
+}
+.list-filter {}
+.list-filter-sort {}
+.list-filter-item {display: block; position: relative; margin-bottom: 25px; font-size: 14px;overflow: hidden;
+	input {position: absolute; left: -100px;}
+	.icon {position: absolute; top: 0;right: 0;bottom: 0; margin: auto;}
+}
+.values-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	.value {font-size: 12px; width: auto; border: none;background: none; outline: none;
+		&:last-child {text-align: right;}
+	}
+}
+.slider-range {}
+
 
 .card-master-sidebar, .card-service-sidebar, .card-order-sidebar, .card-review-content {
 	border-bottom: 1px solid $gray-light;

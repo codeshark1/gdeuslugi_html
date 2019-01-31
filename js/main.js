@@ -364,7 +364,7 @@ function hideSearchSuggest() {
     $('.form-search').css('z-index','inherit');
     $('#js-search-suggest').slideUp(100);
     overlayOff()
-}    
+}
 
 jQuery(document).ready(function($){
     new SVGInjector().inject(document.querySelectorAll('svg[data-src]'));
