@@ -1,6 +1,7 @@
 
-date polyfill
-
-stars
-
-LANDINGS
+category pick for listing
+separate city pick for listing
+separate phone modals
+grid
+move filters into modal for mob
+rest of the css

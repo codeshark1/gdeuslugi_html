@@ -951,41 +951,81 @@ body.modal-opened {overflow: hidden;}
    ========================================================================== */
 .filter-main {}
 .accord-filter {
-	border-top: 1px solid $border;
-	padding-top: 10px;
-	margin-top: 10px;
-	.heading-filter {
-		position: relative;
-		font-weight: 500;
-		font-size: 15px;
-		cursor: pointer;
-		margin: 0 0 25px 0;
-		&:after {
-			content: "";
-			width: 9px;height: 6px;
-			background-image: url("data:image/svg+xml,%3Csvg width='9' height='6' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41 0L0 1.33198L6 7L12 1.33198L10.59 0L6 4.32659L1.41 0Z' fill='%2347AB2F'/%3E%3C/svg%3E%0A");
-			display: inline-block;
-			position: absolute; top: 0;right: 0;bottom: 0; margin: auto;
-		}
-		&.opened:after {transform: rotate(180deg)}
+	border-bottom: 1px solid $border;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+
+	.content {padding-right: 25px; margin-top: 10px;}
+}
+.heading-filter {
+	position: relative;
+	font-weight: 500;
+	font-size: 15px;
+	cursor: pointer;
+	margin: 0;
+	&:after {
+		content: "";
+		width: 9px;height: 6px;
+		background-image: url("data:image/svg+xml,%3Csvg width='9' height='6' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41 0L0 1.33198L6 7L12 1.33198L10.59 0L6 4.32659L1.41 0Z' fill='%2347AB2F'/%3E%3C/svg%3E%0A");
+		display: inline-block;
+		position: absolute; top: 0;right: 0;bottom: 0; margin: auto;
 	}
-	.content {padding-right: 50px;}
+	&.opened:after {transform: rotate(180deg)}
+
+	.hint {display: inline-block; margin-left: 10px; font-weight: 400; text-transform: lowercase;}
 }
 .list-filter {}
 .list-filter-sort {}
-.list-filter-item {display: block; position: relative; margin-bottom: 25px; font-size: 14px;overflow: hidden;
+.list-filter-item {
+	display: block; 
+	position: relative; 
+	font-size: 14px;
+	overflow: hidden;
+	padding: 10px;
+	border-radius: 3px;
 	input {position: absolute; left: -100px;}
-	.icon {position: absolute; top: 0;right: 0;bottom: 0; margin: auto;}
+	.icon {position: absolute; top: 0;right: 10px;bottom: 0; margin: auto;}
+
+	&:hover {background: $main-light}
+
+	&.selected {display: none;}
 }
 .values-row {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	.value {font-size: 12px; width: auto; border: none;background: none; outline: none; max-width: 50%;
+	.value {font-size: 12px; width: auto; border: none;background: none !important; outline: none; max-width: 50%;
 		&:last-child {text-align: right;}
+		&:focus {color: $main}
 	}
 }
 .slider-range {}
+
+.rating-4 path {fill: #A3CC01}
+.rating-3 path {fill: #EBC500}
+.rating-2 path {fill: #FF8934}
+
+.list-tags {
+	font-size: 0;
+	.btn-tag {margin: 0 10px 10px 0;}
+}
+
+.sec-filter {margin-bottom: 40px;}
+
+.buttons-filter {
+	.btn {width: 100%;}
+	.btn-cancel {margin-bottom: 20px;}
+}
+
+
+
+
+
+
+
+
+
+
 
 
 .card-master-sidebar, .card-service-sidebar, .card-order-sidebar, .card-review-content {

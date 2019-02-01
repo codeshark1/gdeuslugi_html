@@ -7,7 +7,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&amp;subset=cyrillic-ext" rel="stylesheet"> 
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 </head>
@@ -193,8 +195,8 @@
 
             <aside class="col-sidebar">
                 <form action="/" class="filter-main">
-                    <div class="accord-filter">
-                        <h6 class="heading-filter heading-filter-sort">Сортировка</h6>
+                    <div class="accord-filter filter-select">
+                        <h6 class="heading-filter heading-filter-sort">Сортировка <div class="hint"></div></h6>
                         <div class="content list-filter list-filter-sort">
                             <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По стоимости <svg class="icon" data-src="img/decr.svg"></svg></span></label>
                             <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По стоимости <svg class="icon" data-src="img/incr.svg"></svg></span></label>
@@ -209,40 +211,91 @@
                     </div><!-- /.accord-filter -->
 
                     <div class="accord-filter">
-                        <h6 class="heading-filter opened">Стоимость</h6>
+                        <h6 class="heading-filter">Стоимость</h6>
                         <div class="content">
                             <div class="values-row">
-                                <input id="slider-range-min" class="value" value="от 1 789 ₽">
-                                <input id="slider-range-min" class="value" value="до 11 789 ₽">
+                                <input id="slider-range-min" class="value sliderValue" data-index="0" value="от 1 789 ₽" autocomplete="off">
+                                <input id="slider-range-max" class="value sliderValue" data-index="1" value="до 11 789 ₽" autocomplete="off">
                             </div><!-- /.values-row -->
                             <div id="slider-range" class="slider-range"></div>
                         </div><!-- /.content -->
                     </div><!-- /.accord-filter -->
 
-                    <div class="accord-filter">                    
-                        <h6 class="heading-filter">Рейтинг от</h6>
+                    <div class="accord-filter filter-select sec-filter">
+                        <h6 class="heading-filter">Рейтинг от <div class="hint"></div></h6>
                         <div class="content list-filter list-filter-rating">
                             <label class="list-filter-item">
                                 <input type="radio" name="filter-rating">
-                                <span class="value rating-filter rating-5"><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg></span>
-                                <span class="value rating-filter rating-4"><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg></span>
-                                <span class="value rating-filter rating-3"><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg></span>
-                                <span class="value rating-filter rating-2"><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg></span>
+                                <div class="value rating-filter rating-5"><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg></div>
+                            </label>
+                            <label class="list-filter-item">
+                                <input type="radio" name="filter-rating">
+                                <div class="value rating-filter rating-4"><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg></div>
+                            </label>
+                            <label class="list-filter-item">
+                                <input type="radio" name="filter-rating">
+                                <div class="value rating-filter rating-3"><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg></div>
+                            </label>
+                            <label class="list-filter-item">
+                                <input type="radio" name="filter-rating">
+                                <div class="value rating-filter rating-2"><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg></div>
                             </label>
                         </div><!-- /.content -->
                     </div><!-- /.accord-filter -->
 
-                    <label class="form-row checkbox checkbox-accept"><input type="checkbox">Показать выполненные</label>                    
+                    <script>
+                        //$('.accord-filter .content').hide();
+                        
+                        $('.list-filter-item').click(function(){
+                            $(this).addClass('selected').parents('.filter-select').find('.heading-filter .hint').html($(this).children('.value').clone());
+                            $(this).siblings().removeClass('selected');                            
+                            $(this).parents('.content').slideUp(100);
+                        });
+
+                        $('.heading-filter').click(function(){
+                            $(this).toggleClass('opened');
+                            $(this).siblings('.content').slideToggle(100);
+                        });
+                    </script>
+
+                    <script>                        
+                            $("#slider-range").slider({
+                                min: 100,
+                                max: 100000,
+                                step: 100,
+                                values: [5000, 50000],
+                                range:true,
+                                slide: function(event, ui) {
+                                    $("#slider-range-min").val("от "+ui.values[0]+" ₽");
+                                    $("#slider-range-max").val("до "+ui.values[1]+" ₽");
+                                }
+                            });
+                            $("#slider-range-min").change(function() {
+                                var myString = $(this).val();
+                                myString = myString.replace(/\D/g,'');
+                                $("#slider-range").slider('values',0,myString);
+                            });
+                            $("#slider-range-max").change(function() {
+                                var myString = $(this).val();
+                                myString = myString.replace(/\D/g,'');
+                                $("#slider-range").slider('values',1,myString);
+                            });                            
+                    </script>  
+
+                    <label class="form-row checkbox checkbox-accept sec-filter"><input type="checkbox">Показать выполненные</label>                    
                     
-                    <div>
+                    <div class="list-tags sec-filter">
                         <a href="#" class="btn btn-tag">юридические услуги <span class="count">1598</span></a>
                         <a href="#" class="btn btn-tag">Туалет <span class="count">1598</span></a>
                         <a href="#" class="btn btn-tag">кухня <span class="count">598</span></a>
                         <a href="#" class="btn btn-tag">ванна <span class="count">1598</span></a>
+                        <a href="#" class="btn btn-tag">кухня <span class="count">598</span></a>
+                        <a href="#" class="btn btn-tag">Туалет <span class="count">1598</span></a>
+                        <a href="#" class="btn btn-tag">ванна <span class="count">1598</span></a>                        
                     </div>
 
-                    <div class="buttons">
-                        <button type="submit" class="btn btn-cancel"><svg data-src="img/x.svg"></svg> очистить фильтр</button>
+                    <div class="buttons-filter">
+                        <button type="button" class="btn btn-cancel"><svg class="icon" data-src="img/x.svg"></svg> очистить фильтр</button>
                         <button type="submit" class="btn btn-main">Показать 283 заказа</button>
                     </div>
                 </form>                
