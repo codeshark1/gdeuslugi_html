@@ -480,6 +480,8 @@ $sect-mg-neg: 39px;
 	&:hover {cursor: pointer; box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);}
 	.price {font-size: 17px; margin-top: 20px;}
 	.user-summary-inline {margin-top: 20px;}
+
+	.img-avatar-wrap {margin: -20px -20px 0 -20px}
 }
 .footer-card {
 	border-top: 1px solid $gray-border;
@@ -492,7 +494,7 @@ $sect-mg-neg: 39px;
 }
 .img-avatar-wrap {
 	position: relative;
-	.image {}
+	.image {width: 100%;}
 	.userpic {}
 	.rating {}
 }

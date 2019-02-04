@@ -1577,6 +1577,8 @@ a, svg, path, button {
     margin-top: 20px; }
   .card-offer .user-summary-inline {
     margin-top: 20px; }
+  .card-offer .img-avatar-wrap {
+    margin: -20px -20px 0 -20px; }
 
 .footer-card {
   border-top: 1px solid #DCDCDC;
@@ -1591,6 +1593,8 @@ a, svg, path, button {
 
 .img-avatar-wrap {
   position: relative; }
+  .img-avatar-wrap .image {
+    width: 100%; }
 
 .time-left {
   font-size: 14px;
