@@ -437,6 +437,76 @@ jQuery(document).ready(function($){
         customCheckbox();
     });    
 
+        $('#overlay-page').click(function (e) {
+        hideSearchSuggest();
+    })
+
+
+
+    function createListItem(item, tag, entity) {
+        var id = item.id;
+        var name = item.name;
+        var item = document.createElement('li');
+        var spanTag = document.createElement('span');
+        var link = document.createElement('a');
+        var routeTo = "http://gdeuslugidev.ru/search/" + entity + "/" + id;
+
+        if (tag === 'Категория') {
+            item.classList.add('category')
+        }
+        spanTag.innerText = tag;
+        item.classList.add('list-item');
+        spanTag.classList.add('type');
+        item.appendChild(link)
+        link.setAttribute('href', routeTo);
+        item.appendChild(spanTag)
+        link.innerText = name;
+        return item;
+    }
+    // Поиск
+    $('#search-services').on('input', function (e) {
+
+        var value = $(this).val().trim();
+        var searchListContainer = $('.form-search-suggest');
+        var listSearchContainer = $(searchListContainer).find('.list-suggest');
+        var url = function (searchStr) {
+            return 'http://gdeuslugidev.ru/api/search/' + searchStr;
+        }
+        var searchContext = $('.list-item').find('a');
+
+        if (value) {
+
+            $.ajax({
+                method: "GET",
+                url: url(value),
+            }).done(function (res) {
+                showSearchSuggest()
+                var categories = res.categories; // Категории
+                var orders = res.orders; // Статьи
+                var services = res.services; // Услуги
+                $(listSearchContainer).css('height', '500px')
+                $(listSearchContainer).empty();
+                $(categories).each(function (idx, item) {
+                    var element = createListItem(item, 'Категория', 'categories', value);
+                    $(listSearchContainer).append(element)
+                })
+                $(orders).each(function (idx, item) {
+                    var element = createListItem(item, 'Заказ', 'orders', value);
+                    $(listSearchContainer).append(element)
+                })
+                $(services).each(function (idx, item) {
+                    var element = createListItem(item, 'Услуга', 'services', value);
+                    $(listSearchContainer).append(element)
+                });
+            });
+
+        } else {
+            $(listSearchContainer).empty()
+            $(listSearchContainer).css('height', '0')
+
+        }
+        $(searchContext).mark(value, { className: 'secondary' });
+    })
 
 
 
