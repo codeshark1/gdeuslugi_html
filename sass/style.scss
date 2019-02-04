@@ -305,6 +305,7 @@ $sect-mg-neg: 39px;
 			top: 60px;
 		}		
 	}
+	.rating-num {color: #fff}
 	.menu {
 		padding-left: 88px;
 	}
@@ -488,6 +489,12 @@ $sect-mg-neg: 39px;
 	position: absolute;
 	left: 0;bottom: 0;right: 0;
 	padding: 20px;
+}
+.img-avatar-wrap {
+	position: relative;
+	.image {}
+	.userpic {}
+	.rating {}
 }
 .time-left {font-size: 14px; color: $gray-text;
 	.icon {margin-right: 5px;}
@@ -1193,10 +1200,8 @@ body.modal-opened {overflow: hidden;}
 	}
 }
 
-.rating-mini, .rating-mini-vert {
-	font-size: 16px;
-	.rating-num {color: $main; }
-}
+.rating-mini, .rating-mini-vert {font-size: 16px;}
+.rating-num {color: $main;}
 .rating-mini {
 	text-align: center;
 	width: 40px;

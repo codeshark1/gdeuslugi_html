@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&subset=cyrillic-ext");
 /* ==========================================================================
    BASE
    ========================================================================== */
@@ -1383,6 +1384,8 @@ a, svg, path, button {
     @media (min-width: 992px) {
       .menu-main-user .rating {
         top: 60px; } }
+  .menu-main-user .rating-num {
+    color: #fff; }
   .menu-main-user .menu {
     padding-left: 88px; }
   .menu-main-user-heading {
@@ -1585,6 +1588,9 @@ a, svg, path, button {
   bottom: 0;
   right: 0;
   padding: 20px; }
+
+.img-avatar-wrap {
+  position: relative; }
 
 .time-left {
   font-size: 14px;
@@ -2348,8 +2354,9 @@ body.modal-opened {
 
 .rating-mini, .rating-mini-vert {
   font-size: 16px; }
-  .rating-mini .rating-num, .rating-mini-vert .rating-num {
-    color: #47AB2F; }
+
+.rating-num {
+  color: #47AB2F; }
 
 .rating-mini {
   text-align: center;

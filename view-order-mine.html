@@ -12,220 +12,291 @@
     <script src="js/main.js"></script>
     <script src="js/blueimp-gallery.min.js"></script>
 </head>
-<body>
+<body class="user-loggedin">
 <!--[if lt IE 10]>
     <p class="browserupgrade">Вы используете <b>устаревший</b> браузер. Пожалуйста, <a href="http://browsehappy.com/?locale=ru_ru">обновите свой браузер</a> чтобы улучшить опыт работы с сайтом.</p>
 <![endif]-->
-    <header class="header-site">
-        <div class="bx-action">
-            <a href="#" class="btn-open-menu">
-                <span class="logo">U</span>
-                <svg data-src="img/arrow-down.svg"></svg>
-            </a>
-        </div><!-- /.bx-action -->
+<header class="header-site">
+    <div class="header-level-1">
+        <div class="row-header">
+            <div class="col-logo">
+                <a href="#" class="logo-site">Где Услуги</a>
+            </div><!-- /.col-logo -->
+            <div class="col-search">
+                <form action="/" class="form-search">
+                    <input class="search-field" type="search" placeholder="Поиск...">
+                    <p class="search-field-btn"></p>
+                    <div class="form-search-suggest" id="js-search-suggest">
+                        <ul class="list-suggest">                                               
+                            <li class="list-item category"><a href="#"><mark>Уборка</mark> помещений <span class="type">Категория</span></a></li>
+                            <li class="list-item category"><a href="#"><mark>Уборка</mark> квартир <span class="type">Категория</span></a></li>
+                            <li class="list-item category"><a href="#"><mark>Уборка</mark> офисов <span class="type">Категория</span></a></li>
+                            <li class="list-item"><a href="#"><mark>Уборка</mark> территории <span class="type">Статья</span></a></li>
+                            <li class="list-item"><a href="#">Генеральная <mark>уборка</mark> бассейнов и водоемов <span class="type">Услуга</span></a></li>
+                            <li class="list-item"><a href="#"><mark>Уборка</mark> после ремонта <span class="type">Заказ</span></a></li>
+                            <li class="list-item"><a href="#">Как выбрать <mark>убор</mark>щицу <span class="type">Статья</span></a></li>
+                        </ul>
+                    </div>
+                </form>
+                <div class="button d-lg-none">
+                    <button class="btn btn-settings" id="js-btn-filter"><svg class="icon" data-src="img/settings.svg"></svg> <i class="number">3</i></button>
+                </div>
+            </div><!-- /.col-search -->
+            <div class="col-actions">
+                <div class="links d-none d-sm-block">
+                    <a href="#" class="btn-link">Создать заказ</a>
+                    <div class="user-block">
+                        <p href="#" class="btn-link"><i class="userpic">В</i>мой профиль</p>
+                        <ul class="list-user">
+                            <li class="list-item"><a href="#" class="link-icon"><svg data-src="img/user.svg"></svg>Личный кабинет</a></li>
+                            <li class="list-item"><a href="#" class="link-icon"><svg data-src="img/logout.svg"></svg>Выйти</a></li>
+                        </ul>
+                    </div><!-- /.user -->
+                </div>
+                <button class="btn-menu" id="js-btn-menu"><span></span><span></span><span></span></button>                
+            </div><!-- /.col-actions -->
+        </div><!-- /.row-header -->
+    </div><!-- /.level-1 -->
+    <div class="header-level-2"></div><!-- /.level-2 -->
+</header>
+<nav class="menu-main menu-top" id="js-menu-main">
+    <div class="menu-main-user">
+        <div class="userpic"><img src="img/user.jpg" alt="pic"></div>
 
-        <div class="bx-user">
-            <a href="#" class="userpic">
-                А
-            </a>
-        </div><!-- /.bx-user -->
-    </header>
+        <div class="rating rating-mini-horiz">
+            <i class="star"><svg data-src="img/star.svg"></svg></i>
+            <span class="rating-num">4,7</span>
+        </div>
 
-    <main class="container content-main">    
-        <div class="row justify-content-between row-main">
-            <div class="col-md-7 col-lg-6 col-content">
-                <article class="order-full">
-                    <header class="order-header">
-                        <p class="order-num">Заказ #1q2w3e</p>
-                        <h1 class="h-main h-order">Черновая кладка стен полнотелым кирпичем</h1>
-                        <p class="order-price">150 000 P</p> 
-                        <p class="order-location">Санкт-Петербург</p>
-                        <a href="#" class="order-categ">Строительство домов и коттеджей</a>
-                    </header>
+        <div class="menu menu-main-user-heading" id="js-menu-main-user-heading">
+            <p class="user-name">Александр</p>
+            <svg class="icon" data-src="img/arrow-down.svg"></svg>
+        </div>
 
-                    <div class="order-actions d-md-none">
-                        <button type="button" class="btn btn-main">Редактировать</button>
-                        <button type="button" class="btn btn-dots modal-trigger" data-trigger="#modal-actions">...</button>
-                    </div><!-- /.order-actions -->
+        <div class="menu-main-user-actions" id="js-menu-main-user-actions">
+            <ul class="list-user">
+                <li class="menu-item"><a href="#" class="link-icon"><svg data-src="img/user.svg"></svg>Личный кабинет</a></li>
+                <li class="menu-item"><a href="#" class="link-icon"><svg data-src="img/logout.svg"></svg>Выйти</a></li>
+            </ul>
+        </div>
+    </div><!-- /.menu-main-user -->
 
-                    <div class="order-gallery" id="gallery">
-                        <a href="img/photo1.jpg" class="img-main">
-                            <img src="img/prev-big1.jpg" alt="pic">
-                        </a>
+    <div class="location menu-item">
+        <svg class="icon" data-src="img/location.svg"></svg>
+        <p href="#" class="town modal-trigger" data-trigger="#modal-cities">Гусь-Хрустальный</p>        
+        <input type="hidden" id="select-city-input" class="chosen-value">
+    </div>
+
+    <hr>
+
+    <ul class="menu">
+        <li class="menu-item"><a href="#">Мастера</a></li>
+        <li class="menu-item"><a href="#">Услуги</a></li>
+        <li class="menu-item"><a href="#">Заказы</a></li>
+    </ul>
+
+    <hr>  
+    
+    <ul class="menu">
+        <li class="menu-item"><a href="#">Создать заказ</a></li>
+        <li class="menu-item"><a href="#">Создать услугу</a></li>
+    </ul>        
+</nav><!-- /.menu-wrapper -->
+<main class="container content-main">    
+    <div class="row justify-content-between row-main">
+        <div class="col-md-7 col-lg-6 col-content">
+            <article class="order-full">
+                <header class="order-header">
+                    <p class="order-num">Заказ #1q2w3e</p>
+                    <h1 class="h-main h-order">Черновая кладка стен полнотелым кирпичем</h1>
+                    <p class="order-price">150 000 P</p> 
+                    <p class="order-location">Санкт-Петербург</p>
+                    <a href="#" class="order-categ">Строительство домов и коттеджей</a>
+                </header>
+
+                <div class="order-actions d-md-none">
+                    <button type="button" class="btn btn-main">Редактировать</button>
+                    <button type="button" class="btn btn-dots modal-trigger" data-trigger="#modal-actions">...</button>
+                </div><!-- /.order-actions -->
+
+                <div class="order-gallery" id="gallery">
+                    <a href="img/photo1.jpg" class="img-main">
+                        <img src="img/prev-big1.jpg" alt="pic">
+                    </a>
+                    <div class="img-preview-wrapper">
+                        <div class="img-preview-row">
+                            <a href="img/photo3.jpg" class="img-thumbnail"><img src="img/prev-sm3.jpg" alt="pic"></a>
+                            <a href="img/photo2.jpg" class="img-thumbnail"><img src="img/prev-sm2.jpg" alt="pic"></a>
+                            <a href="img/photo4.jpg" class="img-thumbnail"><img src="img/prev-sm4.jpg" alt="pic"></a>
+                            <a href="img/photo5.jpg" class="img-thumbnail"><img src="img/prev-sm5.jpg" alt="pic"></a>
+                        </div>
+                    </div><!-- img-preview-wrapper -->
+                </div><!-- /.order-gallery -->
+                <div class="order-description">
+                    <p>Сделайте мне аккуратно и надежно, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. Очень аккуратно и надежно, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно.  Устраивался на работу потому что там график как говорили.</p>
+                </div><!-- /.order-description -->
+
+                
+                <h2 class="h-content">Поделиться</h2>
+                <ul class="menu-login-social">
+                    <li class="menu-item"><a href="#" class="vk"><svg data-src="img/vk.svg"></svg></a></li>
+                    <li class="menu-item"><a href="#" class="fb"><svg data-src="img/fb.svg"></svg></a></li>
+                    <li class="menu-item"><a href="#" class="ok"><svg data-src="img/ok.svg"></svg></a></li>
+                    <li class="menu-item"><a href="#" class="tw"><svg data-src="img/tw.svg"></svg></a></li>
+                </ul> 
+                
+
+                <div class="order-actions">
+                    <button type="button" class="btn btn-main">Редактировать</button>
+                    <button type="button" class="btn btn-dots modal-trigger" data-trigger="#modal-actions">...</button>
+                </div><!-- /.order-actions -->
+            </article>
+        </div><!-- /.col -->
+        <aside class="col-md-5 col-lg-4 col-sidebar">
+            <h2 class="h-section">Рекомендуем</h2>
+
+            <ul class="nav-tabs js-nav-tabs">
+                <li class="menu-item active"><a href="#tab-masters">Мастера</a></li>
+                <li class="menu-item"><a href="#tab-services">Услуги</a></li>
+            </ul>
+            <div class="tabcontent-wrapper js-tabcontent-wrapper">
+                <div class="tabcontent" id="tab-masters">
+                    <div class="card-master-sidebar">
+                        <div class="user-header">
+                            <a href="#" class="userpic">К</a>
+                            <a href="#" class="name">Константин</a>
+                            <div class="rating">
+                                <span class="rating-num">4.7</span>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <span class="rating-rates">65</span>
+                            </div><!-- rating -->
+                        </div><!-- /.user-header -->                        
+                        <p class="city">Санкт-Петербург</p>
+                        <p class="description">Отделка окон, Отделка дверей, Монтаж теплых полов, Сантехнические услуги, Слаботочные системы, Водители</p>
+                    </div><!-- /.card-master-listing -->
+                    <div class="card-master-sidebar">
+                        <div class="user-header">
+                            <a href="#" class="userpic">К</a>
+                            <a href="#" class="name">Константин</a>
+                            <div class="rating">
+                                <span class="rating-num">4.7</span>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <span class="rating-rates">65</span>
+                            </div><!-- rating -->
+                        </div><!-- /.user-header -->                        
+                        <p class="city">Санкт-Петербург</p>
+                        <p class="description">Отделка окон, Отделка дверей, Монтаж теплых полов, Сантехнические услуги, Слаботочные системы, Водители</p>
+                    </div><!-- /.card-master-listing -->
+                    <div class="card-master-sidebar">
+                        <div class="user-header">
+                            <a href="#" class="userpic">К</a>
+                            <a href="#" class="name">Константин</a>
+                            <div class="rating">
+                                <span class="rating-num">4.7</span>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <span class="rating-rates">65</span>
+                            </div><!-- rating -->
+                        </div><!-- /.user-header -->                        
+                        <p class="city">Санкт-Петербург</p>
+                        <p class="description">Отделка окон, Отделка дверей, Монтаж теплых полов, Сантехнические услуги, Слаботочные системы, Водители</p>
+                    </div><!-- /.card-master-listing -->                                        
+                </div><!-- /.tabcontent -->
+                <div class="tabcontent" id="tab-services">
+                    <div class="card-service-sidebar">
+                        <a href="#" class="title">Черновая кладка стен полнотелым кирпичем</a>
+                        <p class="price">от 3000 P</p>
+
                         <div class="img-preview-wrapper">
                             <div class="img-preview-row">
-                                <a href="img/photo3.jpg" class="img-thumbnail"><img src="img/prev-sm3.jpg" alt="pic"></a>
-                                <a href="img/photo2.jpg" class="img-thumbnail"><img src="img/prev-sm2.jpg" alt="pic"></a>
-                                <a href="img/photo4.jpg" class="img-thumbnail"><img src="img/prev-sm4.jpg" alt="pic"></a>
-                                <a href="img/photo5.jpg" class="img-thumbnail"><img src="img/prev-sm5.jpg" alt="pic"></a>
+                                <div class="img-thumbnail"><img src="img/prev-sm2.jpg" alt="pic"></div>
+                                <div class="img-thumbnail"><img src="img/prev-sm3.jpg" alt="pic"></div>
+                                <div class="img-thumbnail"><img src="img/prev-sm4.jpg" alt="pic"></div>
+                                <div class="img-thumbnail"><img src="img/prev-sm5.jpg" alt="pic"></div>
                             </div>
-                        </div><!-- img-preview-wrapper -->
-                    </div><!-- /.order-gallery -->
-                    <div class="order-description">
-                        <p>Сделайте мне аккуратно и надежно, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. Очень аккуратно и надежно, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно.  Устраивался на работу потому что там график как говорили.</p>
-                    </div><!-- /.order-description -->
+                        </div><!-- /.img-preview-wrapper -->
+                        <p class="description text-trimmer" data-maxlength="100">Делаю очень аккуратно и надежно, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. Устраивался на работу потому что там график как говорили будут подстр</p>
+                    </div><!-- /.card-service-listing -->
+                    <div class="card-service-sidebar">
+                        <a href="#" class="title">Черновая кладка стен полнотелым кирпичем</a>
+                        <p class="price">от 3000 P</p>
 
-                    
-                    <h2 class="h-content">Поделиться</h2>
-                    <ul class="menu-login-social">
-                        <li class="menu-item"><a href="#" class="vk"><svg data-src="img/vk.svg"></svg></a></li>
-                        <li class="menu-item"><a href="#" class="fb"><svg data-src="img/fb.svg"></svg></a></li>
-                        <li class="menu-item"><a href="#" class="ok"><svg data-src="img/ok.svg"></svg></a></li>
-                        <li class="menu-item"><a href="#" class="tw"><svg data-src="img/tw.svg"></svg></a></li>
-                    </ul> 
-                    
+                        <div class="img-preview-wrapper">
+                            <div class="img-preview-row">
+                                <div class="img-thumbnail"><img src="img/prev-sm2.jpg" alt="pic"></div>
+                                <div class="img-thumbnail"><img src="img/prev-sm3.jpg" alt="pic"></div>
+                                <div class="img-thumbnail"><img src="img/prev-sm4.jpg" alt="pic"></div>
+                                <div class="img-thumbnail"><img src="img/prev-sm5.jpg" alt="pic"></div>
+                            </div>
+                        </div><!-- /.img-preview-wrapper -->
+                        <p class="description text-trimmer" data-maxlength="100">Делаю очень аккуратно и надежно, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. Устраивался на работу потому что там график как говорили будут подстр</p>
+                    </div><!-- /.card-service-listing -->
+                    <div class="card-service-sidebar">
+                        <a href="#" class="title">Черновая кладка стен полнотелым кирпичем</a>
+                        <p class="price">от 3000 P</p>
 
-                    <div class="order-actions">
-                        <button type="button" class="btn btn-main">Редактировать</button>
-                        <button type="button" class="btn btn-dots modal-trigger" data-trigger="#modal-actions">...</button>
-                    </div><!-- /.order-actions -->
-                </article>
-            </div><!-- /.col -->
-            <aside class="col-md-5 col-lg-4 col-sidebar">
-                <h2 class="h-section">Рекомендуем</h2>
+                        <div class="img-preview-wrapper">
+                            <div class="img-preview-row">
+                                <div class="img-thumbnail"><img src="img/prev-sm2.jpg" alt="pic"></div>
+                                <div class="img-thumbnail"><img src="img/prev-sm3.jpg" alt="pic"></div>
+                                <div class="img-thumbnail"><img src="img/prev-sm4.jpg" alt="pic"></div>
+                                <div class="img-thumbnail"><img src="img/prev-sm5.jpg" alt="pic"></div>
+                            </div>
+                        </div><!-- /.img-preview-wrapper -->
+                        <p class="description text-trimmer" data-maxlength="100">Делаю очень аккуратно и надежно, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. Устраивался на работу потому что там график как говорили будут подстр</p>
+                    </div><!-- /.card-service-listing -->                                                
+                </div><!-- /.tabcontent -->
+            </div><!-- /.tabcontent-wrapper -->                      
+        </aside><!-- /.col -->
+    </div><!-- /.row -->
+</main><!-- /.container -->
 
-                <ul class="nav-tabs js-nav-tabs">
-                    <li class="menu-item active"><a href="#tab-masters">Мастера</a></li>
-                    <li class="menu-item"><a href="#tab-services">Услуги</a></li>
+<div class="footer-placehodler"></div>
+
+<div class="modal-container" id="modal-actions">
+    <div class="modal-bg">
+        <div class="modal-window">
+            <div class="wrapper">
+                <ul class="menu-modal-actions">
+                    <li class="menu-item"><a href="#">Написать отзыв</a></li>
+                    <li class="menu-item"><a href="#">Пожаловаться</a></li>
+                    <li class="menu-item"><a href="#" class="close">Отмена</a></li>
                 </ul>
-                <div class="tabcontent-wrapper js-tabcontent-wrapper">
-                    <div class="tabcontent" id="tab-masters">
-                        <div class="card-master-sidebar">
-                            <div class="user-header">
-                                <a href="#" class="userpic">К</a>
-                                <a href="#" class="name">Константин</a>
-                                <div class="rating">
-                                    <span class="rating-num">4.7</span>
-                                    <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                    <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                    <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                    <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                    <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                    <span class="rating-rates">65</span>
-                                </div><!-- rating -->
-                            </div><!-- /.user-header -->                        
-                            <p class="city">Санкт-Петербург</p>
-                            <p class="description">Отделка окон, Отделка дверей, Монтаж теплых полов, Сантехнические услуги, Слаботочные системы, Водители</p>
-                        </div><!-- /.card-master-listing -->
-                        <div class="card-master-sidebar">
-                            <div class="user-header">
-                                <a href="#" class="userpic">К</a>
-                                <a href="#" class="name">Константин</a>
-                                <div class="rating">
-                                    <span class="rating-num">4.7</span>
-                                    <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                    <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                    <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                    <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                    <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                    <span class="rating-rates">65</span>
-                                </div><!-- rating -->
-                            </div><!-- /.user-header -->                        
-                            <p class="city">Санкт-Петербург</p>
-                            <p class="description">Отделка окон, Отделка дверей, Монтаж теплых полов, Сантехнические услуги, Слаботочные системы, Водители</p>
-                        </div><!-- /.card-master-listing -->
-                        <div class="card-master-sidebar">
-                            <div class="user-header">
-                                <a href="#" class="userpic">К</a>
-                                <a href="#" class="name">Константин</a>
-                                <div class="rating">
-                                    <span class="rating-num">4.7</span>
-                                    <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                    <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                    <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                    <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                    <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                    <span class="rating-rates">65</span>
-                                </div><!-- rating -->
-                            </div><!-- /.user-header -->                        
-                            <p class="city">Санкт-Петербург</p>
-                            <p class="description">Отделка окон, Отделка дверей, Монтаж теплых полов, Сантехнические услуги, Слаботочные системы, Водители</p>
-                        </div><!-- /.card-master-listing -->                                        
-                    </div><!-- /.tabcontent -->
-                    <div class="tabcontent" id="tab-services">
-                        <div class="card-service-sidebar">
-                            <a href="#" class="title">Черновая кладка стен полнотелым кирпичем</a>
-                            <p class="price">от 3000 P</p>
+            </div><!-- /.wrapper -->
+        </div><!-- /#modal-window-->    
+    </div><!-- /.modal-bg -->
+</div><!-- /.modal-container -->
 
-                            <div class="img-preview-wrapper">
-                                <div class="img-preview-row">
-                                    <div class="img-thumbnail"><img src="img/prev-sm2.jpg" alt="pic"></div>
-                                    <div class="img-thumbnail"><img src="img/prev-sm3.jpg" alt="pic"></div>
-                                    <div class="img-thumbnail"><img src="img/prev-sm4.jpg" alt="pic"></div>
-                                    <div class="img-thumbnail"><img src="img/prev-sm5.jpg" alt="pic"></div>
-                                </div>
-                            </div><!-- /.img-preview-wrapper -->
-                            <p class="description text-trimmer" data-maxlength="100">Делаю очень аккуратно и надежно, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. Устраивался на работу потому что там график как говорили будут подстр</p>
-                        </div><!-- /.card-service-listing -->
-                        <div class="card-service-sidebar">
-                            <a href="#" class="title">Черновая кладка стен полнотелым кирпичем</a>
-                            <p class="price">от 3000 P</p>
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>    
 
-                            <div class="img-preview-wrapper">
-                                <div class="img-preview-row">
-                                    <div class="img-thumbnail"><img src="img/prev-sm2.jpg" alt="pic"></div>
-                                    <div class="img-thumbnail"><img src="img/prev-sm3.jpg" alt="pic"></div>
-                                    <div class="img-thumbnail"><img src="img/prev-sm4.jpg" alt="pic"></div>
-                                    <div class="img-thumbnail"><img src="img/prev-sm5.jpg" alt="pic"></div>
-                                </div>
-                            </div><!-- /.img-preview-wrapper -->
-                            <p class="description text-trimmer" data-maxlength="100">Делаю очень аккуратно и надежно, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. Устраивался на работу потому что там график как говорили будут подстр</p>
-                        </div><!-- /.card-service-listing -->
-                        <div class="card-service-sidebar">
-                            <a href="#" class="title">Черновая кладка стен полнотелым кирпичем</a>
-                            <p class="price">от 3000 P</p>
-
-                            <div class="img-preview-wrapper">
-                                <div class="img-preview-row">
-                                    <div class="img-thumbnail"><img src="img/prev-sm2.jpg" alt="pic"></div>
-                                    <div class="img-thumbnail"><img src="img/prev-sm3.jpg" alt="pic"></div>
-                                    <div class="img-thumbnail"><img src="img/prev-sm4.jpg" alt="pic"></div>
-                                    <div class="img-thumbnail"><img src="img/prev-sm5.jpg" alt="pic"></div>
-                                </div>
-                            </div><!-- /.img-preview-wrapper -->
-                            <p class="description text-trimmer" data-maxlength="100">Делаю очень аккуратно и надежно, изначально в ночь меня все устраивало, потом ночи убрали ну да ладно. Устраивался на работу потому что там график как говорили будут подстр</p>
-                        </div><!-- /.card-service-listing -->                                                
-                    </div><!-- /.tabcontent -->
-                </div><!-- /.tabcontent-wrapper -->                      
-            </aside><!-- /.col -->
-        </div><!-- /.row -->
-    </main><!-- /.container -->
-
-    <div class="footer-placehodler"></div>
-
-    <div class="modal-container" id="modal-actions">
-        <div class="modal-bg">
-            <div class="modal-window">
-                <div class="wrapper">
-                    <ul class="menu-modal-actions">
-                        <li class="menu-item"><a href="#">Написать отзыв</a></li>
-                        <li class="menu-item"><a href="#">Пожаловаться</a></li>
-                        <li class="menu-item"><a href="#" class="close">Отмена</a></li>
-                    </ul>
-                </div><!-- /.wrapper -->
-            </div><!-- /#modal-window-->    
-        </div><!-- /.modal-bg -->
-    </div><!-- /.modal-container -->
-
-    <div id="blueimp-gallery" class="blueimp-gallery">
-        <div class="slides"></div>
-        <h3 class="title"></h3>
-        <a class="prev">‹</a>
-        <a class="next">›</a>
-        <a class="close">×</a>
-        <a class="play-pause"></a>
-        <ol class="indicator"></ol>
-    </div>    
-
-    <script>
-        document.getElementById('gallery').onclick = function (event) {
-            event = event || window.event;
-            var target = event.target || event.srcElement,
-                link = target.src ? target.parentNode : target,
-                options = {index: link, event: event},
-                links = this.getElementsByTagName('a');
-            blueimp.Gallery(links, options);
-        };            
-    </script>    
+<script>
+    document.getElementById('gallery').onclick = function (event) {
+        event = event || window.event;
+        var target = event.target || event.srcElement,
+            link = target.src ? target.parentNode : target,
+            options = {index: link, event: event},
+            links = this.getElementsByTagName('a');
+        blueimp.Gallery(links, options);
+    };            
+</script>    
 </body>
 </html>
