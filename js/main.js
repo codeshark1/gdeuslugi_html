@@ -215,30 +215,36 @@ function show_pass() {
     function modal_open_close(){
         $('.modal-trigger').click(function(e){
             e.preventDefault();
-            $($(this).data('trigger')).addClass('opened');
+            //$($(this).data('trigger')).addClass('opened').attr('data-triggerid', $(this).data('triggerid'));
+            $($(this).data('trigger')).addClass('opened').attr('data-triggerid', $(this).attr('id'));
+            console.log($(this).attr('id'))
             $('body').addClass('modal-opened');
         });
 
         $('.modal-container .close').click(function(e){
             e.preventDefault();
-            //$(this).parents('.modal-container').removeClass('opened');
             close_modal();
         });
     } 
     function modal_menu_link_click() {
         $('#menu-categs-popup a, #modal-cities a').click(function(e){
             e.preventDefault();
-            var target_data = "#" + $(this).parents('.modal-container').attr('id');
-            
+            //var target_data = "#" + $(this).parents('.modal-container').attr('id');
+            var target_data = "#" + $(this).parents('.modal-container').data('triggerid');
+            console.log(target_data);
             $(this).parent('.menu-item').addClass('active').siblings().removeClass('active');
             if( ! $(this).next('.sub-menu').length ) {
-                //$(this).parents('.modal-container').removeClass('opened');
                 close_modal();
-                if ( $('body').find("[data-trigger='"+target_data+"']").is('input') ) {
-                    $('body').find("[data-trigger='"+target_data+"']").val($(this).text()).next('.chosen-value').val( $(this).data('value') );
+                if ( $('body').find(target_data).is('input') ) {
+                    $('body').find(target_data).val($(this).text()).next('.chosen-value').val( $(this).data('value') );
                 } else {
-                    $('body').find("[data-trigger='"+target_data+"']").text($(this).text()).next('.chosen-value').val( $(this).data('value') );
+                    $('body').find(target_data).text($(this).text()).next('.chosen-value').val( $(this).data('value') );
                 }
+                /* if ( $('body').find("[data-triggerid='"+target_data+"']").is('input') ) {
+                    $('body').find("[data-triggerid='"+target_data+"']").val($(this).text()).next('.chosen-value').val( $(this).data('value') );
+                } else {
+                    $('body').find("[data-triggerid='"+target_data+"']").text($(this).text()).next('.chosen-value').val( $(this).data('value') );
+                } */                
             }
         });
     }
