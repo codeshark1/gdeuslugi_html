@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Листинг заказов</title>
+    <title>Листинг услуг</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&amp;subset=cyrillic-ext" rel="stylesheet"> 
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -111,7 +111,7 @@
         <div class="row-main bx-mg">
             <div class="col-content">
                 <div class="h-page">
-                    893 заказа на 
+                    893 услуги по 
                     <a href="#" class="btn-picker modal-trigger" data-trigger="#modal-categs">сантехнику</a> 
                     <input type="hidden" id="select-category-input" class="chosen-value">
                     в 
@@ -122,320 +122,32 @@
                 <nav class="breadcrumbs">
                     <ul>
                         <li><a href="#">GdeUslugi</a></li>
-                        <li><a href="#">Заказы</a></li>
+                        <li><a href="#">Услуги</a></li>
                         <li><a href="#">Сантехника</a></li>
                         <li>В Санкт-Петербурге</li>
                     </ul>
                 </nav>
 
                 <div class="row-listing-main">
-                    <div class="card card-order card-link card-offer">
-                        <p class="h-card"><a href="#">Ремонт и разводка сантехники или офисном помещении</a></p>                        
-                        <p class="price">до 115 500 ₽</p>
+                    <div class="card card-link card-offer">
+                        <div class="img-avatar-wrap">
+                            <div class="image"><img src="img/photo-listing-1.jpg" alt="pic"></div><!-- /.image -->
+                            
+                            <span href="#" class="userpic">К</span> 
 
-                        <a href="#" class="user-summary-inline">
-                            <div class="user-mini">
-                                <span href="#" class="userpic">К</span> 
-                                Апполинарий Гентшенфельд
-                            </div>
                             <div class="rating rating-mini-horiz">
                                 <i class="star"><svg data-src="img/star.svg"></svg></i>
                                 <span class="rating-num">4.7</span>
-                            </div>
-                        </a><!-- /.user-summary-inline -->
+                            </div>                            
+                        </div><!-- /.img-avatar-wrap -->
+
+                        <p class="h-card-second">Апполинарий Гентшенфельд</p>
+
+                        <p class="h-card"><a href="#">Ремонт и разводка сантехники или офисном помещении</a></p>
+
+                        <p class="price">По договоренности</p>
 
                         <div class="footer-card">
-                            <p class="time-left">
-                                <svg class="icon" data-src="img/time.svg"></svg>
-                                00:00:20
-                            </p>
-                            <a href="#" class="btn btn-link modal-trigger" data-trigger="#modal-tel-1">контакты</a>
-                        </div><!-- /.footer-card -->
-
-                        <div class="modal-container modal-tel" id="modal-tel-1">
-                            <div class="modal-bg">
-                                <div class="modal-window">
-                                    <div class="wrapper">
-                                        <button type="button" class="close btn-close">
-                                            <svg data-src="img/x.svg"></svg>
-                                        </button>
-                                        <div class="modal-content">
-                                            <p class="h-modal">Апполинарий</p>
-                                            <p class="tel">+7 987 654-32-12</p>
-                                            <button type="button" class="btn btn-text">Скопировать</button>
-                                            <button type="button" class="btn btn-main">Позвонить</button>
-                                        </div><!-- modal-content -->
-                                    </div><!-- /.wrapper -->
-                                </div><!-- /#modal-window-->    
-                            </div><!-- /.modal-bg -->
-                        </div><!-- /.modal-container -->                        
-                    </div><!-- /.card -->
-                    <div class="card card-order card-link card-offer">
-                        <p class="h-card"><a href="#">Ремонт и разводка</a></p>                        
-                        <p class="price">до 115 500 ₽</p>
-
-                        <a href="#" class="user-summary-inline">
-                            <div class="user-mini">
-                                <span href="#" class="userpic">К</span> 
-                                Апполинарий Гентшенфельд
-                            </div>
-                            <div class="rating rating-mini-horiz">
-                                <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                <span class="rating-num">4.7</span>
-                            </div>
-                        </a><!-- /.user-summary-inline -->
-
-                        <div class="footer-card">
-                            <p class="time-left urgent">
-                                <svg class="icon" data-src="img/time.svg"></svg>
-                                00:00:20
-                            </p>
-                            <a href="#" class="btn btn-link modal-trigger" data-trigger="#modal-tel-1">контакты</a>
-                        </div><!-- /.footer-card -->
-
-                        <div class="modal-container modal-tel" id="modal-tel-1">
-                            <div class="modal-bg">
-                                <div class="modal-window">
-                                    <div class="wrapper">
-                                        <button type="button" class="close btn-close">
-                                            <svg data-src="img/x.svg"></svg>
-                                        </button>
-                                        <div class="modal-content">
-                                            <p class="h-modal">Апполинарий</p>
-                                            <p class="tel">+7 987 654-32-12</p>
-                                            <button type="button" class="btn btn-text">Скопировать</button>
-                                            <button type="button" class="btn btn-main">Позвонить</button>
-                                        </div><!-- modal-content -->
-                                    </div><!-- /.wrapper -->
-                                </div><!-- /#modal-window-->    
-                            </div><!-- /.modal-bg -->
-                        </div><!-- /.modal-container -->                        
-                    </div><!-- /.card -->
-                    <div class="card card-order card-link card-offer">
-                        <p class="h-card"><a href="#">Ремонт и разводка</a></p>                        
-                        <p class="price">до 115 500 ₽</p>
-
-                        <a href="#" class="user-summary-inline">
-                            <div class="user-mini">
-                                <span href="#" class="userpic">К</span> 
-                                Апполинарий Гентшенфельд
-                            </div>
-                            <div class="rating rating-mini-horiz">
-                                <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                <span class="rating-num">4.7</span>
-                            </div>
-                        </a><!-- /.user-summary-inline -->
-
-                        <div class="footer-card">
-                            <p class="time-left urgent">
-                                <svg class="icon" data-src="img/time.svg"></svg>
-                                00:00:20
-                            </p>
-                            <a href="#" class="btn btn-link modal-trigger" data-trigger="#modal-tel-1">контакты</a>
-                        </div><!-- /.footer-card -->
-
-                        <div class="modal-container modal-tel" id="modal-tel-1">
-                            <div class="modal-bg">
-                                <div class="modal-window">
-                                    <div class="wrapper">
-                                        <button type="button" class="close btn-close">
-                                            <svg data-src="img/x.svg"></svg>
-                                        </button>
-                                        <div class="modal-content">
-                                            <p class="h-modal">Апполинарий</p>
-                                            <p class="tel">+7 987 654-32-12</p>
-                                            <button type="button" class="btn btn-text">Скопировать</button>
-                                            <button type="button" class="btn btn-main">Позвонить</button>
-                                        </div><!-- modal-content -->
-                                    </div><!-- /.wrapper -->
-                                </div><!-- /#modal-window-->    
-                            </div><!-- /.modal-bg -->
-                        </div><!-- /.modal-container -->                        
-                    </div><!-- /.card -->                    
-                    <div class="card card-order card-link card-offer">
-                        <p class="h-card"><a href="#">Ремонт и разводка сантехники или офисном помещении</a></p>                        
-                        <p class="price">до 115 500 ₽</p>
-
-                        <a href="#" class="user-summary-inline">
-                            <div class="user-mini">
-                                <span href="#" class="userpic">К</span> 
-                                Апполинарий Гентшенфельд
-                            </div>
-                            <div class="rating rating-mini-horiz">
-                                <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                <span class="rating-num">4.7</span>
-                            </div>
-                        </a><!-- /.user-summary-inline -->
-
-                        <div class="footer-card">
-                            <p class="time-left">
-                                <svg class="icon" data-src="img/time.svg"></svg>
-                                00:00:20
-                            </p>
-                            <a href="#" class="btn btn-link modal-trigger" data-trigger="#modal-tel-1">контакты</a>
-                        </div><!-- /.footer-card -->
-
-                        <div class="modal-container modal-tel" id="modal-tel-1">
-                            <div class="modal-bg">
-                                <div class="modal-window">
-                                    <div class="wrapper">
-                                        <button type="button" class="close btn-close">
-                                            <svg data-src="img/x.svg"></svg>
-                                        </button>
-                                        <div class="modal-content">
-                                            <p class="h-modal">Апполинарий</p>
-                                            <p class="tel">+7 987 654-32-12</p>
-                                            <button type="button" class="btn btn-text">Скопировать</button>
-                                            <button type="button" class="btn btn-main">Позвонить</button>
-                                        </div><!-- modal-content -->
-                                    </div><!-- /.wrapper -->
-                                </div><!-- /#modal-window-->    
-                            </div><!-- /.modal-bg -->
-                        </div><!-- /.modal-container -->                        
-                    </div><!-- /.card -->
-                    <div class="card card-order card-link card-offer">
-                        <p class="h-card"><a href="#">Ремонт и разводка сантехники или офисном помещении</a></p>                        
-                        <p class="price">до 115 500 ₽</p>
-
-                        <a href="#" class="user-summary-inline">
-                            <div class="user-mini">
-                                <span href="#" class="userpic">К</span> 
-                                Апполинарий Гентшенфельд
-                            </div>
-                            <div class="rating rating-mini-horiz">
-                                <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                <span class="rating-num">4.7</span>
-                            </div>
-                        </a><!-- /.user-summary-inline -->
-
-                        <div class="footer-card">
-                            <p class="time-left">
-                                <svg class="icon" data-src="img/time.svg"></svg>
-                                00:00:20
-                            </p>
-                            <a href="#" class="btn btn-link modal-trigger" data-trigger="#modal-tel-1">контакты</a>
-                        </div><!-- /.footer-card -->
-
-                        <div class="modal-container modal-tel" id="modal-tel-1">
-                            <div class="modal-bg">
-                                <div class="modal-window">
-                                    <div class="wrapper">
-                                        <button type="button" class="close btn-close">
-                                            <svg data-src="img/x.svg"></svg>
-                                        </button>
-                                        <div class="modal-content">
-                                            <p class="h-modal">Апполинарий</p>
-                                            <p class="tel">+7 987 654-32-12</p>
-                                            <button type="button" class="btn btn-text">Скопировать</button>
-                                            <button type="button" class="btn btn-main">Позвонить</button>
-                                        </div><!-- modal-content -->
-                                    </div><!-- /.wrapper -->
-                                </div><!-- /#modal-window-->    
-                            </div><!-- /.modal-bg -->
-                        </div><!-- /.modal-container -->                        
-                    </div><!-- /.card -->
-                    <div class="card card-order card-link card-offer">
-                        <p class="h-card"><a href="#">Ремонт и разводка</a></p>                        
-                        <p class="price">до 115 500 ₽</p>
-
-                        <a href="#" class="user-summary-inline">
-                            <div class="user-mini">
-                                <span href="#" class="userpic">К</span> 
-                                Апполинарий Гентшенфельд
-                            </div>
-                            <div class="rating rating-mini-horiz">
-                                <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                <span class="rating-num">4.7</span>
-                            </div>
-                        </a><!-- /.user-summary-inline -->
-
-                        <div class="footer-card">
-                            <p class="time-left urgent">
-                                <svg class="icon" data-src="img/time.svg"></svg>
-                                00:00:20
-                            </p>
-                            <a href="#" class="btn btn-link modal-trigger" data-trigger="#modal-tel-1">контакты</a>
-                        </div><!-- /.footer-card -->
-
-                        <div class="modal-container modal-tel" id="modal-tel-1">
-                            <div class="modal-bg">
-                                <div class="modal-window">
-                                    <div class="wrapper">
-                                        <button type="button" class="close btn-close">
-                                            <svg data-src="img/x.svg"></svg>
-                                        </button>
-                                        <div class="modal-content">
-                                            <p class="h-modal">Апполинарий</p>
-                                            <p class="tel">+7 987 654-32-12</p>
-                                            <button type="button" class="btn btn-text">Скопировать</button>
-                                            <button type="button" class="btn btn-main">Позвонить</button>
-                                        </div><!-- modal-content -->
-                                    </div><!-- /.wrapper -->
-                                </div><!-- /#modal-window-->    
-                            </div><!-- /.modal-bg -->
-                        </div><!-- /.modal-container -->                        
-                    </div><!-- /.card -->
-                    <div class="card card-order card-link card-offer">
-                        <p class="h-card"><a href="#">Ремонт и разводка</a></p>                        
-                        <p class="price">до 115 500 ₽</p>
-
-                        <a href="#" class="user-summary-inline">
-                            <div class="user-mini">
-                                <span href="#" class="userpic">К</span> 
-                                Апполинарий Гентшенфельд
-                            </div>
-                            <div class="rating rating-mini-horiz">
-                                <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                <span class="rating-num">4.7</span>
-                            </div>
-                        </a><!-- /.user-summary-inline -->
-
-                        <div class="footer-card">
-                            <p class="time-left urgent">
-                                <svg class="icon" data-src="img/time.svg"></svg>
-                                00:00:20
-                            </p>
-                            <a href="#" class="btn btn-link modal-trigger" data-trigger="#modal-tel-1">контакты</a>
-                        </div><!-- /.footer-card -->
-
-                        <div class="modal-container modal-tel" id="modal-tel-1">
-                            <div class="modal-bg">
-                                <div class="modal-window">
-                                    <div class="wrapper">
-                                        <button type="button" class="close btn-close">
-                                            <svg data-src="img/x.svg"></svg>
-                                        </button>
-                                        <div class="modal-content">
-                                            <p class="h-modal">Апполинарий</p>
-                                            <p class="tel">+7 987 654-32-12</p>
-                                            <button type="button" class="btn btn-text">Скопировать</button>
-                                            <button type="button" class="btn btn-main">Позвонить</button>
-                                        </div><!-- modal-content -->
-                                    </div><!-- /.wrapper -->
-                                </div><!-- /#modal-window-->    
-                            </div><!-- /.modal-bg -->
-                        </div><!-- /.modal-container -->                        
-                    </div><!-- /.card -->                    
-                    <div class="card card-order card-link card-offer">
-                        <p class="h-card"><a href="#">Ремонт и разводка сантехники или офисном помещении</a></p>                        
-                        <p class="price">до 115 500 ₽</p>
-
-                        <a href="#" class="user-summary-inline">
-                            <div class="user-mini">
-                                <span href="#" class="userpic">К</span> 
-                                Апполинарий Гентшенфельд
-                            </div>
-                            <div class="rating rating-mini-horiz">
-                                <i class="star"><svg data-src="img/star.svg"></svg></i>
-                                <span class="rating-num">4.7</span>
-                            </div>
-                        </a><!-- /.user-summary-inline -->
-
-                        <div class="footer-card">
-                            <p class="time-left">
-                                <svg class="icon" data-src="img/time.svg"></svg>
-                                00:00:20
-                            </p>
                             <a href="#" class="btn btn-link modal-trigger" data-trigger="#modal-tel-1">контакты</a>
                         </div><!-- /.footer-card -->
 
