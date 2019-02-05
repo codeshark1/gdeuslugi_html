@@ -396,14 +396,16 @@ label.checkbox a {
     vertical-align: bottom;
     margin-right: 8px; }
 
-.btn-picker:after {
-  content: "";
-  width: 12px;
-  height: 7px;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41 0L0 1.33198L6 7L12 1.33198L10.59 0L6 4.32659L1.41 0Z' fill='%2347AB2F'/%3E%3C/svg%3E%0A");
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 5px; }
+.btn-picker {
+  white-space: nowrap; }
+  .btn-picker:after {
+    content: "";
+    width: 12px;
+    height: 7px;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41 0L0 1.33198L6 7L12 1.33198L10.59 0L6 4.32659L1.41 0Z' fill='%2347AB2F'/%3E%3C/svg%3E%0A");
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px; }
 
 .btn-menu {
   padding: 0;
@@ -487,7 +489,10 @@ h1, h2, h3, h4 {
       font-size: 1.7rem; } }
 
 .breadcrumbs {
-  color: #999999; }
+  color: #999999;
+  margin-bottom: 25px; }
+  .breadcrumbs:last-child {
+    margin-bottom: 0; }
   .breadcrumbs li {
     display: inline-block;
     position: relative;
@@ -507,15 +512,9 @@ h1, h2, h3, h4 {
         content: none; }
     .breadcrumbs li a {
       color: #999999; }
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     .breadcrumbs {
-      padding: 0 10px;
-      margin-bottom: 30px; } }
-  @media (min-width: 576px) {
-    .breadcrumbs {
-      margin-bottom: 55px; }
-      .breadcrumbs:last-child {
-        margin-bottom: 0; } }
+      display: none; } }
 
 .row-mod {
   display: flex !important;
@@ -1569,7 +1568,6 @@ a, svg, path, button {
   margin-bottom: 20px; }
 
 .card-offer {
-  max-width: 400px;
   transition: all .3s;
   margin-bottom: 10px;
   padding-bottom: 80px; }
@@ -1666,6 +1664,31 @@ a, svg, path, button {
     flex-wrap: wrap; }
     .row-listing-main .card-offer {
       width: 49%; } }
+
+.nav-serv-mast {
+  margin-bottom: 10px; }
+  @media (min-width: 992px) {
+    .nav-serv-mast .indicator {
+      background: #999;
+      border-radius: 3px;
+      height: 4px;
+      width: 20px;
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      margin: 0 10px; }
+      .nav-serv-mast .indicator:after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        position: absolute;
+        background: #47AB2F;
+        top: -3px; }
+    .nav-serv-mast.services .indicator:after {
+      left: 0; }
+    .nav-serv-mast.masters .indicator:after {
+      right: 0; } }
 
 /* ==========================================================================
 	FORMS 

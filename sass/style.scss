@@ -478,7 +478,7 @@ $sect-mg-neg: 39px;
 }
 
 .card-offer {
-	max-width: 400px;
+	//max-width: 400px;
 	transition: all .3s;
 	margin-bottom: 10px;
 	padding-bottom: 80px; //for footer
@@ -541,7 +541,32 @@ $sect-mg-neg: 39px;
 }
 
 
+.nav-serv-mast {
+	margin-bottom: 10px;
+	@media (max-width: $screen-md-max) {
 
+	}
+	@media (min-width: $screen-lg-min) {
+		.indicator {
+			background: #999;
+			border-radius: 3px;
+			height: 4px; width: 20px;
+			display: inline-block;
+			position: relative;
+			vertical-align: middle;
+			margin: 0 10px;
+			&:after {
+				content: "";
+				width: 10px;height: 10px;border-radius: 100%;
+				position: absolute;
+				background: $main;			
+				top: -3px;
+			}
+		}
+		&.services .indicator:after {left: 0;}
+		&.masters .indicator:after {right: 0;}
+	}
+}
 
 
 /* ==========================================================================

@@ -231,7 +231,6 @@ function show_pass() {
             e.preventDefault();
             //var target_data = "#" + $(this).parents('.modal-container').attr('id');
             var target_data = "#" + $(this).parents('.modal-container').data('triggerid');
-            console.log(target_data);
             $(this).parent('.menu-item').addClass('active').siblings().removeClass('active');
             if( ! $(this).next('.sub-menu').length ) {
                 close_modal();
@@ -245,6 +244,12 @@ function show_pass() {
                 } else {
                     $('body').find("[data-triggerid='"+target_data+"']").text($(this).text()).next('.chosen-value').val( $(this).data('value') );
                 } */                
+            }
+
+            if( $('#menu-directions').length ) {
+                var linkMasters = $('#menu-directions .masters a').attr('href');
+                var trimmed = linkMasters.replace(/\d+$/g, "");
+                console.log(trimmed);
             }
         });
     }
@@ -465,7 +470,6 @@ jQuery(document).ready(function($){
     }
     // Поиск
     $('#search-services').on('input', function (e) {
-
         var value = $(this).val().trim();
         var searchListContainer = $('.form-search-suggest');
         var listSearchContainer = $(searchListContainer).find('.list-suggest');

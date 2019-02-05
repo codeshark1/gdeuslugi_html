@@ -322,6 +322,7 @@ label.checkbox {
 }
 
 .btn-picker {
+  white-space: nowrap;
   &:after {
     content: "";
     width: 12px;height: 7px;
@@ -422,6 +423,8 @@ h1, h2, h3, h4 {line-height: 1.1; font-weight: 500}
 
 .breadcrumbs {
   color: $gray-text;
+  margin-bottom: 25px;
+  &:last-child {margin-bottom: 0;}
   li {
     display: inline-block;
     position: relative;
@@ -441,13 +444,12 @@ h1, h2, h3, h4 {line-height: 1.1; font-weight: 500}
     a {color: $gray-text}
   }
 
-  @media (max-width: $screen-sm-max) {
-    padding: 0 10px;
-    margin-bottom: 30px;
+  @media (max-width: $screen-md-max) {
+    display: none;
   }
   @media (min-width: $screen-sm-min) {
-    margin-bottom: 55px;
-    &:last-child {margin-bottom: 0;}
+    //margin-bottom: 55px;
+    //&:last-child {margin-bottom: 0;}
   }
 }
 
