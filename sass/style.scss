@@ -386,7 +386,7 @@ $sect-mg-neg: 39px;
    CONTENT
    ========================================================================== */
 
-   .h-main {
+.h-main {
 	font-weight: bold;
 	font-size: 24px;
 	@media (min-width: $screen-md-min) {
@@ -465,13 +465,18 @@ $sect-mg-neg: 39px;
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
 	border-radius: 3px;	
 	padding: 20px;	
-	position: relative;
+	position: relative; 
 }
 .h-card {
 	font-size: 16px;
 	font-weight: 500;
 	a {color: $base-text}
 }
+.h-card-second {
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
 .card-offer {
 	max-width: 400px;
 	transition: all .3s;
@@ -481,22 +486,28 @@ $sect-mg-neg: 39px;
 	.price {font-size: 17px; margin-top: 20px;}
 	.user-summary-inline {margin-top: 20px;}
 
-	.img-avatar-wrap {margin: -20px -20px 0 -20px}
+	.img-avatar-wrap {margin: -20px -20px 20px -20px}
 }
 .footer-card {
 	border-top: 1px solid $gray-border;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	padding-top: 20px;
 	position: absolute;
 	left: 0;bottom: 0;right: 0;
 	padding: 20px;
+	text-align: center;
+}
+.card-order {
+	.footer-card {justify-content: space-between;}
 }
 .img-avatar-wrap {
 	position: relative;
-	.image {width: 100%;}
-	.userpic {}
-	.rating {}
+	background: $gray-light;
+	padding-bottom: 40px;
+	.image {height: 200px; background-repeat: no-repeat;background-size: cover; background-position: center center;}
+	.userpic {width: 80px;height: 80px; position: absolute;bottom: 0;left: 20px; font-size: 20px; line-height: 75px;}
+	.rating {position: absolute; bottom: 11px; left: 110px; font-size: 14px;}
 }
 .time-left {font-size: 14px; color: $gray-text;
 	.icon {margin-right: 5px;}
