@@ -234,18 +234,21 @@ function show_pass() {
             $(this).parent('.menu-item').addClass('active').siblings().removeClass('active');
             if( ! $(this).next('.sub-menu').length ) {
                 close_modal();
+                var id = $('body').find(target_data).attr('id');
+
                 if ( $('body').find(target_data).is('input') ) {
-                    $('body').find(target_data).val($(this).text()).next('.chosen-value').val( $(this).data('value') );
+                    $('body').find(target_data).val($(this).text());
                 } else {
-                    $('body').find(target_data).text($(this).text()).next('.chosen-value').val( $(this).data('value') );
+                    $('body').find(target_data).text($(this).text());                    
                 }
+                $('body').find("#"+id+"-input").val($(this).data('value'));
                 /* if ( $('body').find("[data-triggerid='"+target_data+"']").is('input') ) {
                     $('body').find("[data-triggerid='"+target_data+"']").val($(this).text()).next('.chosen-value').val( $(this).data('value') );
                 } else {
                     $('body').find("[data-triggerid='"+target_data+"']").text($(this).text()).next('.chosen-value').val( $(this).data('value') );
                 } */                
             }
-            
+
             if( $('#menu-directions').length ) {
                 var linkMasters = $('#menu-directions .masters a').attr('href');
                 var linkMastersTrimmed = linkMasters.replace(/\d+$/g, "");
