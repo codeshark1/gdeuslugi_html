@@ -263,9 +263,14 @@ $sect-mg-neg: 39px;
 	padding: 0 20px;
 	height: 56px;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+    align-content: center;
+    align-items: center;
 	margin-bottom: 10px;
+	color: $main;
+	.btn-link {display: inline-block; margin: 0 5px;
+		&:first-child {margin-left: 0;}
+		&:last-child {margin-right: 0;}
+	}
 	@media (min-width: $screen-lg-min) {
 		height: 87px;
 	}	
@@ -478,7 +483,6 @@ $sect-mg-neg: 39px;
 }
 
 .card-offer {
-	//max-width: 400px;
 	transition: all .3s;
 	margin-bottom: 10px;
 	padding-bottom: 80px; //for footer
@@ -537,6 +541,9 @@ $sect-mg-neg: 39px;
 	}
 }
 .row-listing-main {
+	@media (max-width: $screen-xs-max) {
+		.card-offer {margin-left: -20px;margin-right: -20px;}
+	}
 	@media (min-width: $screen-sm-min) {
 		display: flex;
 		justify-content: space-between;
@@ -549,9 +556,26 @@ $sect-mg-neg: 39px;
 .nav-serv-mast {
 	margin-bottom: 10px;
 	@media (max-width: $screen-md-max) {
-
+		background: #3B464B;
+		margin: 0 -20px;
+		padding-left: 15px;
+		position: relative;
+		top: -20px;
+		.num {display: none;}
+		.btn, .btn.grayed {color: #fff;
+			border: 4px solid transparent;
+			padding: 10px 5px;
+			border-width: 4px 0;
+		}
+		&.services {
+			.btn:first-child {border-bottom-color: $main}
+		}
+		&.masters {
+			.btn:last-child {border-bottom-color: $main}
+		}		
 	}
 	@media (min-width: $screen-lg-min) {
+		.num {margin-left: 10px;}
 		.indicator {
 			background: #999;
 			border-radius: 3px;
