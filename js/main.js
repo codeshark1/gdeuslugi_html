@@ -256,11 +256,11 @@ function show_pass() {
 
                 var linkServices = $('#menu-directions .services a').attr('href');
                 var linkServivesTrimmed = linkServices.replace(/\d+$/g, "");
-                $('#menu-directions .masters a').attr('href', linkServivesTrimmed + $(this).data('value'));
+                $('#menu-directions .services a').attr('href', linkServivesTrimmed + $(this).data('value'));
                 
                 var linkOrders = $('#menu-directions .orders a').attr('href');
                 var linkOrdersTrimmed = linkOrders.replace(/\d+$/g, "");
-                $('#menu-directions .masters a').attr('href', linkOrdersTrimmed + $(this).data('value'));                
+                $('#menu-directions .orders a').attr('href', linkOrdersTrimmed + $(this).data('value'));                
             }
         });
     }
