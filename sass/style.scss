@@ -267,13 +267,14 @@ $sect-mg-neg: 39px;
     align-items: center;
 	margin-bottom: 10px;
 	color: $main;
-	.btn-link {display: inline-block; margin: 0 5px;
+	.btn-link {
+		display: inline-block; margin: 0 5px;
 		&:first-child {margin-left: 0;}
 		&:last-child {margin-right: 0;}
 	}
 	@media (min-width: $screen-lg-min) {
 		height: 87px;
-	}	
+	}
 }
 .menu-main-user {
 	margin: 0 -14px;
