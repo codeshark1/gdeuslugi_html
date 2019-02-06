@@ -1646,9 +1646,16 @@ a, svg, path, button {
     display: inline-block;
     font-size: 14px; }
 
-@media (min-width: 992px) {
-  .row-main {
-    display: flex; }
+.row-main {
+  display: flex; }
+  @media (max-width: 991px) {
+    .row-main {
+      flex-direction: column; }
+      .row-main .col-content {
+        order: 2; }
+      .row-main .col-sidebar {
+        order: 1; } }
+  @media (min-width: 992px) {
     .row-main .col-content {
       flex-grow: 1; }
     .row-main .col-sidebar {

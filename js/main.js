@@ -245,11 +245,19 @@ function show_pass() {
                     $('body').find("[data-triggerid='"+target_data+"']").text($(this).text()).next('.chosen-value').val( $(this).data('value') );
                 } */                
             }
-
+            
             if( $('#menu-directions').length ) {
                 var linkMasters = $('#menu-directions .masters a').attr('href');
-                var trimmed = linkMasters.replace(/\d+$/g, "");
-                console.log(trimmed);
+                var linkMastersTrimmed = linkMasters.replace(/\d+$/g, "");
+                $('#menu-directions .masters a').attr('href', linkMastersTrimmed + $(this).data('value'));
+
+                var linkServices = $('#menu-directions .services a').attr('href');
+                var linkServivesTrimmed = linkServices.replace(/\d+$/g, "");
+                $('#menu-directions .masters a').attr('href', linkServivesTrimmed + $(this).data('value'));
+                
+                var linkOrders = $('#menu-directions .orders a').attr('href');
+                var linkOrdersTrimmed = linkOrders.replace(/\d+$/g, "");
+                $('#menu-directions .masters a').attr('href', linkOrdersTrimmed + $(this).data('value'));                
             }
         });
     }

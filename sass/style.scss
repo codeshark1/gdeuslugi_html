@@ -525,8 +525,13 @@ $sect-mg-neg: 39px;
 }
 
 .row-main {
+	display: flex;
+	@media (max-width: $screen-md-max) {
+		flex-direction: column;
+		.col-content {order: 2}
+		.col-sidebar {order: 1}
+	}
 	@media (min-width: $screen-lg-min) {
-		display: flex;
 		.col-content {flex-grow: 1}
 		.col-sidebar {width: 262px;flex-grow: 0;flex-shrink: 0; margin-left: 40px;}
 	}
