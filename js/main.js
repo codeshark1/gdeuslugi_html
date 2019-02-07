@@ -465,7 +465,7 @@ jQuery(document).ready(function($){
         var item = document.createElement('li');
         var spanTag = document.createElement('span');
         var link = document.createElement('a');
-        var routeTo = "http://gdeuslugidev.ru/search/" + entity + "/" + id;
+        var routeTo = "http://gdeuslugidev.ru/" + entity + "/" + id;
 
         if (tag === 'Категория') {
             item.classList.add('category')
@@ -502,15 +502,15 @@ jQuery(document).ready(function($){
                 $(listSearchContainer).css('height', '500px')
                 $(listSearchContainer).empty();
                 $(categories).each(function (idx, item) {
-                    var element = createListItem(item, 'Категория', 'categories', value);
+                    var element = createListItem(item, 'Категория', 'category', value);
                     $(listSearchContainer).append(element)
                 })
                 $(orders).each(function (idx, item) {
-                    var element = createListItem(item, 'Заказ', 'orders', value);
+                    var element = createListItem(item, 'Заказ', 'order', value);
                     $(listSearchContainer).append(element)
                 })
                 $(services).each(function (idx, item) {
-                    var element = createListItem(item, 'Услуга', 'services', value);
+                    var element = createListItem(item, 'Услуга', 'service', value);
                     $(listSearchContainer).append(element)
                 });
             });
