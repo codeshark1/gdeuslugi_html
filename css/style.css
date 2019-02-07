@@ -1757,6 +1757,14 @@ a, svg, path, button {
     .nav-serv-mast.masters .indicator:after {
       right: 0; } }
 
+.listing-noresults {
+  background: #F3F3F3;
+  text-align: center;
+  padding: 60px 20px; }
+  .listing-noresults .heading {
+    margin: 40px 0;
+    color: #999999; }
+
 /* ==========================================================================
 	FORMS 
 ========================================================================== */

@@ -616,7 +616,12 @@ $sect-mg-neg: 39px;
 	}
 }
 
-
+.listing-noresults {
+	background: $gray-light;
+	text-align: center;
+	padding: 60px 20px;
+	.heading {margin: 40px 0; color: $gray-text}
+}
 /* ==========================================================================
 	FORMS 
 ========================================================================== */
