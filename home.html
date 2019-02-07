@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Шапка</title>
+    <title>Главная</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&amp;subset=cyrillic-ext" rel="stylesheet"> 
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -81,8 +81,78 @@
     </ul>        
 </nav><!-- /.menu-wrapper -->
 
-<main>
-    
+<main class="content-main">
+    <div class="container">
+        <h1 class="h-page h-center">Проверенные мастера в <a href="#" class="btn-picker modal-trigger" data-trigger="#modal-cities" id="trigger-city-listing">Санкт-Петербурге</a>
+            <input type="hidden" id="trigger-city-listing-input" class="chosen-value">
+        </h1>
+
+        <form action="/" class="search-center">
+            <input type="text" placeholder="Услуга или мастер">
+            <button type="submit" class="btn btn-main">Найти мастера</button>
+        </form>
+
+        <hr>
+
+        <section>
+            <h2 class="h-page h-center">Выбирайте среди 400 000 мастеров и 500 услуг</h2>
+            <ul class="list-categs-xl">
+                <li class="menu-item"><a href="#">ИТ-услуги</a> <span class="number">337</span></li>
+                <li class="menu-item"><a href="#">Бытовые услуги, ремонт техники</a> <span class="number">467</span></li>
+                <li class="menu-item"><a href="#">Услуги пошива</a> <span class="number">461</span></li>
+                <li class="menu-item"><a href="#">Отделочные работы</a> <span class="number">921</span></li>
+                <li class="menu-item"><a href="#">Инженерно-монтажные работы</a> <span class="number">812</span></li>
+                <li class="menu-item"><a href="#">Благоустройство территории</a> <span class="number">205</span></li>
+                <li class="menu-item"><a href="#">Судостроительные услуги</a> <span class="number">71</span></li>
+                <li class="menu-item"><a href="#">ИТ-услуги</a> <span class="number">337</span></li>
+                <li class="menu-item"><a href="#">Бытовые услуги, ремонт техники</a> <span class="number">467</span></li>
+                <li class="menu-item"><a href="#">Услуги пошива</a> <span class="number">461</span></li>
+                <li class="menu-item"><a href="#">Отделочные работы</a> <span class="number">921</span></li>
+                <li class="menu-item"><a href="#">Инженерно-монтажные работы</a> <span class="number">812</span></li>
+                <li class="menu-item"><a href="#">Благоустройство территории</a> <span class="number">205</span></li>
+                <li class="menu-item"><a href="#">Судостроительные услуги</a> <span class="number">71</span></li>
+                <li class="menu-item"><a href="#">ИТ-услуги</a> <span class="number">337</span></li>
+                <li class="menu-item"><a href="#">Бытовые услуги, ремонт техники</a> <span class="number">467</span></li>
+                <li class="menu-item"><a href="#">Услуги пошива</a> <span class="number">461</span></li>
+                <li class="menu-item"><a href="#">Отделочные работы</a> <span class="number">921</span></li>
+                <li class="menu-item"><a href="#">Инженерно-монтажные работы</a> <span class="number">812</span></li>
+                <li class="menu-item"><a href="#">Благоустройство территории</a> <span class="number">205</span></li>
+                <li class="menu-item"><a href="#">Судостроительные услуги</a> <span class="number">71</span></li>                                
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 class="h-page h-center">Как это работает</h2>
+            <ul class="list-howitworks">
+                <li class="list-item">
+                    <svg data-src="img/howitworks1.svg"></svg>
+                    <p class="title">Заполните критерии подбора</p>
+                </li>
+                <li class="list-item">
+                    <svg data-src="img/howitworks2.svg"></svg>
+                    <p class="title">Посмотрите анкеты подобранных специалистов</p>
+                </li>
+                <li class="list-item">
+                    <svg data-src="img/howitworks3.svg"></svg>
+                    <p class="title">Общайтесь в чате и выберите подходящего</p>
+                </li>                                
+            </ul>
+        </section>
+
+        <form action="/" class="search-center">
+            <input type="text" placeholder="Услуга или мастер">
+            <button type="submit" class="btn btn-main">Найти мастера</button>
+        </form>        
+
+        <hr>
+
+        <section>
+            <h2 class="h-page">Отзывы</h2>
+
+        </section>
+    </div><!-- /.container -->
 </main>
 
 <div class="modal-container" id="modal-cities">
