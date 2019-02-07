@@ -1641,7 +1641,11 @@ a, svg, path, button {
     height: 200px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center; }
+    background-position: center center;
+    background-color: #E7E7E7;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
   .img-avatar-wrap .userpic {
     width: 80px;
     height: 80px;

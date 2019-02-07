@@ -528,7 +528,16 @@ $sect-mg-neg: 39px;
 	position: relative;
 	background: $gray-light;
 	padding-bottom: 40px;
-	.image {height: 200px; background-repeat: no-repeat;background-size: cover; background-position: center center;}
+	.image {
+		height: 200px; 
+		background-repeat: no-repeat;
+		background-size: cover; 
+		background-position: center center;
+		background-color: #E7E7E7;
+		display: flex;
+		justify-content: center;
+		align-items: center;		
+	}
 	.userpic {width: 80px;height: 80px; position: absolute;bottom: 0;left: 20px; font-size: 20px; line-height: 75px;}
 	.rating {position: absolute; bottom: 11px; left: 110px; font-size: 14px;}
 }
