@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Листинг мастеров</title>    
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body class="user-loggedin">
+<!--[if lt IE 10]>
+    <p class="browserupgrade">Вы используете <b>устаревший</b> браузер. Пожалуйста, <a href="http://browsehappy.com/?locale=ru_ru">обновите свой браузер</a> чтобы улучшить опыт работы с сайтом.</p>
+<![endif]-->
+
+<header class="header-site">
+    <div class="header-level-1">
+        <div class="row-header">
+            <div class="col-logo">
+                <a href="#" class="logo-site">Где Услуги</a>
+            </div><!-- /.col-logo -->
+            <div class="col-search">
+                <form action="/" class="form-search">
+                    <input class="search-field" type="search" placeholder="Поиск...">
+                    <p class="search-field-btn"></p>
+                    <div class="form-search-suggest" id="js-search-suggest">
+                        <ul class="list-suggest">                                               
+                            <li class="list-item category"><a href="#"><mark>Уборка</mark> помещений <span class="type">Категория</span></a></li>
+                            <li class="list-item category"><a href="#"><mark>Уборка</mark> квартир <span class="type">Категория</span></a></li>
+                            <li class="list-item category"><a href="#"><mark>Уборка</mark> офисов <span class="type">Категория</span></a></li>
+                            <li class="list-item"><a href="#"><mark>Уборка</mark> территории <span class="type">Статья</span></a></li>
+                            <li class="list-item"><a href="#">Генеральная <mark>уборка</mark> бассейнов и водоемов <span class="type">Услуга</span></a></li>
+                            <li class="list-item"><a href="#"><mark>Уборка</mark> после ремонта <span class="type">Заказ</span></a></li>
+                            <li class="list-item"><a href="#">Как выбрать <mark>убор</mark>щицу <span class="type">Статья</span></a></li>
+                        </ul>
+                    </div>
+                </form>
+                <div class="button d-lg-none">
+                    <button class="btn btn-settings" id="js-btn-filter"><svg class="icon" data-src="img/settings.svg"></svg> <i class="number">3</i></button>
+                </div>
+            </div><!-- /.col-search -->
+            <div class="col-actions">
+                <div class="links d-none d-sm-block">
+                    <a href="#" class="btn-link">Создать заказ</a>
+                    <div class="user-block">
+                        <p href="#" class="btn-link"><i class="userpic">В</i>мой профиль</p>
+                        <ul class="list-user">
+                            <li class="list-item"><a href="#" class="link-icon"><svg data-src="img/user.svg"></svg>Личный кабинет</a></li>
+                            <li class="list-item"><a href="#" class="link-icon"><svg data-src="img/logout.svg"></svg>Выйти</a></li>
+                        </ul>
+                    </div><!-- /.user -->
+                </div>
+                <button class="btn-menu" id="js-btn-menu"><span></span><span></span><span></span></button>                
+            </div><!-- /.col-actions -->
+        </div><!-- /.row-header -->
+    </div><!-- /.level-1 -->
+    <div class="header-level-2"></div><!-- /.level-2 -->
+</header>
+
+<nav class="menu-main menu-top" id="js-menu-main">
+    <div class="menu-main-user">
+        <div class="userpic"><img src="img/user.jpg" alt="pic"></div>
+
+        <div class="rating rating-mini-horiz">
+            <i class="star"><svg data-src="img/star.svg"></svg></i>
+            <span class="rating-num">4,7</span>
+        </div>
+
+        <div class="menu menu-main-user-heading" id="js-menu-main-user-heading">
+            <p class="user-name">Александр</p>
+            <svg class="icon" data-src="img/arrow-down.svg"></svg>
+        </div>
+
+        <div class="menu-main-user-actions" id="js-menu-main-user-actions">
+            <ul class="list-user">
+                <li class="menu-item"><a href="#" class="link-icon"><svg data-src="img/user.svg"></svg>Личный кабинет</a></li>
+                <li class="menu-item"><a href="#" class="link-icon"><svg data-src="img/logout.svg"></svg>Выйти</a></li>
+            </ul>
+        </div>
+    </div><!-- /.menu-main-user -->
+
+    <div class="location menu-item">
+        <svg class="icon" data-src="img/location.svg"></svg>
+        <p href="#" class="town modal-trigger" data-trigger="#modal-cities">Гусь-Хрустальный</p>
+        <input type="hidden" id="select-city-input" class="chosen-value">
+    </div>
+
+    <hr>
+
+    <ul class="menu" id="menu-directions">
+        <li class="menu-item masters"><a href="http://gdeuslugidev.ru/masters/search?city=123">Мастера</a></li>
+        <li class="menu-item services"><a href="http://gdeuslugidev.ru/service/search?city=123">Услуги</a></li>
+        <li class="menu-item orders"><a href="http://gdeuslugidev.ru/orders/search?city=123">Заказы</a></li>
+    </ul>
+
+    <hr>  
+    
+    <ul class="menu">
+        <li class="menu-item"><a href="#">Создать заказ</a></li>
+        <li class="menu-item"><a href="#">Создать услугу</a></li>
+    </ul>        
+</nav><!-- /.menu-wrapper -->
+
+<main class="content-main">
+    <div class="container">
+        <div class="row-main bx-mg">
+            <div class="col-content">
+                <div class="h-page">
+                    893 мастера по 
+                    <a href="#" class="btn-picker modal-trigger" data-trigger="#modal-categs" id="trigger-categs-listing">сантехнике</a> 
+                    <input type="hidden" id="trigger-categs-listing-input" class="chosen-value">
+                    в 
+                    <a href="#" class="btn-picker modal-trigger" data-trigger="#modal-cities" id="trigger-city-listing">Санкт-Петербурге</a>
+                    <input type="hidden" id="trigger-city-listing-input" class="chosen-value">
+                </div>
+
+                <nav class="breadcrumbs">
+                    <ul>
+                        <li><a href="#">GdeUslugi</a></li>
+                        <li><a href="#">Мастера</a></li>
+                        <li><a href="#">Сантехника</a></li>
+                        <li>В Санкт-Петербурге</li>
+                    </ul>
+                </nav>
+
+                <div class="listing-noresults">
+                    <svg class="icon" data-src="img/cat-bit-remont.svg"></svg>
+                    <p class="heading">Ничего не найдено в выбранной категории по указанному запросу</p>
+                    <a href="#" class="btn btn-main">уточнить поиск</a>
+                </div><!-- /.listing-noresults -->
+
+                <div class="row-listing-main">
+                    <div class="card card-link card-offer">
+                        <div class="img-avatar-wrap">
+                            <div class="image" style="background-image: url(img/photo-listing-1.jpg)"></div><!-- /.image -->                            
+                            <a href="#" class="userpic"><img src="img/user.jpg" alt="pic"></a>
+                            <div class="rating rating-mini-horiz">
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <span class="rating-num">4.7</span>
+                            </div>
+                        </div><!-- /.img-avatar-wrap -->                        
+
+                        <p class="h-card"><a href="#">Апполинарий Геншенфельд</a></p>
+
+                        <ul class="list-services-card">
+                            <li class="list-item"><span>Установка ванной</span><span>15 000 ₽</span></li>
+                            <li class="list-item"><span>Установка смесителя</span><span>По договоренности</span></li>
+                            <li class="list-item"><span>Монтаж крепежных систем</span><span>По договоренности</span></li>
+                        </ul>
+
+                        <a href="#" class="h-card-second">Все услуги и цены</a>
+
+                        <div class="footer-card">
+                            <a href="#" class="btn btn-link modal-trigger" data-trigger="#modal-tel-1">контакты</a>
+                        </div><!-- /.footer-card -->
+
+                        <div class="modal-container modal-tel" id="modal-tel-1">
+                            <div class="modal-bg">
+                                <div class="modal-window">
+                                    <div class="wrapper">
+                                        <button type="button" class="close btn-close">
+                                            <svg data-src="img/x.svg"></svg>
+                                        </button>
+                                        <div class="modal-content">
+                                            <p class="h-modal">Апполинарий</p>
+                                            <p class="tel">+7 987 654-32-12</p>
+                                            <button type="button" class="btn btn-text">Скопировать</button>
+                                            <button type="button" class="btn btn-main">Позвонить</button>
+                                        </div><!-- modal-content -->
+                                    </div><!-- /.wrapper -->
+                                </div><!-- /#modal-window-->    
+                            </div><!-- /.modal-bg -->
+                        </div><!-- /.modal-container -->                        
+                    </div><!-- /.card -->
+                    <div class="card card-link card-offer">
+                        <div class="img-avatar-wrap">
+                            <div class="image" style="background-image: url(img/photo-listing-1.jpg)"></div><!-- /.image -->                            
+                            <span href="#" class="userpic">В</span>
+                            <div class="rating rating-mini-horiz">
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <span class="rating-num">4.7</span>
+                            </div>
+                        </div><!-- /.img-avatar-wrap -->                        
+
+                        <p class="h-card"><a href="#">Апполинарий Геншенфельд</a></p>
+
+                        <ul class="list-services-card">
+                            <li class="list-item"><span>Установка ванной</span><span>15 000 ₽</span></li>
+                            <li class="list-item"><span>Установка смесителя</span><span>По договоренности</span></li>
+                            <li class="list-item"><span>Монтаж крепежных систем</span><span>По договоренности</span></li>
+                        </ul>
+
+                        <a href="#" class="h-card-second">Все услуги и цены</a>
+
+                        <div class="footer-card">
+                            <a href="#" class="btn btn-link modal-trigger" data-trigger="#modal-tel-1">контакты</a>
+                        </div><!-- /.footer-card -->
+
+                        <div class="modal-container modal-tel" id="modal-tel-1">
+                            <div class="modal-bg">
+                                <div class="modal-window">
+                                    <div class="wrapper">
+                                        <button type="button" class="close btn-close">
+                                            <svg data-src="img/x.svg"></svg>
+                                        </button>
+                                        <div class="modal-content">
+                                            <p class="h-modal">Апполинарий</p>
+                                            <p class="tel">+7 987 654-32-12</p>
+                                            <button type="button" class="btn btn-text">Скопировать</button>
+                                            <button type="button" class="btn btn-main">Позвонить</button>
+                                        </div><!-- modal-content -->
+                                    </div><!-- /.wrapper -->
+                                </div><!-- /#modal-window-->    
+                            </div><!-- /.modal-bg -->
+                        </div><!-- /.modal-container -->                        
+                    </div><!-- /.card -->      
+                    <div class="card card-link card-offer">
+                        <div class="img-avatar-wrap">
+                            <div class="image" style="background-image: url(img/photo-listing-1.jpg)"></div><!-- /.image -->                            
+                            <span href="#" class="userpic"><img src="img/user.jpg" alt="pic"></span>
+                            <div class="rating rating-mini-horiz">
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <span class="rating-num">4.7</span>
+                            </div>
+                        </div><!-- /.img-avatar-wrap -->                        
+
+                        <p class="h-card"><a href="#">Апполинарий Геншенфельд</a></p>
+
+                        <ul class="list-services-card">
+                            <li class="list-item"><span>Установка ванной</span><span>15 000 ₽</span></li>
+                            <li class="list-item"><span>Установка смесителя</span><span>По договоренности</span></li>
+                            <li class="list-item"><span>Монтаж крепежных систем</span><span>По договоренности</span></li>
+                        </ul>
+
+                        <a href="#" class="h-card-second">Все услуги и цены</a>
+
+                        <div class="footer-card">
+                            <a href="#" class="btn btn-link modal-trigger" data-trigger="#modal-tel-1">контакты</a>
+                        </div><!-- /.footer-card -->
+
+                        <div class="modal-container modal-tel" id="modal-tel-1">
+                            <div class="modal-bg">
+                                <div class="modal-window">
+                                    <div class="wrapper">
+                                        <button type="button" class="close btn-close">
+                                            <svg data-src="img/x.svg"></svg>
+                                        </button>
+                                        <div class="modal-content">
+                                            <p class="h-modal">Апполинарий</p>
+                                            <p class="tel">+7 987 654-32-12</p>
+                                            <button type="button" class="btn btn-text">Скопировать</button>
+                                            <button type="button" class="btn btn-main">Позвонить</button>
+                                        </div><!-- modal-content -->
+                                    </div><!-- /.wrapper -->
+                                </div><!-- /#modal-window-->    
+                            </div><!-- /.modal-bg -->
+                        </div><!-- /.modal-container -->                        
+                    </div><!-- /.card -->
+                    <div class="card card-link card-offer">
+                        <div class="img-avatar-wrap">
+                            <div class="image" style="background-image: url(img/photo-listing-1.jpg)"></div><!-- /.image -->                            
+                            <span href="#" class="userpic">В</span>
+                            <div class="rating rating-mini-horiz">
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <span class="rating-num">4.7</span>
+                            </div>
+                        </div><!-- /.img-avatar-wrap -->                        
+
+                        <p class="h-card"><a href="#">Апполинарий Геншенфельд</a></p>
+
+                        <ul class="list-services-card">
+                            <li class="list-item"><span>Установка ванной</span><span>15 000 ₽</span></li>
+                            <li class="list-item"><span>Установка смесителя</span><span>По договоренности</span></li>
+                            <li class="list-item"><span>Монтаж крепежных систем</span><span>По договоренности</span></li>
+                        </ul>
+
+                        <a href="#" class="h-card-second">Все услуги и цены</a>
+
+                        <div class="footer-card">
+                            <a href="#" class="btn btn-link modal-trigger" data-trigger="#modal-tel-1">контакты</a>
+                        </div><!-- /.footer-card -->
+
+                        <div class="modal-container modal-tel" id="modal-tel-1">
+                            <div class="modal-bg">
+                                <div class="modal-window">
+                                    <div class="wrapper">
+                                        <button type="button" class="close btn-close">
+                                            <svg data-src="img/x.svg"></svg>
+                                        </button>
+                                        <div class="modal-content">
+                                            <p class="h-modal">Апполинарий</p>
+                                            <p class="tel">+7 987 654-32-12</p>
+                                            <button type="button" class="btn btn-text">Скопировать</button>
+                                            <button type="button" class="btn btn-main">Позвонить</button>
+                                        </div><!-- modal-content -->
+                                    </div><!-- /.wrapper -->
+                                </div><!-- /#modal-window-->    
+                            </div><!-- /.modal-bg -->
+                        </div><!-- /.modal-container -->                        
+                    </div><!-- /.card -->          
+                    <div class="card card-link card-offer">
+                        <div class="img-avatar-wrap">
+                            <div class="image" style="background-image: url(img/photo-listing-1.jpg)"></div><!-- /.image -->                            
+                            <span href="#" class="userpic"><img src="img/user.jpg" alt="pic"></span>
+                            <div class="rating rating-mini-horiz">
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <span class="rating-num">4.7</span>
+                            </div>
+                        </div><!-- /.img-avatar-wrap -->                        
+
+                        <p class="h-card"><a href="#">Апполинарий Геншенфельд</a></p>
+
+                        <ul class="list-services-card">
+                            <li class="list-item"><span>Установка ванной</span><span>15 000 ₽</span></li>
+                            <li class="list-item"><span>Установка смесителя</span><span>По договоренности</span></li>
+                            <li class="list-item"><span>Монтаж крепежных систем</span><span>По договоренности</span></li>
+                        </ul>
+
+                        <a href="#" class="h-card-second">Все услуги и цены</a>
+
+                        <div class="footer-card">
+                            <a href="#" class="btn btn-link modal-trigger" data-trigger="#modal-tel-1">контакты</a>
+                        </div><!-- /.footer-card -->
+
+                        <div class="modal-container modal-tel" id="modal-tel-1">
+                            <div class="modal-bg">
+                                <div class="modal-window">
+                                    <div class="wrapper">
+                                        <button type="button" class="close btn-close">
+                                            <svg data-src="img/x.svg"></svg>
+                                        </button>
+                                        <div class="modal-content">
+                                            <p class="h-modal">Апполинарий</p>
+                                            <p class="tel">+7 987 654-32-12</p>
+                                            <button type="button" class="btn btn-text">Скопировать</button>
+                                            <button type="button" class="btn btn-main">Позвонить</button>
+                                        </div><!-- modal-content -->
+                                    </div><!-- /.wrapper -->
+                                </div><!-- /#modal-window-->    
+                            </div><!-- /.modal-bg -->
+                        </div><!-- /.modal-container -->                        
+                    </div><!-- /.card -->
+                    <div class="card card-link card-offer">
+                        <div class="img-avatar-wrap">
+                            <div class="image" style="background-image: url(img/photo-listing-1.jpg)"></div><!-- /.image -->                            
+                            <span href="#" class="userpic">В</span>
+                            <div class="rating rating-mini-horiz">
+                                <i class="star"><svg data-src="img/star.svg"></svg></i>
+                                <span class="rating-num">4.7</span>
+                            </div>
+                        </div><!-- /.img-avatar-wrap -->                        
+
+                        <p class="h-card"><a href="#">Апполинарий Геншенфельд</a></p>
+
+                        <ul class="list-services-card">
+                            <li class="list-item"><span>Установка ванной</span><span>15 000 ₽</span></li>
+                            <li class="list-item"><span>Установка смесителя</span><span>По договоренности</span></li>
+                            <li class="list-item"><span>Монтаж крепежных систем</span><span>По договоренности</span></li>
+                        </ul>
+
+                        <a href="#" class="h-card-second">Все услуги и цены</a>
+
+                        <div class="footer-card">
+                            <a href="#" class="btn btn-link modal-trigger" data-trigger="#modal-tel-1">контакты</a>
+                        </div><!-- /.footer-card -->
+
+                        <div class="modal-container modal-tel" id="modal-tel-1">
+                            <div class="modal-bg">
+                                <div class="modal-window">
+                                    <div class="wrapper">
+                                        <button type="button" class="close btn-close">
+                                            <svg data-src="img/x.svg"></svg>
+                                        </button>
+                                        <div class="modal-content">
+                                            <p class="h-modal">Апполинарий</p>
+                                            <p class="tel">+7 987 654-32-12</p>
+                                            <button type="button" class="btn btn-text">Скопировать</button>
+                                            <button type="button" class="btn btn-main">Позвонить</button>
+                                        </div><!-- modal-content -->
+                                    </div><!-- /.wrapper -->
+                                </div><!-- /#modal-window-->    
+                            </div><!-- /.modal-bg -->
+                        </div><!-- /.modal-container -->                        
+                    </div><!-- /.card -->                                                                
+                </div><!-- /.row-listing-main -->
+
+
+                <div class="breadcrumbs">
+                    <ul>
+                        <li><a href="#">GdeUslugi</a></li>
+                        <li><a href="#">Мастера</a></li>
+                        <li><a href="#">Сантехника</a></li>
+                        <li>В Санкт-Петербурге</li>
+                    </ul>
+                </div>                
+            </div><!-- /.col-content -->
+
+            <aside class="col-sidebar">
+                <nav class="nav-serv-mast masters">
+                    <a href="#" class="btn btn-link">Услуги <span class="num">856</span></a>
+                    <span class="indicator"></span>
+                    <a href="#" class="btn btn-link grayed">Мастера <span class="num">85</span></a>
+                </nav>
+
+                <div class="listing-filter" id="js-listing-filter">
+                    <div class="filter-header d-lg-none">
+                        <p class="btn btn-link grayed" id="js-btn-filter-close">отмена</p>
+                        <h5 class="heading-filter-panel">Фильтр</h5>
+                        <p class="btn btn-link">Готово</p>
+                    </div><!-- /.filter-header -->
+                    <form action="/" class="listing-filter_i">
+                        <div class="accord-filter filter-select">
+                            <h6 class="heading-filter heading-filter-sort">Сортировка <div class="hint"></div></h6>
+                            <div class="content list-filter list-filter-sort">
+                                <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По стоимости <svg class="icon" data-src="img/decr.svg"></svg></span></label>
+                                <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По стоимости <svg class="icon" data-src="img/incr.svg"></svg></span></label>
+                                <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По рейтингу <svg class="icon" data-src="img/decr.svg"></svg></span></label>
+                                <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По рейтингу <svg class="icon" data-src="img/incr.svg"></svg></span></label>
+                                <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По отзывам <svg class="icon" data-src="img/decr.svg"></svg></span></label>
+                                <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По отзывам <svg class="icon" data-src="img/incr.svg"></svg></span></label>
+                                <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По дате <svg class="icon" data-src="img/decr.svg"></svg></span></label>
+                                <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По дате <svg class="icon" data-src="img/incr.svg"></svg></span></label>
+                                <label class="list-filter-item"><input type="radio" name="filter-sort"><span class="value">По умолчанию</span></label>
+                            </div><!-- /.content -->
+                        </div><!-- /.accord-filter -->
+
+                        <div class="accord-filter">
+                            <h6 class="heading-filter heading-filter-price">Стоимость</h6>
+                            <div class="content">
+                                <div class="values-row">
+                                    <input id="slider-range-min" class="value sliderValue" data-index="0" value="от 1 789 ₽" autocomplete="off">
+                                    <input id="slider-range-max" class="value sliderValue" data-index="1" value="до 11 789 ₽" autocomplete="off">
+                                </div><!-- /.values-row -->
+                                <div id="slider-range" class="slider-range"></div>
+                            </div><!-- /.content -->
+                        </div><!-- /.accord-filter -->
+
+                        <div class="accord-filter sec-filter filter-select">
+                            <h6 class="heading-filter heading-filter-rating">Рейтинг от <div class="hint"></div></h6>
+                            <div class="content list-filter list-filter-rating">
+                                <label class="list-filter-item">
+                                    <input type="radio" name="filter-rating">
+                                    <div class="value rating-filter rating-5"><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg></div>
+                                </label>
+                                <label class="list-filter-item">
+                                    <input type="radio" name="filter-rating">
+                                    <div class="value rating-filter rating-4"><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg></div>
+                                </label>
+                                <label class="list-filter-item">
+                                    <input type="radio" name="filter-rating">
+                                    <div class="value rating-filter rating-3"><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg></div>
+                                </label>
+                                <label class="list-filter-item">
+                                    <input type="radio" name="filter-rating">
+                                    <div class="value rating-filter rating-2"><svg data-src="img/star.svg"></svg><svg data-src="img/star.svg"></svg></div>
+                                </label>
+                            </div><!-- /.content -->
+                        </div><!-- /.accord-filter -->
+
+                        <label class="form-row checkbox checkbox-accept sec-filter"><input type="checkbox">Показать выполненные</label>                    
+                        
+                        <div class="list-tags sec-filter d-none d-lg-block">
+                            <a href="#" class="btn btn-tag">юридические услуги <span class="count">1598</span></a>
+                            <a href="#" class="btn btn-tag">Туалет <span class="count">1598</span></a>
+                            <a href="#" class="btn btn-tag">кухня <span class="count">598</span></a>
+                            <a href="#" class="btn btn-tag">ванна <span class="count">1598</span></a>
+                            <a href="#" class="btn btn-tag">кухня <span class="count">598</span></a>
+                            <a href="#" class="btn btn-tag">Туалет <span class="count">1598</span></a>
+                            <a href="#" class="btn btn-tag">ванна <span class="count">1598</span></a>                        
+                        </div>
+
+                        <div class="buttons-filter">
+                            <button type="button" class="btn btn-cancel"><svg class="icon" data-src="img/x.svg"></svg> сброс</button>
+                            <button type="submit" class="btn btn-main">Показать 283 услуги</button>
+                        </div>
+                    </form><!-- /.listing-filter_i -->
+                </div><!-- /.listing-filter -->
+            </aside><!-- /.col-sidebar -->
+        </div><!-- /.row-main bx-mg-->
+
+        <div class="row-main">
+            <div class="col-content">
+                <article class="article bx-mg">
+                    <h2 class="h-section">Сантехника</h2>
+                    <p>На сайте вы найдете опытного мастера по ремонту и установке сантехники. Подтверждением высокого профессионализма работников является то, что более 90% всех оставленных клиентами отзывов - положительные. Все специалисты имеют большой опыт проведения сантехнических работ, прошли проверку на сервере или сертификацию.</p>
+                    <p>Сегодня сантехник в Санкт-Петербурге – одна из самых востребованных профессий. Ведь практически в каждой квартире в столице и коттедже в подмосковье нужен эксперт по разводке труб, монтажу оборудования и устранению неисправностей. Чтобы сделать правильный выбор, стоит определить, какие именно требуется выполнить сантехработы в вашем доме, подобрать идеальных кандидатов, ознакомиться с рекомендациями и пообщаться с исполнителем.</p>
+                </article>
+
+                <section class="bx-mg">
+                    <h2 class="h-section-color">Заказы по городам</h2>
+                    <div class="list-tags">
+                        <a href="#" class="btn btn-tag">Санкт-петербург</a>
+                        <a href="#" class="btn btn-tag">Выборг</a>
+                        <a href="#" class="btn btn-tag">Павловск</a>
+                        <a href="#" class="btn btn-tag">Пушкин</a>
+                        <a href="#" class="btn btn-tag">Ломоносов</a>
+                        <a href="#" class="btn btn-tag">Санкт-петербург</a>
+                        <a href="#" class="btn btn-tag">Выборг</a>
+                        <a href="#" class="btn btn-tag">Павловск</a>
+                        <a href="#" class="btn btn-tag">Пушкин</a>
+                        <a href="#" class="btn btn-tag">Ломоносов</a>          
+                        <a href="#" class="btn btn-tag">Санкт-петербург</a>
+                        <a href="#" class="btn btn-tag">Выборг</a>
+                        <a href="#" class="btn btn-tag">Павловск</a>
+                    </div><!-- /.list-tags -->
+                </section>
+                <section class="bx-mg">
+                    <h2 class="h-section-color">Заказы по разделам</h2>
+                    <div class="list-tags">
+                        <a href="#" class="btn btn-tag">Электромонтажные работы</a>
+                        <a href="#" class="btn btn-tag">Шиномонтаж</a>
+                        <a href="#" class="btn btn-tag">Маляры</a>
+                        <a href="#" class="btn btn-tag">Электромонтажные работы</a>
+                        <a href="#" class="btn btn-tag">Шиномонтаж</a>
+                        <a href="#" class="btn btn-tag">Маляры</a>
+                        <a href="#" class="btn btn-tag">Электромонтажные работы</a>
+                        <a href="#" class="btn btn-tag">Шиномонтаж</a>
+                        <a href="#" class="btn btn-tag">Маляры</a>
+                        <a href="#" class="btn btn-tag">Электромонтажные работы</a>
+                    </div><!-- /.list-tags -->
+                </section>                          
+            </div><!-- /.col-content -->
+            <div class="col-sidebar"></div><!-- /.col-sidebar -->
+        </div><!-- /.row-main -->
+    </div><!-- /.container -->
+</main>
+
+<footer class="footer-site">
+    <div class="container">
+        <div class="row-footer">
+            <div class="menus-footer-wrapper">
+                <section class="col-footer">
+                    <h6 class="h-footer">Заказчику</h6>
+                    <ul class="list-footer">
+                        <li class="list-item"><a href="#">Создать заказ</a></li>
+                        <li class="list-item"><a href="#">Найти мастера</a></li>
+                        <li class="list-item"><a href="#">Каталог мастеров</a></li>
+                        <li class="list-item"><a href="#">Продвижение заказа</a></li>
+                    </ul>
+                </section><!-- /.col-footer -->
+                <section class="col-footer">
+                    <h6 class="h-footer">Мастеру</h6>
+                    <ul class="list-footer">
+                        <li class="list-item"><a href="#">Создать услугу</a></li>
+                        <li class="list-item"><a href="#">Найти заказ</a></li>
+                        <li class="list-item"><a href="#">Продвижение профиля                    </a></li>
+                    </ul>
+                </section><!-- /.col-footer -->
+                <section class="col-footer col-wider">
+                    <h6 class="h-footer">ГдеУслуги</h6>
+                    <ul class="list-footer cols">
+                        <li class="list-item"><a href="#">О нас</a></li>
+                        <li class="list-item"><a href="#">Наши вакансии</a></li>
+                        <li class="list-item"><a href="#">Блог</a></li>
+                        <li class="list-item"><a href="#">Реклама на сайте</a></li>
+                        <li class="list-item"><a href="#">API</a></li>
+                        <li class="list-item"><a href="#">Правила работы с сайтом</a></li>
+                        <li class="list-item"><a href="#">Контакты</a></li>
+                    </ul>
+                </section><!-- /.col-footer -->
+            </div><!-- /.menus-footer-wrapper -->
+
+            <div class="misc-footer-wrapper">
+                <ul class="list-social-footer">
+                    <li class="list-item"><a href="#" class="vk"><svg data-src="img/vk.svg"></svg></a></li>
+                    <li class="list-item"><a href="#" class="ok"><svg data-src="img/ok.svg"></svg></a></li>
+                    <li class="list-item"><a href="#" class="fb"><svg data-src="img/fb.svg"></svg></a></li>
+                    <li class="list-item"><a href="#" class="in"><svg data-src="img/in.svg"></svg></a></li>
+                    <li class="list-item"><a href="#" class="tw"><svg data-src="img/tw.svg"></svg></a></li>
+                </ul>
+
+                <div class="bx_18">
+                    <p class="18p">18+</p>
+                </div>
+
+                <p class="copyright">&#169; 2018-2019</p>
+            </div><!-- /.misc-footer-wrapper -->            
+        </div><!-- /.row-footer -->
+    </div><!-- /.container -->
+</footer>
+
+<div class="modal-container" id="modal-cities">
+    <div class="modal-bg">
+        <div class="modal-window">
+            <div class="wrapper">
+                <div class="modal-header">
+                    <h3 class="h-modal">Выбор города</h3>
+                    <button type="button" class="close btn-close">
+                        <svg data-src="img/x.svg"></svg>
+                    </button> 
+                </div>
+                
+                <div class="modal-content">
+                    <input type="search" class="search-field" placeholder="Введите город" onkeyup="list_filter(this, '#menu-cities-popup')">
+                    <p class="heading">Популярные города</p>
+                    <div id="menu-cities-popup">
+                        <ul>
+                            <li class="menu-item"><a href="#" data-value="Moscow">Москва</a></li>
+                            <li class="menu-item active"><a href="#" data-value="SPB">Санкт-Петербург</a></li>
+                            <li class="menu-item"><a href="#" data-value="Novosib">Новосибирск</a></li>
+                            <li class="menu-item"><a href="#" data-value="EKB">Екатеринбург</a></li>
+                            <li class="menu-item"><a href="#" data-value="Nizhniy">Нижний Новгород</a></li>
+                            <li class="menu-item"><a href="#" data-value="Kazan">Казань</a></li>
+                            <li class="menu-item"><a href="#" data-value="Chelyabinsk">Челябинск</a></li>
+                            <li class="menu-item"><a href="#" data-value="Omsk">Омск</a></li>
+                        </ul>
+                        <hr>
+                        <p class="heading">Центр</p>
+                        <ul>
+                            <li class="menu-item"><a href="#">Москва</a></li>
+                            <li class="menu-item"><a href="#">Санкт-Петербург</a></li>
+                            <li class="menu-item"><a href="#">Новосибирск</a></li>
+                            <li class="menu-item"><a href="#">Екатеринбург</a></li>
+                            <li class="menu-item"><a href="#">Нижний Новгород</a></li>
+                            <li class="menu-item"><a href="#">Казань</a></li>
+                            <li class="menu-item"><a href="#">Челябинск</a></li>
+                            <li class="menu-item"><a href="#">Омск</a></li>
+                        </ul>                
+                    </div><!-- /#menu-cities-popup -->
+                </div><!-- /.modal-content -->
+            </div><!-- /.wrapper -->
+        </div><!-- /#modal-window-->    
+    </div><!-- /.modal-bg -->
+</div><!-- /.modal-container -->
+
+<div class="modal-container" id="modal-categs">
+    <div class="modal-bg">
+        <div class="modal-window">
+            <div class="wrapper">
+                <div class="modal-header">
+                    <h3 class="h-modal">Выбор категории</h3>
+                    <button type="button" class="close btn-close">
+                        <svg data-src="img/x.svg"></svg>
+                    </button> 
+                </div>
+                    
+                <div class="modal-content">
+                    <input type="search" class="search-field" placeholder="Введите категорию" onkeyup="list_filter(this, '#menu-categs-popup')">
+                        
+                    <div id="menu-categs-popup">
+                        <ul>
+                            <li class="menu-item">
+                                <a href="#">ИТ-услуги</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="#">Все категории 2</a></li>
+                                    <li class="menu-item">
+                                        <a href="#">Юридические Услуги 2</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item"><a href="#">Все категории 3</a></li>
+                                            <li class="menu-item"><a href="#">Юридические Услуги 3</a></li>
+                                            <li class="menu-item"><a href="#">Нотариальные услуги 3</a></li>
+                                            <li class="menu-item"><a href="#">Аудиторские услуги 3</a></li>
+                                        </ul>                                            
+                                    </li>
+                                    <li class="menu-item"><a href="#">Нотариальные услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Аудиторские услуги 2</a></li>
+                                </ul>                                    
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Бытовые услуги, ремонт техники</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="#">Все категории 2</a></li>
+                                    <li class="menu-item"><a href="#">Юридические Услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Нотариальные услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Аудиторские услуги 2</a></li>
+                                </ul>                                    
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Отделочные работы</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="#">Все категории 2</a></li>
+                                    <li class="menu-item"><a href="#">Юридические Услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Нотариальные услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Аудиторские услуги 2</a></li>
+                                </ul>                                    
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Услуги пошива</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="#">Все категории 2</a></li>
+                                    <li class="menu-item"><a href="#">Юридические Услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Нотариальные услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Аудиторские услуги 2</a></li>
+                                </ul>                                    
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Деловые услуги</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="#">Все категории 2</a></li>
+                                    <li class="menu-item"><a href="#">Юридические Услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Нотариальные услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Аудиторские услуги 2</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">ИТ-услуги</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="#">Все категории 2</a></li>
+                                    <li class="menu-item"><a href="#">Юридические Услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Нотариальные услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Аудиторские услуги 2</a></li>
+                                </ul>                                    
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Бытовые услуги, ремонт техники</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="#">Все категории 2</a></li>
+                                    <li class="menu-item"><a href="#">Юридические Услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Нотариальные услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Аудиторские услуги 2</a></li>
+                                </ul>                                    
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Отделочные работы</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="#">Все категории 2</a></li>
+                                    <li class="menu-item"><a href="#">Юридические Услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Нотариальные услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Аудиторские услуги 2</a></li>
+                                </ul>                                    
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Услуги пошива</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="#">Все категории 2</a></li>
+                                    <li class="menu-item"><a href="#">Юридические Услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Нотариальные услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Аудиторские услуги 2</a></li>
+                                </ul>                                    
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Деловые услуги</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="#">Все категории 2</a></li>
+                                    <li class="menu-item"><a href="#">Юридические Услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Нотариальные услуги 2</a></li>
+                                    <li class="menu-item"><a href="#">Аудиторские услуги 2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- menu-categs-popup -->
+                </div><!-- /.modal-content -->
+            </div><!-- /.wrapper -->
+        </div><!-- /#modal-window-->
+    </div><!-- /.modal-bg -->
+</div><!-- /.modal-container -->
+
+<div id="overlay-page"></div>
+
+<script>                        
+        $("#slider-range").slider({
+            min: 100,
+            max: 100000,
+            step: 100,
+            values: [5000, 50000],
+            range:true,
+            slide: function(event, ui) {
+                $("#slider-range-min").val("от "+ui.values[0]+" ₽");
+                $("#slider-range-max").val("до "+ui.values[1]+" ₽");
+            }
+        });
+        $("#slider-range-min").change(function() {
+            var myString = $(this).val();
+            myString = myString.replace(/\D/g,'');
+            $("#slider-range").slider('values',0,myString);
+        });
+        $("#slider-range-max").change(function() {
+            var myString = $(this).val();
+            myString = myString.replace(/\D/g,'');
+            $("#slider-range").slider('values',1,myString);
+        });
+</script> 
+</body>
+</html>

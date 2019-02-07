@@ -260,8 +260,8 @@ label.checkbox {
 @mixin btn-colors() {
   color: #fff;
   background: $main;
-  &:hover {background: #3C9027; color: #fff}
-  &:active {background: #307420; color: #fff}
+  &:hover {background: #3C9027; color: #fff !important}
+  &:active {background: #307420; color: #fff !important}
 }
 
 .btn-main {

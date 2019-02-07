@@ -313,10 +313,10 @@ label.checkbox a {
   border: none !important; }
   .btn-main:hover {
     background: #3C9027;
-    color: #fff; }
+    color: #fff !important; }
   .btn-main:active {
     background: #307420;
-    color: #fff; }
+    color: #fff !important; }
   .btn-main[disabled] {
     background: #D4D3D2;
     cursor: not-allowed; }
@@ -346,10 +346,10 @@ label.checkbox a {
   border: none; }
   .btn-pill:hover {
     background: #3C9027;
-    color: #fff; }
+    color: #fff !important; }
   .btn-pill:active {
     background: #307420;
-    color: #fff; }
+    color: #fff !important; }
 
 .btn-search {
   background: url("../img/search.svg") no-repeat;
