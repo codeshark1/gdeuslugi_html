@@ -1550,6 +1550,8 @@ a, svg, path, button {
 @media (min-width: 992px) {
   .list-categs-xl {
     columns: 3; } }
+.list-categs-xl a {
+  color: #333; }
 
 /* ==========================================================================
    LISTING
