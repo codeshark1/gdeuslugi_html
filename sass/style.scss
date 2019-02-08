@@ -409,6 +409,7 @@ $sect-mg-neg: 39px;
 	font-size: 24px;
 	font-weight: 500;
 }
+.h-center {text-align: center;}
 .h-section, .h-section-color { //H2
 	font-weight: 500;
 	font-size: 20px;
@@ -434,6 +435,26 @@ $sect-mg-neg: 39px;
 
 .article {
 	p {margin-bottom: 15px;}
+}
+
+
+.search-center {
+	display: flex;
+	max-width: 630px;
+	margin: 0 auto;
+	input {margin: 0 20px 0 0 !important;}
+	.btn {width: 190px; flex-shrink:0}
+}
+
+.list-categs-xl {
+	@media (min-width: $screen-md-min) {
+		columns: 2;
+	}
+	@media (min-width: $screen-lg-min) {
+		columns: 3;
+	}	
+	a {color: $base-text;}
+	.menu-item {}
 }
 /* ==========================================================================
    LISTING

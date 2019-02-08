@@ -49,7 +49,7 @@ hr {
   border: none;
   margin: 0;
   height: 1px;
-  background: #000; }
+  background: #d8d8d8; }
 
 /* ==========================================================================
   COMMON
@@ -1506,6 +1506,9 @@ a, svg, path, button {
   font-size: 24px;
   font-weight: 500; }
 
+.h-center {
+  text-align: center; }
+
 .h-section, .h-section-color {
   font-weight: 500;
   font-size: 20px;
@@ -1530,6 +1533,23 @@ a, svg, path, button {
 
 .article p {
   margin-bottom: 15px; }
+
+.search-center {
+  display: flex;
+  max-width: 630px;
+  margin: 0 auto; }
+  .search-center input {
+    margin: 0 20px 0 0 !important; }
+  .search-center .btn {
+    width: 190px;
+    flex-shrink: 0; }
+
+@media (min-width: 768px) {
+  .list-categs-xl {
+    columns: 2; } }
+@media (min-width: 992px) {
+  .list-categs-xl {
+    columns: 3; } }
 
 /* ==========================================================================
    LISTING
