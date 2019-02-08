@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Категория</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&amp;subset=cyrillic-ext" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+<!--[if lt IE 10]>
+    <p class="browserupgrade">Вы используете <b>устаревший</b> браузер. Пожалуйста, <a href="http://browsehappy.com/?locale=ru_ru">обновите свой браузер</a> чтобы улучшить опыт работы с сайтом.</p>
+<![endif]-->
+
+<header class="header-site">
+    <div class="header-level-1">
+        <div class="row-header">
+            <div class="col-logo">
+                <a href="#" class="logo-site">Где Услуги</a>
+            </div><!-- /.col-logo -->
+            <div class="col-search">
+                <form action="/" class="form-search">
+                    <input class="search-field" type="search" placeholder="Поиск...">
+                    <p class="search-field-btn"></p>
+                    <div class="form-search-suggest" id="js-search-suggest">
+                        <ul class="list-suggest">                                               
+                            <li class="list-item category"><a href="#"><mark>Уборка</mark> помещений <span class="type">Категория</span></a></li>
+                            <li class="list-item category"><a href="#"><mark>Уборка</mark> квартир <span class="type">Категория</span></a></li>
+                            <li class="list-item category"><a href="#"><mark>Уборка</mark> офисов <span class="type">Категория</span></a></li>
+                            <li class="list-item"><a href="#"><mark>Уборка</mark> территории <span class="type">Статья</span></a></li>
+                            <li class="list-item"><a href="#">Генеральная <mark>уборка</mark> бассейнов и водоемов <span class="type">Услуга</span></a></li>
+                            <li class="list-item"><a href="#"><mark>Уборка</mark> после ремонта <span class="type">Заказ</span></a></li>
+                            <li class="list-item"><a href="#">Как выбрать <mark>убор</mark>щицу <span class="type">Статья</span></a></li>
+                        </ul>
+                    </div>
+                </form>
+            </div><!-- /.col-search -->
+            <div class="col-actions">
+                <div class="links d-none d-sm-block">
+                    <a href="#" class="btn-link">Создать услугу</a>
+                    <a href="#" class="btn-link">Войти</a>
+                </div>
+                <button class="btn-menu" id="js-btn-menu"><span></span><span></span><span></span></button>                
+            </div><!-- /.col-actions -->
+        </div><!-- /.row-header -->
+    </div><!-- /.level-1 -->
+    <div class="header-level-2"></div><!-- /.level-2 -->
+</header>
+
+<nav class="menu-main menu-top" id="js-menu-main">
+    <div class="menu-main-header">
+        <a href="#" class="btn-link">Вход</a> | <a href="#" class="btn-link">Регистрация</a>
+    </div><!-- /.menu-main-header -->
+
+    <div class="location menu-item">
+        <svg class="icon" data-src="img/location.svg"></svg>
+        <p href="#" class="town modal-trigger" data-trigger="#modal-cities">Гусь-Хрустальный</p>        
+        <input type="hidden" id="select-city-input" class="chosen-value">
+    </div>
+
+    <hr>
+
+    <ul class="menu">
+        <li class="menu-item"><a href="#">Мастера</a></li>
+        <li class="menu-item"><a href="#">Услуги</a></li>
+        <li class="menu-item"><a href="#">Заказы</a></li>
+    </ul>
+
+    <hr>  
+    
+    <ul class="menu">
+        <li class="menu-item"><a href="#">Создать заказ</a></li>
+        <li class="menu-item"><a href="#">Создать услугу</a></li>
+    </ul>        
+</nav><!-- /.menu-wrapper -->
+
+<main class="content-main">
+    <div class="container">
+        <div class="category-intro bx-mg">
+            <h1 class="h-page h-center">Сантехники в <a href="#" class="btn-picker modal-trigger" data-trigger="#modal-cities" id="trigger-city-listing">Санкт-Петербурге</a>
+                <input type="hidden" id="trigger-city-listing-input" class="chosen-value">
+            </h1>
+            <div>
+                <svg data-src="img/cat-0.svg"></svg>
+            </div>
+
+            <a href="#" class="btn btn-main">Подобрать мастера</a>
+
+            <p><a href="#">2328 мастеров по сантехнике</a></p>
+        </div><!-- category-intro -->
+
+        <hr class="bx-mg">
+
+        <div class="category-numbers row">
+            <div class="col-md-4 bx-mg">
+                <h2 class="h-section">12 486 клиентов</h2>
+                <p>нашли мастера по сантехнике за последние 12 месяцев</p>
+            </div><!-- /.col -->
+            <div class="col-md-4 bx-mg">
+                <h2 class="h-section h-section-color">93%</h2>
+                <p>Положительных отзывов. 5292 отзыва оставили клиенты за последние 12 месяцев.</p>
+            </div><!-- /.col -->
+            <div class="col-md-4 bx-mg">
+                <h2 class="h-section">2328 мастеров по ремонту</h2>
+                <p>С отзывами 848 <br>
+                    С примерами работ 1136
+                </p>
+            </div><!-- /.col -->                        
+        </div><!-- /.category-numbers -->
+
+        <section class="bx-mg">
+            <h2 class="h-section">Средняя стоимость услуг сантехников</h2>
+            <p class="description">На стоимость влияют опыт и квалификация сантехника, стоимость материалов, сложность работы. Некоторые сантехники предоставляют скидки, например, при заказе нескольких услуг или большом объёме работ. Окончательную стоимость работ вы согласуете с сантехником.</p>            
+            <div class="row category-prices">
+                <div class="col-md-4">
+                    <p class="item"><a href="#" class="categ">Ремонт ванной и туалета</a> 1 500–60 000 Р</p>
+                    <p class="ite m"><a href="#" class="categ">Монтаж канализации</a> 300–4 000 Р</p>
+                    <p class="item"><a href="#" class="categ">Монтаж труб</a> 250–4 000 Р</p>
+                </div><!-- /.col -->
+                <div class="col-md-4">
+                    <p class="item"><a href="#" class="categ">Ремонт ванной и туалета</a> 1 500–60 000 Р</p>
+                    <p class="item"><a href="#" class="categ">Монтаж канализации</a> 300–4 000 Р</p>
+                    <p class="item"><a href="#" class="categ">Монтаж труб</a> 250–4 000 Р</p>
+                </div><!-- /.col -->
+                <div class="col-md-4">
+                    <p class="item"><a href="#" class="categ">Ремонт ванной и туалета</a> 1 500–60 000 Р</p>
+                    <p class="item"><a href="#" class="categ">Монтаж канализации</a> 300–4 000 Р</p>
+                    <p class="item"><a href="#" class="categ">Монтаж труб</a> 250–4 000 Р</p>
+                </div><!-- /.col -->                                
+            </div><!-- /.row -->
+        </section>
+
+        <hr class="bx-mg">
+
+        <section>
+            <h2 class="h-page">Отзывы о сантехниках</h2>
+            <div class="row">
+                <div class="col-md-6 col-review-home bx-mg">
+                    <div class="user-header">
+                        <a href="#" class="userpic">К</a>
+                        <a href="#" class="name">Константин</a>
+                        <div class="rating">
+                            <span class="rating-num">4.7</span>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <span class="rating-rates">65</span>
+                        </div><!-- rating -->
+                    </div><!-- /.user-header -->                                            
+                    <p class="review-text">Заказ был на сантехнические работы. Необходимо было устранить засор и протечку под душевой кабиной. Мастер очень грамотный. Работает очень культурно. Работой довольна. Всем советую мастера!</p>
+                    <div class="user-footer">
+                        <a href="#" class="name">Виктория</a>
+                        <p>Устранение течи  •  4000 Р</p>
+                    </div>
+                </div><!-- /.col-md-6 -->                
+                <div class="col-md-6 col-review-home bx-mg">
+                    <div class="user-header">
+                        <a href="#" class="userpic">К</a>
+                        <a href="#" class="name">Константин</a>
+                        <div class="rating">
+                            <span class="rating-num">4.7</span>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <span class="rating-rates">65</span>
+                        </div><!-- rating -->
+                    </div><!-- /.user-header -->                                            
+                    <p class="review-text">Заказ был на сантехнические работы. Необходимо было устранить засор и протечку под душевой кабиной. Мастер очень грамотный. Работает очень культурно. Работой довольна. Всем советую мастера!</p>
+                    <div class="user-footer">
+                        <a href="#" class="name">Виктория</a>
+                        <p>Устранение течи  •  4000 Р</p>
+                    </div>
+                </div><!-- /.col-md-6 -->                             
+            </div><!-- /.row -->
+        </section>
+    </div><!-- /.container -->
+</main>
+
+<div class="cta-page">
+    <p class="heading">Заработайте на том, что делаете лучше всех</p>
+    <a href="#" class="btn btn-main">Стать мастером</a>
+</div><!-- /.cta-page -->
+
+<footer class="footer-site">
+    <div class="container">
+        <div class="row-footer">
+            <div class="menus-footer-wrapper">
+                <section class="col-footer">
+                    <h6 class="h-footer">Заказчику</h6>
+                    <ul class="list-footer">
+                        <li class="list-item"><a href="#">Создать заказ</a></li>
+                        <li class="list-item"><a href="#">Найти мастера</a></li>
+                        <li class="list-item"><a href="#">Каталог мастеров</a></li>
+                        <li class="list-item"><a href="#">Продвижение заказа</a></li>
+                    </ul>
+                </section><!-- /.col-footer -->
+                <section class="col-footer">
+                    <h6 class="h-footer">Мастеру</h6>
+                    <ul class="list-footer">
+                        <li class="list-item"><a href="#">Создать услугу</a></li>
+                        <li class="list-item"><a href="#">Найти заказ</a></li>
+                        <li class="list-item"><a href="#">Продвижение профиля                    </a></li>
+                    </ul>
+                </section><!-- /.col-footer -->
+                <section class="col-footer col-wider">
+                    <h6 class="h-footer">ГдеУслуги</h6>
+                    <ul class="list-footer cols">
+                        <li class="list-item"><a href="#">О нас</a></li>
+                        <li class="list-item"><a href="#">Наши вакансии</a></li>
+                        <li class="list-item"><a href="#">Блог</a></li>
+                        <li class="list-item"><a href="#">Реклама на сайте</a></li>
+                        <li class="list-item"><a href="#">API</a></li>
+                        <li class="list-item"><a href="#">Правила работы с сайтом</a></li>
+                        <li class="list-item"><a href="#">Контакты</a></li>
+                    </ul>
+                </section><!-- /.col-footer -->
+            </div><!-- /.menus-footer-wrapper -->
+
+            <div class="misc-footer-wrapper">
+                <ul class="list-social-footer">
+                    <li class="list-item"><a href="#" class="vk"><svg data-src="img/vk.svg"></svg></a></li>
+                    <li class="list-item"><a href="#" class="ok"><svg data-src="img/ok.svg"></svg></a></li>
+                    <li class="list-item"><a href="#" class="fb"><svg data-src="img/fb.svg"></svg></a></li>
+                    <li class="list-item"><a href="#" class="in"><svg data-src="img/in.svg"></svg></a></li>
+                    <li class="list-item"><a href="#" class="tw"><svg data-src="img/tw.svg"></svg></a></li>
+                </ul>
+
+                <div class="bx_18">
+                    <p class="18p">18+</p>
+                </div>
+
+                <p class="copyright">&#169; 2018-2019</p>
+            </div><!-- /.misc-footer-wrapper -->            
+        </div><!-- /.row-footer -->
+    </div><!-- /.container -->
+</footer>
+
+<div class="modal-container" id="modal-cities">
+    <div class="modal-bg">
+        <div class="modal-window">
+            <div class="wrapper">
+                <div class="modal-header">
+                    <h3 class="h-modal">Выбор города</h3>
+                    <button type="button" class="close btn-close">
+                        <svg data-src="img/x.svg"></svg>
+                    </button> 
+                </div>
+                
+                <div class="modal-content">
+                    <input type="search" class="search-field" placeholder="Введите город" onkeyup="list_filter(this, '#menu-cities-popup')">
+                    <p class="heading">Популярные города</p>
+                    <div id="menu-cities-popup">
+                        <ul>
+                            <li class="menu-item"><a href="#" data-value="Moscow">Москва</a></li>
+                            <li class="menu-item active"><a href="#" data-value="SPB">Санкт-Петербург</a></li>
+                            <li class="menu-item"><a href="#" data-value="Novosib">Новосибирск</a></li>
+                            <li class="menu-item"><a href="#" data-value="EKB">Екатеринбург</a></li>
+                            <li class="menu-item"><a href="#" data-value="Nizhniy">Нижний Новгород</a></li>
+                            <li class="menu-item"><a href="#" data-value="Kazan">Казань</a></li>
+                            <li class="menu-item"><a href="#" data-value="Chelyabinsk">Челябинск</a></li>
+                            <li class="menu-item"><a href="#" data-value="Omsk">Омск</a></li>
+                        </ul>
+                        <hr>
+                        <p class="heading">Центр</p>
+                        <ul>
+                            <li class="menu-item"><a href="#">Москва</a></li>
+                            <li class="menu-item"><a href="#">Санкт-Петербург</a></li>
+                            <li class="menu-item"><a href="#">Новосибирск</a></li>
+                            <li class="menu-item"><a href="#">Екатеринбург</a></li>
+                            <li class="menu-item"><a href="#">Нижний Новгород</a></li>
+                            <li class="menu-item"><a href="#">Казань</a></li>
+                            <li class="menu-item"><a href="#">Челябинск</a></li>
+                            <li class="menu-item"><a href="#">Омск</a></li>
+                        </ul>                
+                    </div><!-- /#menu-cities-popup -->
+                </div><!-- /.modal-content -->
+            </div><!-- /.wrapper -->
+        </div><!-- /#modal-window-->    
+    </div><!-- /.modal-bg -->
+</div><!-- /.modal-container -->
+
+<div id="overlay-page"></div>
+</body>
+</html>
