@@ -437,24 +437,57 @@ $sect-mg-neg: 39px;
 	p {margin-bottom: 15px;}
 }
 
+/* HOME / LANDINGS */
+.hero-img {
+	height: 200px;	
+	@media (min-width: $screen-sm-min) {height: 400px;}
+	background: url('../img/photo-home.jpg') no-repeat;	
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
 
 .search-center {
-	display: flex;
-	max-width: 630px;
-	margin: 0 auto;
-	input {margin: 0 20px 0 0 !important;}
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	@media (min-width: 500px) {
+		display: flex;
+		max-width: 630px;		
+		input {margin: 0 20px 0 0 !important;}
+	}
 	.btn {width: 190px; flex-shrink:0}
 }
 
 .list-categs-xl {
 	@media (min-width: $screen-md-min) {
-		columns: 2;
+		columns: 2; margin: 0 -10px;
+		margin-bottom: 16px;
+		.menu-item {padding: 0 10px;}
 	}
 	@media (min-width: $screen-lg-min) {
 		columns: 3;
-	}	
+		margin-bottom: 0;
+	}
+	.menu-item {
+		word-wrap: none;
+		margin: 0 0 16px 0;
+		display: flex;
+		justify-content: space-between;
+	}
 	a {color: $base-text;}
-	.menu-item {}
+	.number {color: $gray-text}
+}
+
+.list-howitworks {
+	text-align: center;
+	.title {margin-top: 8px;}
+	.list-item {margin-bottom: 20px;}
+	@media (min-width: $screen-sm-min) {
+		display: flex;
+		justify-content: space-between;
+		.list-item {flex: 1 0 0;}
+	}
 }
 /* ==========================================================================
    LISTING
@@ -710,7 +743,9 @@ input[type="date"] {
 	}
 }
 
-input[type=text],input[type=password] {margin-bottom: 25px;}
+input[type=text],
+input[type=password] {margin-bottom: 20px;}
+
 .form-row, .link-input {
 	margin: 0 0 25px 0;
 	display: block;
@@ -1289,15 +1324,22 @@ body.modal-opened {overflow: hidden;}
 .card-master-sidebar {
 	.city {margin-bottom: 25px;}
 }
+.user-header, .user-footer {
+	.name {
+		font-weight: bold;
+		margin: 0 0 5px 0; 
+		color: $base-text; display: block;
+		font-size: 18px;
+		a {color: $base-text}
+		&:hover, a:hover {color: $main}
+	}
+}
 .user-header {
 	position: relative;
 	padding: 5px 0 0 80px;
 	margin-bottom: 10px;
 	.userpic {position: absolute; left: 0;top: 0;}
-	.name {font-weight: bold;margin: 0 0 5px 0; color: $base-text; display: block;
-		a {color: $base-text}
-		&:hover, a:hover {color: $main}
-	}
+
 	.rating {font-size: 16px;}
 		.rating-num {color: $main;margin-right: 5px;}
 		.star {margin-right: 5px;vertical-align: middle;}
@@ -1320,6 +1362,13 @@ body.modal-opened {overflow: hidden;}
 		}
 	}
 }
+.review-text {
+	background: #EEF5EA;
+	border-radius: 3px;
+	padding: 16px;
+	margin-top: 24px;
+}
+.user-footer {margin-top: 16px;}
 
 .rating-mini, .rating-mini-vert {font-size: 16px;}
 .rating-num {color: $main;}
@@ -1392,7 +1441,12 @@ body.modal-opened {overflow: hidden;}
 /* ---- TABS */
 
 
-
+.cta-page {
+	background: $gray-light;
+	text-align: center;
+	padding: 40px 0;
+	.heading {margin: 0 0 20px 0; font-weight: 700;font-size: 24px;}
+}
 
 
 

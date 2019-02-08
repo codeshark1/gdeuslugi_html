@@ -38,9 +38,6 @@
                         </ul>
                     </div>
                 </form>
-                <div class="button d-lg-none">
-                    <button class="btn btn-settings" id="js-btn-filter"><svg class="icon" data-src="img/settings.svg"></svg> <i class="number"></i></button>
-                </div>
             </div><!-- /.col-search -->
             <div class="col-actions">
                 <div class="links d-none d-sm-block">
@@ -81,20 +78,22 @@
     </ul>        
 </nav><!-- /.menu-wrapper -->
 
-<main class="content-main">
+<main>
+    <div class="hero-img bx-mg"></div><!-- /.hero-img -->
+
     <div class="container">
         <h1 class="h-page h-center">Проверенные мастера в <a href="#" class="btn-picker modal-trigger" data-trigger="#modal-cities" id="trigger-city-listing">Санкт-Петербурге</a>
             <input type="hidden" id="trigger-city-listing-input" class="chosen-value">
         </h1>
 
-        <form action="/" class="search-center">
+        <form action="/" class="search-center bx-mg">
             <input type="text" placeholder="Услуга или мастер">
             <button type="submit" class="btn btn-main">Найти мастера</button>
         </form>
 
-        <hr>
+        <hr class="bx-mg">
 
-        <section>
+        <section class="bx-mg">
             <h2 class="h-page h-center">Выбирайте среди 400 000 мастеров и 500 услуг</h2>
             <ul class="list-categs-xl">
                 <li class="menu-item"><a href="#">ИТ-услуги</a> <span class="number">337</span></li>
@@ -122,7 +121,7 @@
             <p><a href="#">Смотреть все</a></p>
         </section>
 
-        <hr>
+        <hr class="bx-mg">
 
         <section>
             <h2 class="h-page h-center">Как это работает</h2>
@@ -142,19 +141,119 @@
             </ul>
         </section>
 
-        <form action="/" class="search-center">
+        <form action="/" class="search-center bx-mg">
             <input type="text" placeholder="Услуга или мастер">
             <button type="submit" class="btn btn-main">Найти мастера</button>
         </form>        
 
-        <hr>
+        <hr class="bx-mg">
 
         <section>
             <h2 class="h-page">Отзывы</h2>
-
+            <div class="row">
+                <div class="col-md-6 col-review-home bx-mg">
+                    <div class="user-header">
+                        <a href="#" class="userpic">К</a>
+                        <a href="#" class="name">Константин</a>
+                        <div class="rating">
+                            <span class="rating-num">4.7</span>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <span class="rating-rates">65</span>
+                        </div><!-- rating -->
+                    </div><!-- /.user-header -->                                            
+                    <p class="review-text">Заказ был на сантехнические работы. Необходимо было устранить засор и протечку под душевой кабиной. Мастер очень грамотный. Работает очень культурно. Работой довольна. Всем советую мастера!</p>
+                    <div class="user-footer">
+                        <a href="#" class="name">Виктория</a>
+                        <p>Устранение течи  •  4000 Р</p>
+                    </div>
+                </div><!-- /.col-md-6 -->                
+                <div class="col-md-6 col-review-home bx-mg">
+                    <div class="user-header">
+                        <a href="#" class="userpic">К</a>
+                        <a href="#" class="name">Константин</a>
+                        <div class="rating">
+                            <span class="rating-num">4.7</span>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <span class="rating-rates">65</span>
+                        </div><!-- rating -->
+                    </div><!-- /.user-header -->                                            
+                    <p class="review-text">Заказ был на сантехнические работы. Необходимо было устранить засор и протечку под душевой кабиной. Мастер очень грамотный. Работает очень культурно. Работой довольна. Всем советую мастера!</p>
+                    <div class="user-footer">
+                        <a href="#" class="name">Виктория</a>
+                        <p>Устранение течи  •  4000 Р</p>
+                    </div>
+                </div><!-- /.col-md-6 -->                             
+            </div><!-- /.row -->
         </section>
     </div><!-- /.container -->
 </main>
+
+<div class="cta-page">
+    <p class="heading">Заработайте на том, что делаете лучше всех</p>
+    <a href="#" class="btn btn-main">Стать мастером</a>
+</div><!-- /.cta-page -->
+
+<footer class="footer-site">
+    <div class="container">
+        <div class="row-footer">
+            <div class="menus-footer-wrapper">
+                <section class="col-footer">
+                    <h6 class="h-footer">Заказчику</h6>
+                    <ul class="list-footer">
+                        <li class="list-item"><a href="#">Создать заказ</a></li>
+                        <li class="list-item"><a href="#">Найти мастера</a></li>
+                        <li class="list-item"><a href="#">Каталог мастеров</a></li>
+                        <li class="list-item"><a href="#">Продвижение заказа</a></li>
+                    </ul>
+                </section><!-- /.col-footer -->
+                <section class="col-footer">
+                    <h6 class="h-footer">Мастеру</h6>
+                    <ul class="list-footer">
+                        <li class="list-item"><a href="#">Создать услугу</a></li>
+                        <li class="list-item"><a href="#">Найти заказ</a></li>
+                        <li class="list-item"><a href="#">Продвижение профиля                    </a></li>
+                    </ul>
+                </section><!-- /.col-footer -->
+                <section class="col-footer col-wider">
+                    <h6 class="h-footer">ГдеУслуги</h6>
+                    <ul class="list-footer cols">
+                        <li class="list-item"><a href="#">О нас</a></li>
+                        <li class="list-item"><a href="#">Наши вакансии</a></li>
+                        <li class="list-item"><a href="#">Блог</a></li>
+                        <li class="list-item"><a href="#">Реклама на сайте</a></li>
+                        <li class="list-item"><a href="#">API</a></li>
+                        <li class="list-item"><a href="#">Правила работы с сайтом</a></li>
+                        <li class="list-item"><a href="#">Контакты</a></li>
+                    </ul>
+                </section><!-- /.col-footer -->
+            </div><!-- /.menus-footer-wrapper -->
+
+            <div class="misc-footer-wrapper">
+                <ul class="list-social-footer">
+                    <li class="list-item"><a href="#" class="vk"><svg data-src="img/vk.svg"></svg></a></li>
+                    <li class="list-item"><a href="#" class="ok"><svg data-src="img/ok.svg"></svg></a></li>
+                    <li class="list-item"><a href="#" class="fb"><svg data-src="img/fb.svg"></svg></a></li>
+                    <li class="list-item"><a href="#" class="in"><svg data-src="img/in.svg"></svg></a></li>
+                    <li class="list-item"><a href="#" class="tw"><svg data-src="img/tw.svg"></svg></a></li>
+                </ul>
+
+                <div class="bx_18">
+                    <p class="18p">18+</p>
+                </div>
+
+                <p class="copyright">&#169; 2018-2019</p>
+            </div><!-- /.misc-footer-wrapper -->            
+        </div><!-- /.row-footer -->
+    </div><!-- /.container -->
+</footer>
 
 <div class="modal-container" id="modal-cities">
     <div class="modal-bg">
