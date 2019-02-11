@@ -462,8 +462,8 @@ $sect-mg-neg: 39px;
 .list-categs-xl {
 	@media (min-width: $screen-md-min) {
 		columns: 2; margin: 0 -10px;
-		margin-bottom: 16px;
-		.menu-item {padding: 0 10px;}
+		//margin-bottom: 16px;
+		.menu-item {padding: 0 10px 16px 10px;}
 	}
 	@media (min-width: $screen-lg-min) {
 		columns: 3;
@@ -471,7 +471,7 @@ $sect-mg-neg: 39px;
 	}
 	.menu-item {
 		word-wrap: none;
-		margin: 0 0 16px 0;
+		margin: 0;
 		display: flex;
 		justify-content: space-between;
 	}
@@ -595,6 +595,9 @@ $sect-mg-neg: 39px;
 		display: flex;
 		justify-content: center;
 		align-items: center;		
+		&.no-image {
+			background-size: auto;
+		}
 	}
 	.userpic {width: 80px;height: 80px; position: absolute;bottom: 0;left: 20px; font-size: 20px; line-height: 75px;}
 	.rating {position: absolute; bottom: 11px; left: 110px; font-size: 14px;}
