@@ -2599,7 +2599,8 @@ body.modal-opened {
     height: 73px;
     margin: -30px -30px 0 -30px;
     padding-top: 28px;
-    padding-left: 143px; }
+    padding-left: 143px;
+    border-radius: 3px 3px 0 0; }
     .review-v1 .rating .rating-num {
       color: #fff;
       margin-left: 10px; }
