@@ -1467,10 +1467,31 @@ body.modal-opened {overflow: hidden;}
 		margin-bottom: 10px;
 }}
 
-.glide__slide {opacity: 0.5; transition: opacity .15s;
+.glide__slide {opacity: 0.5; transition: opacity .2s ease-in;
 	&:hover {opacity: 1}
 }
 .glide__slide--active {opacity: 1;}
+.glide__arrow {background: none;border: none;padding: 0; cursor: pointer;
+	svg {width: 11px;height: 19px;
+		path {fill: $gray-text}
+	}
+	&:hover {
+		svg path {fill: $main}
+	}
+}
+.carousel-header {
+	position: relative;
+	.glide__arrow {margin: 0 15px}
+	.glide__arrows {
+		position: absolute;
+		right: 0;top: 0;
+		@media (max-width: $screen-xs-max) {
+			display: none;
+		}
+	}
+}
+
+
 /* TABS */
 .nav-tabs {
 	border-bottom: 1px solid $gray-light;

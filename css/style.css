@@ -2691,12 +2691,37 @@ body.modal-opened {
 
 .glide__slide {
   opacity: 0.5;
-  transition: opacity .15s; }
+  transition: opacity .2s ease-in; }
   .glide__slide:hover {
     opacity: 1; }
 
 .glide__slide--active {
   opacity: 1; }
+
+.glide__arrow {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer; }
+  .glide__arrow svg {
+    width: 11px;
+    height: 19px; }
+    .glide__arrow svg path {
+      fill: #999999; }
+  .glide__arrow:hover svg path {
+    fill: #47AB2F; }
+
+.carousel-header {
+  position: relative; }
+  .carousel-header .glide__arrow {
+    margin: 0 15px; }
+  .carousel-header .glide__arrows {
+    position: absolute;
+    right: 0;
+    top: 0; }
+    @media (max-width: 575px) {
+      .carousel-header .glide__arrows {
+        display: none; } }
 
 /* TABS */
 .nav-tabs {
