@@ -7,7 +7,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&amp;subset=cyrillic-ext" rel="stylesheet"> 
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/glide.core.min.css"> <!-- для карусели -->        
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script> <!-- для карусели -->        
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 </head>
@@ -84,7 +86,7 @@
             <h1 class="h-page h-center">Сантехники в <a href="#" class="btn-picker modal-trigger" data-trigger="#modal-cities" id="trigger-city-listing">Санкт-Петербурге</a>
                 <input type="hidden" id="trigger-city-listing-input" class="chosen-value">
             </h1>
-            <div>
+            <div class="category-icon">
                 <svg data-src="img/cat-0.svg"></svg>
             </div>
 
@@ -116,11 +118,11 @@
 
         <section class="bx-mg">
             <h2 class="h-section">Средняя стоимость услуг сантехников</h2>
-            <p class="description">На стоимость влияют опыт и квалификация сантехника, стоимость материалов, сложность работы. Некоторые сантехники предоставляют скидки, например, при заказе нескольких услуг или большом объёме работ. Окончательную стоимость работ вы согласуете с сантехником.</p>            
+            <p class="bx-mg">На стоимость влияют опыт и квалификация сантехника, стоимость материалов, сложность работы. Некоторые сантехники предоставляют скидки, например, при заказе нескольких услуг или большом объёме работ. Окончательную стоимость работ вы согласуете с сантехником.</p>            
             <div class="row category-prices">
                 <div class="col-md-4">
                     <p class="item"><a href="#" class="categ">Ремонт ванной и туалета</a> 1 500–60 000 Р</p>
-                    <p class="ite m"><a href="#" class="categ">Монтаж канализации</a> 300–4 000 Р</p>
+                    <p class="item"><a href="#" class="categ">Монтаж канализации</a> 300–4 000 Р</p>
                     <p class="item"><a href="#" class="categ">Монтаж труб</a> 250–4 000 Р</p>
                 </div><!-- /.col -->
                 <div class="col-md-4">
@@ -137,74 +139,180 @@
         </section>
 
         <hr class="bx-mg">
+    </div><!-- /.container -->    
 
-        <section class="bx-mg">
+    <section class="bx-mg">
+        <div class="container">
             <h2 class="h-section">Портфолио сантехников по сантехнике</h2>
-            <div class="list-portfolios" id="carousel">
-                <div class="list-item">
-                    <a href="#" class="image"><img src="img/prev-big1_sm.jpg" alt="pic"></a>
-                    <p class="title">Кустов Дмитрий — Туалет под ключ</p>
-                </div><!-- /.list-item -->
-            </div><!-- /#carousel.list-portfolios -->
-        </section>
+        </div><!-- /.container -->
+        <div class="glide" id="js-portfolios">
+            <div class="glide__track" data-glide-el="track">
+                <div class="list-portfolios glide__slides">
+                    <div class="glide__slide">
+                        <a href="#" class="image-wrap"><img class="photo" src="img/prev-big1_sm.jpg" alt="pic"></a>
+                        <p class="title">Кустов Дмитрий — Туалет под ключ</p>
+                    </div><!-- /.list-item -->
+                </div><!-- /.glide__slides -->
+            </div><!-- /.glide__track -->
+        </div><!-- /.glide -->
+    </section>
 
-        <hr class="bx-mg">
+    <div class="container"><hr class="bx-mg"></div>    
 
-        <section>
-            <h2 class="h-page">Отзывы о сантехниках</h2>
-            <div class="row">
-                <div class="col-md-6 col-review-home bx-mg">
-                    <div class="user-header">
-                        <a href="#" class="userpic">К</a>
-                        <a href="#" class="name">Константин</a>
-                        <div class="rating">
+    <section class="bx-mg">
+        <div class="container">            
+            <h2 class="h-section" id="js-reviews-header">Отзывы о сантехниках</h2>
+        </div>
+        
+        <div class="glide" id="js-reviews">
+            <div class="glide__track" data-glide-el="track">
+                <div class="list-carousel glide__slides">
+                    <div class="review-v1 card glide__slide">
+                        <div class="rating rating-5">
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
                             <span class="rating-num">4.7</span>
-                            <i class="star"><svg data-src="img/star.svg"></svg></i>
-                            <i class="star"><svg data-src="img/star.svg"></svg></i>
-                            <i class="star"><svg data-src="img/star.svg"></svg></i>
-                            <i class="star"><svg data-src="img/star.svg"></svg></i>
-                            <i class="star"><svg data-src="img/star.svg"></svg></i>
-                            <span class="rating-rates">65</span>
                         </div><!-- rating -->
-                    </div><!-- /.user-header -->                                            
-                    <p class="review-text">Заказ был на сантехнические работы. Необходимо было устранить засор и протечку под душевой кабиной. Мастер очень грамотный. Работает очень культурно. Работой довольна. Всем советую мастера!</p>
-                    <div class="user-footer">
-                        <a href="#" class="name">Виктория</a>
-                        <p>Устранение течи  •  4000 Р</p>
-                    </div>
-                </div><!-- /.col-md-6 -->                
-                <div class="col-md-6 col-review-home bx-mg">
-                    <div class="user-header">
-                        <a href="#" class="userpic">К</a>
-                        <a href="#" class="name">Константин</a>
-                        <div class="rating">
-                            <span class="rating-num">4.7</span>
-                            <i class="star"><svg data-src="img/star.svg"></svg></i>
-                            <i class="star"><svg data-src="img/star.svg"></svg></i>
-                            <i class="star"><svg data-src="img/star.svg"></svg></i>
-                            <i class="star"><svg data-src="img/star.svg"></svg></i>
-                            <i class="star"><svg data-src="img/star.svg"></svg></i>
-                            <span class="rating-rates">65</span>
-                        </div><!-- rating -->
-                    </div><!-- /.user-header -->                                            
-                    <p class="review-text">Заказ был на сантехнические работы. Необходимо было устранить засор и протечку под душевой кабиной. Мастер очень грамотный. Работает очень культурно. Работой довольна. Всем советую мастера!</p>
-                    <div class="user-footer">
-                        <a href="#" class="name">Виктория</a>
-                        <p>Устранение течи  •  4000 Р</p>
-                    </div>
-                </div><!-- /.col-md-6 -->                             
-            </div><!-- /.row -->
-        </section>
-    </div><!-- /.container -->
 
-    <div class="cta-page">
+                        <div class="header">
+                            <a href="#" class="userpic">К</a>
+                            <a href="#" class="name">Алексей Иванов</a>
+                            <p class="date">28 января в 20:45</p>
+                        </div><!-- /.header -->                                            
+                        <p class="title">Монтаж и нарезка видео</p>
+                        <p class="review-text">Заказ был на сантехнические работы. Необходимо было устранить засор и протечку под душевой кабиной. Мастер очень грамотный. Работает очень культурно. Работой довольна. Всем советую мастера!</p>
+                        <div class="footer">                        
+                            <p class="price">5 000 ₽</p>
+                            <p class="doer">Исполнитель: <a href="#">Афанасий Фет</a></p>
+                        </div>
+                    </div>
+                    <div class="review-v1 card glide__slide">
+                        <div class="rating rating-4">
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <span class="rating-num">4.7</span>
+                        </div><!-- rating -->
+
+                        <div class="header">
+                            <a href="#" class="userpic"><img src="img/user.jpg" alt="pic"></a>
+                            <a href="#" class="name">Алексей Иванов</a>
+                            <p class="date">28 января в 20:45</p>
+                        </div><!-- /.header -->                                            
+                        <p class="title">Монтаж и нарезка видео</p>
+                        <p class="review-text">Заказ был на сантехнические работы. Необходимо было устранить засор и протечку под душевой кабиной. Мастер очень грамотный. Работает очень культурно. Работой довольна. Всем советую мастера!</p>
+                        <div class="footer">                        
+                            <p class="price">5 000 ₽</p>
+                            <p class="doer">Исполнитель: <a href="#">Афанасий Фет</a></p>
+                        </div>
+                    </div>
+                    <div class="review-v1 card glide__slide">
+                        <div class="rating rating-3">
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <span class="rating-num">4.7</span>
+                        </div><!-- rating -->
+
+                        <div class="header">
+                            <a href="#" class="userpic">К</a>
+                            <a href="#" class="name">Алексей Иванов</a>
+                            <p class="date">28 января в 20:45</p>
+                        </div><!-- /.header -->                                            
+                        <p class="title">Монтаж и нарезка видео</p>
+                        <p class="review-text">Заказ был на сантехнические работы. Необходимо было устранить засор и протечку под душевой кабиной. Мастер очень грамотный. Работает очень культурно. Работой довольна. Всем советую мастера!</p>
+                        <div class="footer">                        
+                            <p class="price">5 000 ₽</p>
+                            <p class="doer">Исполнитель: <a href="#">Афанасий Фет</a></p>
+                        </div>
+                    </div>
+                    <div class="review-v1 card glide__slide">
+                        <div class="rating rating-5">
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <span class="rating-num">4.7</span>
+                        </div><!-- rating -->
+
+                        <div class="header">
+                            <a href="#" class="userpic">К</a>
+                            <a href="#" class="name">Алексей Иванов</a>
+                            <p class="date">28 января в 20:45</p>
+                        </div><!-- /.header -->                                            
+                        <p class="title">Монтаж и нарезка видео</p>
+                        <p class="review-text">Заказ был на сантехнические работы. Необходимо было устранить засор и протечку под душевой кабиной. Мастер очень грамотный. Работает очень культурно. Работой довольна. Всем советую мастера!</p>
+                        <div class="footer">                        
+                            <p class="price">5 000 ₽</p>
+                            <p class="doer">Исполнитель: <a href="#">Афанасий Фет</a></p>
+                        </div>
+                    </div>
+                    <div class="review-v1 card glide__slide">
+                        <div class="rating rating-4">
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <span class="rating-num">4.7</span>
+                        </div><!-- rating -->
+
+                        <div class="header">
+                            <a href="#" class="userpic"><img src="img/user.jpg" alt="pic"></a>
+                            <a href="#" class="name">Алексей Иванов</a>
+                            <p class="date">28 января в 20:45</p>
+                        </div><!-- /.header -->                                            
+                        <p class="title">Монтаж и нарезка видео</p>
+                        <p class="review-text">Заказ был на сантехнические работы. Необходимо было устранить засор и протечку под душевой кабиной. Мастер очень грамотный. Работает очень культурно. Работой довольна. Всем советую мастера!</p>
+                        <div class="footer">                        
+                            <p class="price">5 000 ₽</p>
+                            <p class="doer">Исполнитель: <a href="#">Афанасий Фет</a></p>
+                        </div>
+                    </div>
+                    <div class="review-v1 card glide__slide">
+                        <div class="rating rating-3">
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <i class="star"><svg data-src="img/star.svg"></svg></i>
+                            <span class="rating-num">4.7</span>
+                        </div><!-- rating -->
+
+                        <div class="header">
+                            <a href="#" class="userpic">К</a>
+                            <a href="#" class="name">Алексей Иванов</a>
+                            <p class="date">28 января в 20:45</p>
+                        </div><!-- /.header -->                                            
+                        <p class="title">Монтаж и нарезка видео</p>
+                        <p class="review-text">Заказ был на сантехнические работы. Необходимо было устранить засор и протечку под душевой кабиной. Мастер очень грамотный. Работает очень культурно. Работой довольна. Всем советую мастера!</p>
+                        <div class="footer">                        
+                            <p class="price">5 000 ₽</p>
+                            <p class="doer">Исполнитель: <a href="#">Афанасий Фет</a></p>
+                        </div>
+                    </div>            
+                </div><!-- /.list-carousel -->
+            </div><!-- glide__track -->
+        </div><!-- glide -->
+    </section>
+    
+
+    <div class="cta-page bx-mg">
         <p class="heading">Заработайте на том, что делаете лучше всех</p>
         <a href="#" class="btn btn-main">Стать мастером</a>
     </div><!-- /.cta-page -->
 
     <div class="container">
         <section class="bx-mg">
-            <h2 class="h-section-color">Заказы по городам</h2>
+            <h2 class="h-section-color">Мастера по городам</h2>
             <div class="list-tags">
                 <a href="#" class="btn btn-tag">Санкт-петербург</a>
                 <a href="#" class="btn btn-tag">Выборг</a>
@@ -222,7 +330,7 @@
             </div><!-- /.list-tags -->
         </section>
         <section class="bx-mg">
-            <h2 class="h-section-color">Заказы по разделам</h2>
+            <h2 class="h-section-color">Мастера по разделам</h2>
             <div class="list-tags">
                 <a href="#" class="btn btn-tag">Электромонтажные работы</a>
                 <a href="#" class="btn btn-tag">Шиномонтаж</a>
@@ -238,7 +346,6 @@
         </section>         
     </div><!-- /.container -->
 </main>
-
 
 <footer class="footer-site">
     <div class="container">
