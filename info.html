@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Информация</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&amp;subset=cyrillic-ext" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/glide.core.min.css"> <!-- для карусели -->    
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script> <!-- для карусели -->    
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>    
+</head>
+<body>
+<!--[if lt IE 10]>
+    <p class="browserupgrade">Вы используете <b>устаревший</b> браузер. Пожалуйста, <a href="http://browsehappy.com/?locale=ru_ru">обновите свой браузер</a> чтобы улучшить опыт работы с сайтом.</p>
+<![endif]-->
+
+<header class="header-site">
+    <div class="header-level-1">
+        <div class="row-header">
+            <div class="col-logo">
+                <a href="#" class="logo-site">Где Услуги</a>
+            </div><!-- /.col-logo -->
+            <div class="col-search">
+                <form action="/" class="form-search">
+                    <input class="search-field" type="search" placeholder="Поиск...">
+                    <p class="search-field-btn"></p>
+                    <div class="form-search-suggest" id="js-search-suggest">
+                        <ul class="list-suggest">                                               
+                            <li class="list-item category"><a href="#"><mark>Уборка</mark> помещений <span class="type">Категория</span></a></li>
+                            <li class="list-item category"><a href="#"><mark>Уборка</mark> квартир <span class="type">Категория</span></a></li>
+                            <li class="list-item category"><a href="#"><mark>Уборка</mark> офисов <span class="type">Категория</span></a></li>
+                            <li class="list-item"><a href="#"><mark>Уборка</mark> территории <span class="type">Статья</span></a></li>
+                            <li class="list-item"><a href="#">Генеральная <mark>уборка</mark> бассейнов и водоемов <span class="type">Услуга</span></a></li>
+                            <li class="list-item"><a href="#"><mark>Уборка</mark> после ремонта <span class="type">Заказ</span></a></li>
+                            <li class="list-item"><a href="#">Как выбрать <mark>убор</mark>щицу <span class="type">Статья</span></a></li>
+                        </ul>
+                    </div>
+                </form>
+            </div><!-- /.col-search -->
+            <div class="col-actions">
+                <div class="links d-none d-sm-block">
+                    <a href="#" class="btn-link">Создать услугу</a>
+                    <a href="#" class="btn-link">Войти</a>
+                </div>
+                <button class="btn-menu" id="js-btn-menu"><span></span><span></span><span></span></button>                
+            </div><!-- /.col-actions -->
+        </div><!-- /.row-header -->
+    </div><!-- /.level-1 -->
+    <div class="header-level-2"></div><!-- /.level-2 -->
+</header>
+
+<nav class="menu-main menu-top" id="js-menu-main">
+    <div class="menu-main-header">
+        <a href="#" class="btn-link">Вход</a> | <a href="#" class="btn-link">Регистрация</a>
+    </div><!-- /.menu-main-header -->
+
+    <div class="location menu-item">
+        <svg class="icon" data-src="img/location.svg"></svg>
+        <p href="#" class="town modal-trigger" data-trigger="#modal-cities">Гусь-Хрустальный</p>        
+        <input type="hidden" id="select-city-input" class="chosen-value">
+    </div>
+
+    <hr>
+
+    <ul class="menu">
+        <li class="menu-item"><a href="#">Мастера</a></li>
+        <li class="menu-item"><a href="#">Услуги</a></li>
+        <li class="menu-item"><a href="#">Заказы</a></li>
+    </ul>
+
+    <hr>  
+    
+    <ul class="menu">
+        <li class="menu-item"><a href="#">Создать заказ</a></li>
+        <li class="menu-item"><a href="#">Создать услугу</a></li>
+    </ul>        
+</nav><!-- /.menu-wrapper -->
+
+<main>
+    <div class="container">        
+        <h1 class="h-page">Помощь</h1>
+        <div class="row-help">
+            <div class="col-accord">
+                <section>
+                    <div class="help-heading">Правила ресурса</div>
+                    <div class="help-content">
+                        <h2 class="h-section">Правила ресурса</h2>
+                        <h3 class="h-content">Общие положения</h3>
+                        <ul>
+                            <li>Регистрация на сайте Gdeuslugi.ru означает полное согласие пользователя с правилами и их безоговорочное принятие. Незнание  данных правил не освобождает пользователя от ответственности за их нарушение.</li>
+                            <li>Все права на сайт и использование сетевого адреса (доменного имени) Gdeuslugi.ru принадлежат администрации сайта.</li>
+                            <li>Администрация сайта оставляет за собой право изменения или дополнения данных правил в  одностороннем порядке без дополнительного уведомления пользователя. При этом данные правила остаются открытым и общедоступным для ознакомления документом. С действующей редакцией правил в любой момент можно ознакомиться на нашем сайте.                            </li>
+                        </ul>
+                        
+                        <h3 class="h-content">Регистрация пользователя на сайте</h3>
+                        <ul>
+                            <li>Регистрация на сайте Gdeuslugi.ru означает полное согласие  пользователя с правилами и их безоговорочное принятие. Незнание данных правил не освобождает пользователя от ответственности за их нарушение.</li>
+                            <li>Все права на сайт и использование сетевого адреса (доменного имени) Gdeuslugi.ru принадлежат администрации сайта.                        </li>
+                        </ul>
+
+                        <h4 class="accord-nest-heading">Курьерские услуги</h4>                        
+                        <div class="accord-nest-content">
+                            <p>Администрация сайта оставляет за собой право изменения/дополнения данных правил в одностороннем порядке без дополнительного уведомления пользователя. При этом данные правила остаются открытым и общедоступным для ознакомления документом. С действующей редакцией правил в любой момент можно ознакомиться на нашем сайте.</p>
+                        </div>
+                    </div><!-- /.help-content -->
+                </section>
+            </div><!-- /.col-accord -->
+            <div class="col-content" id="help-content">
+
+            </div><!-- /#help-content.col-content -->
+        </div><!-- /.row-help -->
+    </div><!-- /.container -->
+</main>
+
+
+<footer class="footer-site">
+    <div class="container">
+        <div class="row-footer">
+            <div class="menus-footer-wrapper">
+                <section class="col-footer">
+                    <h6 class="h-footer">Заказчику</h6>
+                    <ul class="list-footer">
+                        <li class="list-item"><a href="#">Создать заказ</a></li>
+                        <li class="list-item"><a href="#">Найти мастера</a></li>
+                        <li class="list-item"><a href="#">Каталог мастеров</a></li>
+                        <li class="list-item"><a href="#">Продвижение заказа</a></li>
+                    </ul>
+                </section><!-- /.col-footer -->
+                <section class="col-footer">
+                    <h6 class="h-footer">Мастеру</h6>
+                    <ul class="list-footer">
+                        <li class="list-item"><a href="#">Создать услугу</a></li>
+                        <li class="list-item"><a href="#">Найти заказ</a></li>
+                        <li class="list-item"><a href="#">Продвижение профиля                    </a></li>
+                    </ul>
+                </section><!-- /.col-footer -->
+                <section class="col-footer col-wider">
+                    <h6 class="h-footer">ГдеУслуги</h6>
+                    <ul class="list-footer cols">
+                        <li class="list-item"><a href="#">О нас</a></li>
+                        <li class="list-item"><a href="#">Наши вакансии</a></li>
+                        <li class="list-item"><a href="#">Блог</a></li>
+                        <li class="list-item"><a href="#">Реклама на сайте</a></li>
+                        <li class="list-item"><a href="#">API</a></li>
+                        <li class="list-item"><a href="#">Правила работы с сайтом</a></li>
+                        <li class="list-item"><a href="#">Контакты</a></li>
+                    </ul>
+                </section><!-- /.col-footer -->
+            </div><!-- /.menus-footer-wrapper -->
+
+            <div class="misc-footer-wrapper">
+                <ul class="list-social-footer">
+                    <li class="list-item"><a href="#" class="vk"><svg data-src="img/vk.svg"></svg></a></li>
+                    <li class="list-item"><a href="#" class="ok"><svg data-src="img/ok.svg"></svg></a></li>
+                    <li class="list-item"><a href="#" class="fb"><svg data-src="img/fb.svg"></svg></a></li>
+                    <li class="list-item"><a href="#" class="in"><svg data-src="img/in.svg"></svg></a></li>
+                    <li class="list-item"><a href="#" class="tw"><svg data-src="img/tw.svg"></svg></a></li>
+                </ul>
+
+                <div class="bx_18">
+                    <p class="18p">18+</p>
+                </div>
+
+                <p class="copyright">&#169; 2018-2019</p>
+            </div><!-- /.misc-footer-wrapper -->            
+        </div><!-- /.row-footer -->
+    </div><!-- /.container -->
+</footer>
+
+
+<div id="overlay-page"></div>
+
+
+</body>
+</html>

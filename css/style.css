@@ -1567,8 +1567,7 @@ a, svg, path, button {
       padding: 0 10px 16px 10px; } }
 @media (min-width: 992px) {
   .list-categs-xl {
-    columns: 3;
-    margin-bottom: 0; } }
+    columns: 3; } }
 .list-categs-xl .menu-item {
   word-wrap: none;
   margin: 0;
@@ -1609,10 +1608,14 @@ a, svg, path, button {
   font-size: 1.1rem; }
   .category-prices .item {
     margin-bottom: 20px; }
-  .category-prices .col-md-4:last-child .item:last-child {
-    margin-bottom: 0; }
   .category-prices .categ {
     display: block; }
+  @media (min-width: 768px) {
+    .category-prices {
+      columns: 2; } }
+  @media (min-width: 992px) {
+    .category-prices {
+      columns: 3; } }
 
 .list-portfolios .image-wrap {
   display: inline-block;
