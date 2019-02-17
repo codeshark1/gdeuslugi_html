@@ -1519,7 +1519,7 @@ a, svg, path, button {
 
 .h-content {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 500;
   margin: 0 0 20px 0; }
 
 .content-main {
@@ -2774,6 +2774,62 @@ body.modal-opened {
     margin: 0 0 20px 0;
     font-weight: 700;
     font-size: 24px; }
+
+/* INFO / HELP*/
+@media (min-width: 576px) {
+  .row-help {
+    display: flex; } }
+
+.help-heading {
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 15px;
+  margin-left: -15px;
+  padding-left: 35px;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41 0L0 1.33198L6 7L12 1.33198L10.59 0L6 4.32659L1.41 0Z' fill='%2347AB2F'/%3E%3C/svg%3E%0A");
+  background-position: 15px 50%;
+  background-repeat: no-repeat; }
+  .help-heading.active {
+    background-color: #47AB2F;
+    color: #fff;
+    border-radius: 3px;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 9 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.5565 5.92871L8.97071 4.51449L4.48552 0.0292159L0.000244157 4.5145L1.41446 5.92871L4.48548 2.85769L7.5565 5.92871Z' fill='white'/%3E%3C/svg%3E"); }
+
+@media (min-width: 576px) {
+  .help-content p, .help-content ul, .help-content ol {
+    line-height: 1.7; } }
+.help-content ul, .help-content ol {
+  padding-left: 10px; }
+  .help-content ul li, .help-content ol li {
+    margin-bottom: 20px; }
+.help-content ul li {
+  position: relative; }
+.help-content ul li:before {
+  content: "\2022";
+  color: #47AB2F;
+  font-weight: bold;
+  display: inline-block;
+  position: absolute;
+  left: -10px;
+  top: 0; }
+
+.accord-nest-heading {
+  color: #47AB2F;
+  font-size: 1.1rem;
+  position: relative;
+  border-top: 1px solid #d8d8d8;
+  padding: 20px 0;
+  cursor: pointer; }
+  .accord-nest-heading:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 0H10V10H0V12H10V22H12V12H22V10H12V0Z' fill='%2346AA32'/%3E%3C/svg%3E%0A");
+    width: 22px;
+    height: 22px;
+    margin-top: -11px; }
 
 /* ACCORDION */
 .section-accord {
