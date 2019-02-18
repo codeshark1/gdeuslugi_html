@@ -152,10 +152,8 @@ function searchForm(formId) {
     });
 }
 
-function accordion() {
-    $('.accord-content').hide();                
-    $('.accord-open .accord-content').show();
-    $('.h-accord').click(function(){
+function accordion(heading, content) {
+    $(heading).click(function(){
         if ($(this).parent('.accord').hasClass('accord-open')) {
             $(this).siblings('.accord-content').slideUp().parents('.accord').removeClass('accord-open');
         } else {
@@ -229,11 +227,11 @@ function show_pass() {
     function modal_menu_link_click() {
         $('#menu-categs-popup a, #modal-cities a').click(function(e){
             e.preventDefault();
-            //var target_data = "#" + $(this).parents('.modal-container').attr('id');
             var target_data = "#" + $(this).parents('.modal-container').data('triggerid');
             $(this).parent('.menu-item').addClass('active').siblings().removeClass('active');
+
             if( ! $(this).next('.sub-menu').length ) {
-                close_modal();
+                close_modal(); 
                 var id = $('body').find(target_data).attr('id');
 
                 if ( $('body').find(target_data).is('input') ) {
@@ -241,12 +239,7 @@ function show_pass() {
                 } else {
                     $('body').find(target_data).text($(this).text());                    
                 }
-                $('body').find("#"+id+"-input").val($(this).data('value'));
-                /* if ( $('body').find("[data-triggerid='"+target_data+"']").is('input') ) {
-                    $('body').find("[data-triggerid='"+target_data+"']").val($(this).text()).next('.chosen-value').val( $(this).data('value') );
-                } else {
-                    $('body').find("[data-triggerid='"+target_data+"']").text($(this).text()).next('.chosen-value').val( $(this).data('value') );
-                } */                
+                $('body').find("#"+id+"-input").val($(this).data('value'));              
             }
 
             if( $('#menu-directions').length ) {
@@ -572,7 +565,7 @@ jQuery(document).ready(function($){
 
     sidebarFilters(); 
 
-
+/* 
     new Glide('#js-reviews', {
         type: 'carousel',
         focusAt: 'center',
@@ -630,4 +623,5 @@ jQuery(document).ready(function($){
             }
         }
     }).mount();      
+     */
 });

@@ -83,14 +83,15 @@
 <main class="content-main">
     <div class="container">
         <div class="category-intro bx-mg">
-            <h1 class="h-page h-center">Сантехники в <a href="#" class="btn-picker modal-trigger" data-trigger="#modal-cities" id="trigger-city-listing">Санкт-Петербурге</a>
-                <input type="hidden" id="trigger-city-listing-input" class="chosen-value">
-            </h1>
+            <h1 class="h-page h-center">Сантехники в <a href="#" class="btn-picker modal-trigger" data-trigger="#modal-cities" id="trigger-city-listing">Санкт-Петербурге</a></h1>
             <div class="category-icon">
                 <svg data-src="img/cat-0.svg"></svg>
             </div>
 
-            <a href="#" class="btn btn-main">Подобрать мастера</a>
+            <form action="/">
+                <input type="hidden" id="trigger-city-listing-input" class="chosen-value">
+                <button type="submit" class="btn btn-main">Подобрать мастера</button>
+            </form>
 
             <p><a href="#">2328 мастеров по сантехнике</a></p>
         </div><!-- category-intro -->

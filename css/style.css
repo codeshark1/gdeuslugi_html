@@ -2776,27 +2776,53 @@ body.modal-opened {
     font-size: 24px; }
 
 /* INFO / HELP*/
-@media (min-width: 576px) {
+@media (max-width: 767px) {
+  .row-help .col-content {
+    display: none; } }
+@media (min-width: 768px) {
   .row-help {
-    display: flex; } }
+    display: flex;
+    padding: 30px 0 60px; }
+    .row-help .col-accord {
+      border-right: 1px solid #d8d8d8;
+      width: 165px;
+      padding-right: 10px;
+      flex-shrink: 0; }
+    .row-help .col-content {
+      padding-left: 20px; } }
+@media (min-width: 992px) {
+  .row-help {
+    padding: 50px 0 100px; }
+    .row-help .col-accord {
+      width: 340px; }
+    .row-help .col-content {
+      padding-left: 70px; } }
 
 .help-heading {
   text-transform: uppercase;
   font-weight: 500;
   cursor: pointer;
   padding: 15px;
-  margin-left: -15px;
-  padding-left: 35px;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41 0L0 1.33198L6 7L12 1.33198L10.59 0L6 4.32659L1.41 0Z' fill='%2347AB2F'/%3E%3C/svg%3E%0A");
-  background-position: 15px 50%;
-  background-repeat: no-repeat; }
+  margin: 0 -10px;
+  transition: all .15s; }
   .help-heading.active {
     background-color: #47AB2F;
     color: #fff;
-    border-radius: 3px;
-    background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 9 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.5565 5.92871L8.97071 4.51449L4.48552 0.0292159L0.000244157 4.5145L1.41446 5.92871L4.48548 2.85769L7.5565 5.92871Z' fill='white'/%3E%3C/svg%3E"); }
+    border-radius: 3px; }
+  @media (max-width: 767px) {
+    .help-heading {
+      padding-left: 35px;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41 0L0 1.33198L6 7L12 1.33198L10.59 0L6 4.32659L1.41 0Z' fill='%23999999'/%3E%3C/svg%3E%0A");
+      background-position: 15px 50%;
+      background-repeat: no-repeat; }
+      .help-heading.active {
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 9 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.5565 5.92871L8.97071 4.51449L4.48552 0.0292159L0.000244157 4.5145L1.41446 5.92871L4.48548 2.85769L7.5565 5.92871Z' fill='white'/%3E%3C/svg%3E"); } }
+  @media (min-width: 768px) {
+    .help-heading {
+      display: inline-block;
+      margin-left: -15px; } }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .help-content p, .help-content ul, .help-content ol {
     line-height: 1.7; } }
 .help-content ul, .help-content ol {
@@ -2814,76 +2840,71 @@ body.modal-opened {
   left: -10px;
   top: 0; }
 
+.col-accord .help-content {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 0;
+  transition: all .3s;
+  opacity: 0; }
+  .col-accord .help-content.open {
+    font-size: inherit;
+    height: auto;
+    opacity: 1;
+    padding-top: 20px; }
+  @media (min-width: 768px) {
+    .col-accord .help-content.open {
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+      font-size: 0;
+      transition: all .3s;
+      opacity: 0; } }
+
 .accord-nest-heading {
   color: #47AB2F;
   font-size: 1.1rem;
   position: relative;
   border-top: 1px solid #d8d8d8;
-  padding: 20px 0;
-  cursor: pointer; }
+  padding: 20px 35px 20px 10px;
+  cursor: pointer;
+  margin: 0;
+  letter-spacing: 1px;
+  font-weight: 500;
+  transition: all .15s; }
   .accord-nest-heading:after {
     content: "";
     position: absolute;
-    right: 0;
+    right: 10px;
     top: 50%;
     background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 0H10V10H0V12H10V22H12V12H22V10H12V0Z' fill='%2346AA32'/%3E%3C/svg%3E%0A");
     width: 22px;
     height: 22px;
-    margin-top: -11px; }
-
-/* ACCORDION */
-.section-accord {
-  background: #fff; }
-
-.h-accord {
-  cursor: pointer;
-  position: relative;
-  border-top: 1px solid #d8d8d8;
-  padding: 20px 30px 20px 10px;
-  font-size: 1.1rem;
-  font-weight: 400;
-  transition: all .3s;
-  margin: 0; }
-  .h-accord:before {
-    content: "";
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 7' width='11'%3E%3Cpolygon points='5.5 7 0 0.7 0.61 0 5.5 5.6 10.39 0 11 0.7 5.5 7'/%3E%3C/svg%3E");
-    width: 11px;
-    height: 7px;
-    display: block;
-    position: absolute;
-    right: 14px;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+    margin-top: -11px;
     transition: all .15s; }
-  @media (min-width: 576px) {
-    .h-accord {
-      padding: 20px 50px 20px 40px; }
-      .h-accord:before {
-        right: 36px; } }
+  .accord-nest-heading.active {
+    color: #333; }
+  .accord-nest-heading.active:after {
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 0H10V10H0V12H10V22H12V12H22V10H12V0Z' fill='%23999999'/%3E%3C/svg%3E%0A");
+    transform: rotate(45deg); }
+  @media (min-width: 768px) {
+    .accord-nest-heading {
+      padding: 20px 35px 20px 30px; }
+      .accord-nest-heading:after {
+        right: 30px; } }
 
-.accord:first-child .h-accord {
-  border: none; }
-
-.accord-content {
-  padding: 20px 30px 20px 10px; }
-  @media (min-width: 576px) {
-    .accord-content {
-      padding: 20px 50px 20px 40px; } }
-
-.accord-open .h-accord {
-  font-size: 1.6rem; }
-  .accord-open .h-accord:before {
-    transform: rotate(180deg);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 7' width='11' fill='%23ff0000'%3E%3Cpolygon points='5.5 7 0 0.7 0.61 0 5.5 5.6 10.39 0 11 0.7 5.5 7'/%3E%3C/svg%3E"); }
-  .accord-open .h-accord:after {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 55px;
-    background: #EB5757;
-    position: absolute;
-    bottom: 0; }
+.accord-nest-content {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 0;
+  transition: all .3s;
+  opacity: 0; }
+  .accord-nest-content.open {
+    padding: 10px 40px 20px 40px;
+    font-size: inherit;
+    height: auto;
+    opacity: 1; }
 
 /* ==========================================================================
    FOOTER
