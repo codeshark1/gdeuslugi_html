@@ -2776,27 +2776,29 @@ body.modal-opened {
     font-size: 24px; }
 
 /* INFO / HELP*/
-@media (max-width: 767px) {
-  .row-help .col-content {
-    display: none; } }
-@media (min-width: 768px) {
-  .row-help {
-    display: flex;
-    padding: 30px 0 60px; }
-    .row-help .col-accord {
-      border-right: 1px solid #d8d8d8;
-      width: 165px;
-      padding-right: 10px;
-      flex-shrink: 0; }
+.row-help {
+  padding-bottom: 30px; }
+  @media (max-width: 767px) {
     .row-help .col-content {
-      padding-left: 20px; } }
-@media (min-width: 992px) {
-  .row-help {
-    padding: 50px 0 100px; }
-    .row-help .col-accord {
-      width: 340px; }
-    .row-help .col-content {
-      padding-left: 70px; } }
+      display: none; } }
+  @media (min-width: 768px) {
+    .row-help {
+      display: flex;
+      padding: 30px 0 60px; }
+      .row-help .col-accord {
+        border-right: 1px solid #d8d8d8;
+        width: 165px;
+        padding-right: 10px;
+        flex-shrink: 0; }
+      .row-help .col-content {
+        padding-left: 20px; } }
+  @media (min-width: 992px) {
+    .row-help {
+      padding: 50px 0 100px; }
+      .row-help .col-accord {
+        width: 340px; }
+      .row-help .col-content {
+        padding-left: 70px; } }
 
 .help-heading {
   text-transform: uppercase;
@@ -2905,6 +2907,9 @@ body.modal-opened {
     font-size: inherit;
     height: auto;
     opacity: 1; }
+
+.accord-nest {
+  border-bottom: 1px solid #d8d8d8; }
 
 /* ==========================================================================
    FOOTER

@@ -409,6 +409,44 @@ function sidebarFilters() {
     });    
 }
 
+function accordion_nested() {
+    $('.accord-nest-heading').click(function() {
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $(this).next().removeClass('open');
+        } else {
+            $(this).siblings().removeClass('open');
+            $(this).next().addClass('open');
+            $(this).addClass('active').siblings().removeClass('active');
+        }
+    });
+}
+
+
+function accordionTop() {
+    $('.help-heading').click(function(e){
+        e.preventDefault();
+
+        if ($(this).hasClass('active')) {
+            if ( $(window).width() < 768 ) {
+                $(this).removeClass('active').next().removeClass('open');
+            }
+        } else {
+            var content = $(this).next('.help-content').clone();
+            $('#help-content').html(content);
+            $(this).addClass('active').siblings().removeClass('active open');
+            $(this).next().addClass('open');
+            accordion_nested();
+        }
+
+    });
+                    
+    if ( $(window).width() > 768 ) {
+        $('.help-heading:first-child').click();
+    }
+}
+
+
 jQuery(document).ready(function($){
     new SVGInjector().inject(document.querySelectorAll('svg[data-src]'));
 
@@ -564,6 +602,9 @@ jQuery(document).ready(function($){
     });
 
     sidebarFilters(); 
+
+    accordion_nested();
+    accordionTop();
 
  
     new Glide('#js-reviews', {

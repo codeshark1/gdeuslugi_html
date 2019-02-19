@@ -1567,6 +1567,7 @@ body.modal-opened {overflow: hidden;}
 	opacity: 1;
 }
 .row-help {
+	padding-bottom: 30px;
 	@media (max-width: $screen-sm-max) {
 		.col-content {display: none;}
 	}
@@ -1685,12 +1686,13 @@ body.modal-opened {overflow: hidden;}
 }
 .accord-nest-content {
 	@include hideAccordContent;
+
 	&.open {
 		padding: 10px 40px 20px 40px;
 		@include showAccordContent;
 	}
 }
-
+.accord-nest {border-bottom: 1px solid $border;}
 
 
 
