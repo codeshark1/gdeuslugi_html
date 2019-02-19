@@ -349,6 +349,7 @@ function overlayOn() {
 }
 function overlayOff() {
     $('#overlay-page').fadeOut(100);
+    $('body').removeClass('modal-opened');    
 }
 
 function sidePanel(trigger, block, closer) {
@@ -391,7 +392,7 @@ function showSearchSuggest() {
 function hideSearchSuggest() {
     $('.form-search').css('z-index','inherit');
     $('#js-search-suggest').slideUp(100);
-    overlayOff()
+    overlayOff();
 }
 
 function sidebarFilters() {
@@ -484,7 +485,7 @@ jQuery(document).ready(function($){
         customCheckbox();
     });    
 
-        $('#overlay-page').click(function (e) {
+    $('#overlay-page').click(function (e) {
         hideSearchSuggest();
     })
 
@@ -606,6 +607,12 @@ jQuery(document).ready(function($){
     accordion_nested();
     accordionTop();
 
+    $('#overlay-page').click(function(){
+        overlayOff();
+        hideFilterPanel();
+        $('#js-menu-main').removeClass('opened');
+        $('#js-btn-menu').removeClass('active');
+    });
  
     new Glide('#js-reviews', {
         type: 'carousel',
