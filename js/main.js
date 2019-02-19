@@ -565,7 +565,7 @@ jQuery(document).ready(function($){
 
     sidebarFilters(); 
 
-/* 
+ 
     new Glide('#js-reviews', {
         type: 'carousel',
         focusAt: 'center',
@@ -623,5 +623,5 @@ jQuery(document).ready(function($){
             }
         }
     }).mount();      
-     */
+    
 });
