@@ -1242,12 +1242,14 @@ body.modal-opened {overflow: hidden;}
 	}
 	.content {padding-right: 25px; margin-top: 10px;}
 }
-.heading-filter {
-	position: relative;
+.heading-filter, .heading-filter-price {
 	font-weight: 500;
 	font-size: 15px;
-	cursor: pointer;
 	margin: 0;
+}
+.heading-filter {
+	position: relative;
+	cursor: pointer;
 	&:after {
 		content: "";
 		width: 9px;height: 6px;
@@ -1259,6 +1261,7 @@ body.modal-opened {overflow: hidden;}
 
 	.hint {display: inline-block; margin-left: 10px; font-weight: 400; text-transform: lowercase;}
 }
+
 
 .list-filter-item {
 	display: block; 

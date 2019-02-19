@@ -2395,12 +2395,14 @@ body.modal-opened {
     padding-right: 25px;
     margin-top: 10px; }
 
-.heading-filter {
-  position: relative;
+.heading-filter, .heading-filter-price {
   font-weight: 500;
   font-size: 15px;
-  cursor: pointer;
   margin: 0; }
+
+.heading-filter {
+  position: relative;
+  cursor: pointer; }
   .heading-filter:after {
     content: "";
     width: 9px;
