@@ -213,9 +213,16 @@ function show_pass() {
     function modal_open_close(){
         $('.modal-trigger').click(function(e){
             e.preventDefault();
-            //$($(this).data('trigger')).addClass('opened').attr('data-triggerid', $(this).data('triggerid'));
-            $($(this).data('trigger')).addClass('opened').attr('data-triggerid', $(this).attr('id'));
-            console.log($(this).attr('id'))
+            $('#menu-cities-popup .menu-item').removeClass('active');
+            var $dataValue = this.dataset;
+
+            $( $(this).data('trigger') )
+                .addClass('opened')
+                .attr('data-triggerid', $(this).attr('id'))
+                .find('[data-value="' + $dataValue.value + '"]')
+                .parent('.menu-item')
+                .addClass('active');
+            
             $('body').addClass('modal-opened');
         });
 
@@ -227,17 +234,20 @@ function show_pass() {
     function modal_menu_link_click() {
         $('#menu-categs-popup a, #modal-cities a').click(function(e){
             e.preventDefault();
-            var target_data = "#" + $(this).parents('.modal-container').data('triggerid');
+            var $target_data = "#"+$(this).parents('.modal-container')[0].dataset.triggerid;
+    
+            var $dataValue = this.dataset;
+            console.log($target_data);
             $(this).parent('.menu-item').addClass('active').siblings().removeClass('active');
 
             if( ! $(this).next('.sub-menu').length ) {
-                close_modal(); 
-                var id = $('body').find(target_data).attr('id');
+                close_modal();
+                var id = $('body').find($target_data).attr('id'); //---
 
-                if ( $('body').find(target_data).is('input') ) {
-                    $('body').find(target_data).val($(this).text());
+                if ( $('body').find($target_data).is('input') ) {
+                    $('body').find($target_data).val($(this).text());
                 } else {
-                    $('body').find(target_data).text($(this).text());                    
+                    $('body').find($target_data).text($(this).text()).attr('data-value',$dataValue.value);                    
                 }
                 $('body').find("#"+id+"-input").val($(this).data('value'));              
             }
@@ -605,7 +615,7 @@ jQuery(document).ready(function($){
     
     accordionTop();
     accordion_nested();
-    
+
     $('#overlay-page').click(function(){
         overlayOff();
         hideFilterPanel();
