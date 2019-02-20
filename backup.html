@@ -1,7 +1,75 @@
-<h2 class="h-content">����� ����� ���������� ����</h2>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Шапка</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&amp;subset=cyrillic-ext" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    
+        <h2 class="h-content">Войти через социальные сети</h2>
         <ul class="menu-login-social">
             <li class="menu-item"><a href="#" class="vk"><svg data-src="img/vk.svg"></svg></a></li>
             <li class="menu-item"><a href="#" class="fb"><svg data-src="img/fb.svg"></svg></a></li>
             <li class="menu-item"><a href="#" class="ok"><svg data-src="img/ok.svg"></svg></a></li>
             <li class="menu-item"><a href="#" class="google"><svg data-src="img/google.svg"></svg></a></li>
         </ul>
+
+        <div class="col-search">
+            <form action="/" class="form-search">
+                <input class="search-field" type="search" placeholder="Поиск...">
+                <p class="search-field-btn"></p>
+                <div class="form-search-suggest" id="js-search-suggest">
+                    <ul class="list-suggest">                                               
+                        <li class="list-item category"><a href="#"><mark>Уборка</mark> помещений <span class="type">Категория</span></a></li>
+                        <li class="list-item category"><a href="#"><mark>Уборка</mark> квартир <span class="type">Категория</span></a></li>
+                        <li class="list-item category"><a href="#"><mark>Уборка</mark> офисов <span class="type">Категория</span></a></li>
+                        <li class="list-item"><a href="#"><mark>Уборка</mark> территории <span class="type">Статья</span></a></li>
+                        <li class="list-item"><a href="#">Генеральная <mark>уборка</mark> бассейнов и водоемов <span class="type">Услуга</span></a></li>
+                        <li class="list-item"><a href="#"><mark>Уборка</mark> после ремонта <span class="type">Заказ</span></a></li>
+                        <li class="list-item"><a href="#">Как выбрать <mark>убор</mark>щицу <span class="type">Статья</span></a></li>
+                    </ul>
+                </div>
+            </form>
+            <div class="button d-lg-none">
+                <button class="btn btn-settings" id="js-btn-filter"><svg class="icon" data-src="img/settings.svg"></svg> <i class="number"></i></button>
+            </div>
+        </div><!-- /.col-search -->
+
+
+        <form action="/" class="search-center bx-mg">
+            <input type="hidden" id="trigger-city-listing-input" class="chosen-value">
+            <input type="text" placeholder="Услуга или мастер">
+            <button type="submit" class="btn btn-main">Найти мастера</button>
+        </form>        
+
+
+        <li class="menu-item"><a href="#">ИТ-услуги</a> <span class="number">337</span></li>
+        <li class="menu-item"><a href="#">Бытовые услуги, ремонт техники</a> <span class="number">467</span></li>
+        <li class="menu-item"><a href="#">Услуги пошива</a> <span class="number">461</span></li>
+        <li class="menu-item"><a href="#">Отделочные работы</a> <span class="number">921</span></li>
+        <li class="menu-item"><a href="#">Инженерно-монтажные работы</a> <span class="number">812</span></li>
+        <li class="menu-item"><a href="#">Благоустройство территории</a> <span class="number">205</span></li>
+        <li class="menu-item"><a href="#">Судостроительные услуги</a> <span class="number">71</span></li>
+        <li class="menu-item"><a href="#">ИТ-услуги</a> <span class="number">337</span></li>
+        <li class="menu-item"><a href="#">Бытовые услуги, ремонт техники</a> <span class="number">467</span></li>
+        <li class="menu-item"><a href="#">Услуги пошива</a> <span class="number">461</span></li>
+        <li class="menu-item"><a href="#">Отделочные работы</a> <span class="number">921</span></li>
+        <li class="menu-item"><a href="#">Инженерно-монтажные работы</a> <span class="number">812</span></li>
+        <li class="menu-item"><a href="#">Благоустройство территории</a> <span class="number">205</span></li>
+        <li class="menu-item"><a href="#">Судостроительные услуги</a> <span class="number">71</span></li>
+        <li class="menu-item"><a href="#">ИТ-услуги</a> <span class="number">337</span></li>
+        <li class="menu-item"><a href="#">Бытовые услуги, ремонт техники</a> <span class="number">467</span></li>
+        <li class="menu-item"><a href="#">Услуги пошива</a> <span class="number">461</span></li>
+        <li class="menu-item"><a href="#">Отделочные работы</a> <span class="number">921</span></li>
+        <li class="menu-item"><a href="#">Инженерно-монтажные работы</a> <span class="number">812</span></li>
+        <li class="menu-item"><a href="#">Благоустройство территории</a> <span class="number">205</span></li>
+        <li class="menu-item"><a href="#">Судостроительные услуги</a> <span class="number">71</span></li>              
+</body>
+</html>        

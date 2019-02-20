@@ -370,9 +370,9 @@ label.checkbox a {
     width: 16px;
     line-height: 16px;
     position: absolute;
-    right: -3px;
-    bottom: -3px;
-    background: #ffffff;
+    right: 0px;
+    bottom: 0px;
+    background: #E2F2DE;
     border-radius: 100%;
     font-style: normal; }
 
@@ -1135,9 +1135,6 @@ a, svg, path, button {
 .header-site {
   background: #fff;
   position: relative; }
-  @media (max-width: 991px) {
-    .header-site {
-      padding-bottom: 88px; } }
   .header-site .back {
     display: block;
     width: 24px;
@@ -1172,6 +1169,16 @@ a, svg, path, button {
       .header-site .col-search {
         margin: 0 15px;
         width: 600px; } }
+  .header-site .bx-button-filter {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 3; }
+    .header-site .bx-button-filter .btn-settings {
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      overflow: visible; }
   .header-site .form-search {
     position: relative;
     flex-grow: 1; }
@@ -1287,11 +1294,13 @@ a, svg, path, button {
 	NAVIGATION
 ========================================================================== */
 #overlay-page {
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
   left: 0;
+  height: 100%;
+  width: 100%;
   background: rgba(0, 0, 0, 0.7);
   display: none;
   z-index: 4; }
@@ -2352,7 +2361,7 @@ body.modal-opened {
     background: #FAFAFA;
     width: 320px;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     right: -320px;

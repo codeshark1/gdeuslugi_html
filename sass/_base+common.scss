@@ -310,7 +310,7 @@ label.checkbox {
   background: $main;
   border-radius: 4px;
   position: relative;
-  .number {font-size: 9px; font-weight: 500;color: $main;height: 16px;width: 16px; line-height: 16px; position: absolute; right: -3px;bottom: -3px; background: #ffffff;border-radius: 100%; font-style: normal}
+  .number {font-size: 9px; font-weight: 500;color: $main;height: 16px;width: 16px; line-height: 16px; position: absolute; right: 0px;bottom: 0px; background: $main-light;border-radius: 100%; font-style: normal}
 }
 .btn-link {
   @include link();
