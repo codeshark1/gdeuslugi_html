@@ -319,6 +319,7 @@ $sect-mg-neg: 39px;
 		position: relative;
 		cursor: pointer;
 		padding: 10px 0;			
+		min-height: 40px;
 		.user-name {color: $main;text-transform: uppercase;font-weight: 500;font-size: 14px;}
 		.icon {position: absolute; top: 0;right: 0;bottom: 0; margin: auto; width: 9px;
 			path {fill: $main !important;}
@@ -1240,7 +1241,7 @@ body.modal-opened {overflow: hidden;}
 		border-top: 1px solid $border;
 		padding-top: 10px;
 	}
-	
+
 	.content {padding-right: 25px; margin-top: 10px;}
 }
 .heading-filter, .heading-filter-price {

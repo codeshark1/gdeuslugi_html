@@ -1398,7 +1398,8 @@ a, svg, path, button {
   .menu-main-user-heading {
     position: relative;
     cursor: pointer;
-    padding: 10px 0; }
+    padding: 10px 0;
+    min-height: 40px; }
     .menu-main-user-heading .user-name {
       color: #47AB2F;
       text-transform: uppercase;
