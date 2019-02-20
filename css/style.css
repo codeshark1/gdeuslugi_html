@@ -1293,10 +1293,11 @@ a, svg, path, button {
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.7);
-  display: none; }
+  display: none;
+  z-index: 4; }
 
 .menu-top {
-  z-index: 2; }
+  z-index: 5; }
 
 .menu-main {
   width: 288px;
