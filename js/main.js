@@ -233,16 +233,16 @@ function show_pass() {
     } 
     function modal_menu_link_click() {
         $('#menu-categs-popup a, #modal-cities a').click(function(e){
-            e.preventDefault();
+            
             var $target_data = "#"+$(this).parents('.modal-container')[0].dataset.triggerid;
     
             var $dataValue = this.dataset;
-            console.log($target_data);
+
             $(this).parent('.menu-item').addClass('active').siblings().removeClass('active');
 
             if( ! $(this).next('.sub-menu').length ) {
                 close_modal();
-                var id = $('body').find($target_data).attr('id'); //---
+                var id = $('body').find($target_data).attr('id');
 
                 if ( $('body').find($target_data).is('input') ) {
                     $('body').find($target_data).val($(this).text());
@@ -250,6 +250,8 @@ function show_pass() {
                     $('body').find($target_data).text($(this).text()).attr('data-value',$dataValue.value);                    
                 }
                 $('body').find("#"+id+"-input").val($(this).data('value'));              
+            } else {
+                e.preventDefault();
             }
 
             if( $('#menu-directions').length ) {
@@ -468,7 +470,6 @@ function accordionTop() {
 
 
 jQuery(document).ready(function($){
-    //new SVGInjector().inject(document.querySelectorAll('svg[data-src]'));
     svg();
 
     sidePanel('#js-btn-menu','#js-menu-main');
@@ -477,7 +478,6 @@ jQuery(document).ready(function($){
     show_form_filter('#js-btn-search-listing','#search-listing-filter');
     show_form_filter('#search-listing-filter .btn-close','#search-listing-filter');
 
-    //menu_nested('#menu-main');
 
     tabs();
 
@@ -486,14 +486,6 @@ jQuery(document).ready(function($){
 
     drop_menu('#js-user-menu-trigger', '#js-user-menu');
     navigation_show('#js-menu-main-user-heading', '#js-menu-main-user-actions');
-
-    /* $('.location-hint').find('.btn-cta').click(function(e){
-        e.preventDefault();
-        hide_location_hint();
-    });
-    $('#js-btn-cities').click(function(e){        
-        hide_location_hint();
-    }); */
 
 
 
