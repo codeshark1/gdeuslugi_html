@@ -433,18 +433,6 @@ function sidebarFilters() {
     });    
 }
 
-function accordion_nested() {
-    $('.accord-nest-heading').click(function() {
-        if ($(this).hasClass('active')) {
-            $(this).removeClass('active');
-            $(this).next('.accord-nest-content').removeClass('open');
-        } else {
-            $(this).addClass('active').siblings('.accord-nest-heading').removeClass('active');
-            $(this).siblings('.accord-nest-content').removeClass('open');
-            $(this).next('.accord-nest-content').addClass('open');
-        }
-    });
-}
 
 function accordionTop() {
     $('.help-heading').click(function(){
@@ -458,9 +446,20 @@ function accordionTop() {
             $('#help-content').html(content);
             $(this).addClass('active').siblings().removeClass('active open');
             $(this).next('.help-content').addClass('open');
-            
         }
 
+    
+    });
+
+    $('.container').on('click', '.accord-nest-heading', function(){
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $(this).next('.accord-nest-content').removeClass('open');
+        } else {
+            $(this).addClass('active').siblings('.accord-nest-heading').removeClass('active');
+            $(this).siblings('.accord-nest-content').removeClass('open');
+            $(this).next('.accord-nest-content').addClass('open');
+        }
     });
                  
     if ( $(window).width() > 768 ) {
@@ -618,7 +617,7 @@ jQuery(document).ready(function($){
 
     
     accordionTop();
-    accordion_nested();
+    
 
     $('#overlay-page').click(function(){
         overlayOff();
