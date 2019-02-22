@@ -446,9 +446,7 @@ function accordionTop() {
             $('#help-content').html(content);
             $(this).addClass('active').siblings().removeClass('active open');
             $(this).next('.help-content').addClass('open');
-        }
-
-    
+        }    
     });
 
     $('.container').on('click', '.accord-nest-heading', function(){
