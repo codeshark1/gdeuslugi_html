@@ -329,7 +329,8 @@ function show_pass() {
     }
 
     function removeFile() {
-        $('.remove-photo').on('click', function(){
+        $('.remove-photo').on('click', function(e){
+            e.preventDefault();
             $(this).parent().remove();
         });
     };
@@ -594,8 +595,8 @@ jQuery(document).ready(function($){
             if(_count > max)
                 max = _count;
         });
-        console.log(max);
-        var count = max > 0 ? (max + 1) : $('.photos-uploaded').find('.photo-uploaded').length;                
+        
+        var count = max > 0 ? (max + 1) : $('.photos-uploaded').find('.photo-uploaded').length;
         var foo = $('.photos-uploaded').find('.photo-uploaded');                
         $('.photos-uploaded').append("<div class='item photo-uploaded' data-count='"+count+"'><input type='file' class='img-input' name='user_photo[]' data-id='img-upload-"+count+"'></div>");                
         $('input[data-id="img-upload-'+count+'"]').click();

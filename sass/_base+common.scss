@@ -125,6 +125,7 @@ textarea {
 .lbl {  
   display: block;
   margin-bottom: 5px;  
+  &+label {margin-top: 20px;}
 }
 
 fieldset {
@@ -137,7 +138,6 @@ fieldset {
 label.checkbox, label.radio {
   position: relative;
   padding-left: 40px;
-  font-size: 14px;
   &:before, &:after {
     content: "";
     position: absolute;
@@ -171,7 +171,9 @@ label.checkbox {
   }
   a {text-decoration: underline;}
 }
-
+label.checkbox-accept {
+  font-size: 14px;
+}
 
 
 /* DROP (MINI)MENU */

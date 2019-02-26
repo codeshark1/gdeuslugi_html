@@ -177,6 +177,8 @@ textarea.invalid {
 .lbl {
   display: block;
   margin-bottom: 5px; }
+  .lbl + label {
+    margin-top: 20px; }
 
 fieldset {
   border: none;
@@ -185,8 +187,7 @@ fieldset {
 
 label.checkbox, label.radio {
   position: relative;
-  padding-left: 40px;
-  font-size: 14px; }
+  padding-left: 40px; }
   label.checkbox:before, label.checkbox:after, label.radio:before, label.radio:after {
     content: "";
     position: absolute;
@@ -219,6 +220,9 @@ label.checkbox:after {
   margin-left: 3px; }
 label.checkbox a {
   text-decoration: underline; }
+
+label.checkbox-accept {
+  font-size: 14px; }
 
 /* DROP (MINI)MENU */
 .drop-menu-wrapper {
@@ -2304,7 +2308,8 @@ body.modal-opened {
   height: 80px;
   display: inline-block;
   display: inline-flex;
-  margin-right: 16px; }
+  margin-right: 16px;
+  flex-shrink: 0; }
   .img-thumbnail:last-child {
     margin-right: 0; }
 
