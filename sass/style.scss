@@ -852,6 +852,13 @@ input[type=password] {margin-bottom: 20px;}
 	}
 	.link {font-size: 16px;}
 	.img-input {display: none;}
+
+	&.avatar {
+		.item-add {
+			display: none;
+			&:last-child {display: inline-block;}
+		}
+	}
 }
 .img-file-inputs {
 	display: none;

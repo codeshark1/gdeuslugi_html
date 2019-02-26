@@ -324,7 +324,7 @@ function show_pass() {
 /* IMAGE UPLOAD */
     function initDialog(el) {
         $('.img-input').on('change', function (e) {
-        showFile(e, el);
+            showFile(e, el);            
         });
     }
 
@@ -343,9 +343,7 @@ function show_pass() {
             var fr = new FileReader();
 
             fr.onload = (function(theFile) {
-                var numbOfInputs = $('.img-input').length;
-                return function(e) {
-            
+                return function(e) {            
                     el.parent().append("<div class='photo' style='background-image:url(" + e.target.result + ")'></div><a href='#' class='link remove-photo'>Удалить</a>");
                     el.parent().addClass('active');
                     removeFile(); 
@@ -586,8 +584,9 @@ jQuery(document).ready(function($){
     /* IMAGE UPLOAD */
     $('.item-add').on('click',function (e) {
         e.preventDefault();
+        var parentContainer = $(this).parents('.photos-uploaded');
         var max = 0;
-        $('.photo-uploaded').each(function(){
+        parentContainer.find('.photo-uploaded').each(function(){
             var _this = $(this);
             if(!$(this).hasClass('active'))
                 $(this).remove();
@@ -596,11 +595,11 @@ jQuery(document).ready(function($){
                 max = _count;
         });
         
-        var count = max > 0 ? (max + 1) : $('.photos-uploaded').find('.photo-uploaded').length;
-        var foo = $('.photos-uploaded').find('.photo-uploaded');                
-        $('.photos-uploaded').append("<div class='item photo-uploaded' data-count='"+count+"'><input type='file' class='img-input' name='user_photo[]' data-id='img-upload-"+count+"'></div>");                
-        $('input[data-id="img-upload-'+count+'"]').click();
-        initDialog($('input[data-id="img-upload-'+count+'"]'));
+        var count = max > 0 ? (max + 1) : parentContainer.find('.photo-uploaded').length;                
+        parentContainer.append("<div class='item photo-uploaded' data-count='"+count+"'><input type='file' class='img-input' name='user_photo[]' data-id='img-upload-"+count+"'></div>");                
+        var inputChange = parentContainer.find('input[data-id="img-upload-'+count+'"]');
+        inputChange.click();
+        initDialog(inputChange);
     }); 
 
 
