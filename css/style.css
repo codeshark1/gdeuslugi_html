@@ -1995,11 +1995,9 @@ input[type=password] {
   font-size: 16px; }
 .photos-uploaded .img-input {
   display: none; }
-.photos-uploaded.avatar .item-add {
-  display: none; }
-  .photos-uploaded.avatar .item-add:last-child {
-    display: inline-block; }
 
+.photos-avatar .photo {
+  border-radius: 100%; }
 .photos-avatar.chosen .item-add {
   display: none; }
 

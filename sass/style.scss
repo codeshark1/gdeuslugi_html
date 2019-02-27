@@ -857,15 +857,12 @@ input[type=password] {margin-bottom: 20px;}
 	.link {font-size: 16px;}
 	.img-input {display: none;}
 
-	&.avatar {
-		.item-add {
-			display: none;
-			&:last-child {display: inline-block;}
-		}
-	}
 }
-.photos-avatar.chosen {
-	.item-add {display: none;}
+.photos-avatar{
+	.photo {border-radius: 100%;}
+	&.chosen {
+		.item-add {display: none;}
+	}
 }
 .img-file-inputs {
 	display: none;
