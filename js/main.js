@@ -331,6 +331,7 @@ function show_pass() {
     function removeFile() {
         $('.remove-photo').on('click', function(e){
             e.preventDefault();
+            $(this).parents('.photos-uploaded').removeClass('chosen');
             $(this).parent().remove();
         });
     };
@@ -343,9 +344,10 @@ function show_pass() {
             var fr = new FileReader();
 
             fr.onload = (function(theFile) {
-                return function(e) {            
+                return function(e) {       
                     el.parent().append("<div class='photo' style='background-image:url(" + e.target.result + ")'></div><a href='#' class='link remove-photo'>Удалить</a>");
                     el.parent().addClass('active');
+                    el.parents('.photos-uploaded').addClass('chosen');
                     removeFile(); 
                 };
             })(f);
@@ -586,6 +588,7 @@ jQuery(document).ready(function($){
         e.preventDefault();
         var parentContainer = $(this).parents('.photos-uploaded');
         var max = 0;
+        parentContainer.find('.photo-uploaded').not('.active').remove();
         parentContainer.find('.photo-uploaded').each(function(){
             var _this = $(this);
             if(!$(this).hasClass('active'))
@@ -594,14 +597,15 @@ jQuery(document).ready(function($){
             if(_count > max)
                 max = _count;
         });
-        
-        var count = max > 0 ? (max + 1) : parentContainer.find('.photo-uploaded').length;                
-        parentContainer.append("<div class='item photo-uploaded' data-count='"+count+"'><input type='file' class='img-input' name='user_photo[]' data-id='img-upload-"+count+"'></div>");                
+
+        var count = max > 0 ? (max + 1) : parentContainer.find('.photo-uploaded').length;
+        parentContainer.append("<div class='item photo-uploaded' data-count='"+count+"'><input type='file' class='img-input' name='user_photo[]' data-id='img-upload-"+count+"'></div>");
         var inputChange = parentContainer.find('input[data-id="img-upload-'+count+'"]');
         inputChange.click();
         initDialog(inputChange);
     }); 
 
+    
 
    
     $('body').click(function(){

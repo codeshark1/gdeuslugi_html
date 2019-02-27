@@ -82,45 +82,13 @@
 
         <div class="form-row">
             <span class="lbl">Аватар</span>
-            <div class="photos-uploaded">
+            <div class="photos-uploaded photos-avatar">
                 <div class="item item-add">
                     <div class="photo"></div>
                     <a href="#" class="link">Добавить</a>
                 </div>
             </div><!-- /.photos-uploaded -->
         </div><!-- /.form-row -->
-
-        <label class="form-row">
-            <span class="lbl">Город</span>
-            <input type="text" id="select-city" class="pseudo-select modal-trigger" value="Санкт-Петербург" data-trigger="#modal-cities" readonly>
-            <input type="hidden" id="select-city-input" class="chosen-value">
-        </label>
-        
-        <span class="lbl">Используемые мессенджеры</span>
-        <label class="form-row checkbox">
-            <input type="checkbox">Telegram
-        </label>        
-        <label class="form-row checkbox">
-            <input type="checkbox">Whatsapp
-        </label>        
-        <label class="form-row checkbox">
-            <input type="checkbox">Viber
-        </label>                     
-
-        <div class="form-row">
-            <span class="lbl">Фото портфолио</span>
-            <div class="photos-uploaded">
-                <div class="item item-add">
-                    <div class="photo"></div>
-                    <a href="#" class="link">Добавить</a>
-                </div>
-            </div><!-- /.photos-uploaded -->
-        </div><!-- /.form-row -->
-
-        <label class="form-row">
-            <span class="lbl">Видео портфолио</span>
-            <input type="url" placeholder="Сылка на YouTube">            
-        </label>   
 
         <div class="form-bottom-buttons form-row">
             <button type="submit" class="btn btn-main btn-full-mb">Сохранить</button>
@@ -128,11 +96,24 @@
         </div><!-- /.form-bottom-buttons -->
 
         <label class="form-row">
-            <span class="lbl">Введите код из СМС / email</span>
+            <span class="lbl">Введите код из СМС</span>
             <input type="text" placeholder="Код из СМС">            
         </label>  
 
         <a class="link-input" href="#">Не получили СМС?</a>        
+        <div class="sms-info">
+            <p>Вы сможете запросить новое СМС-сообщение через <span class="time">29:25</span></p>
+        </div>        
+
+        <label class="form-row">
+            <span class="lbl">Введите код из email</span>
+            <input type="text" placeholder="Код из email">            
+        </label>  
+
+        <a class="link-input" href="#">Не получили email?</a>        
+        <div class="sms-info">
+            <p>Вы сможете запросить новое email-сообщение через <span class="time">29:25</span></p>
+        </div>               
     </form>
 
 </main><!-- /.container -->
