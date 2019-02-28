@@ -152,17 +152,6 @@ function searchForm(formId) {
     });
 }
 
-function accordion(heading, content) {
-    $(heading).click(function(){
-        if ($(this).parent('.accord').hasClass('accord-open')) {
-            $(this).siblings('.accord-content').slideUp().parents('.accord').removeClass('accord-open');
-        } else {
-            $(this).parents('.section-accord').find('.accord-open').removeClass('accord-open').find('.accord-content').slideUp()
-            $(this).parent('.accord').addClass('accord-open').find('.accord-content').slideDown();
-        }
-    });
-}    
-
 function hide_location_hint() {
     $('.location-hint').hide();
 };
@@ -399,7 +388,7 @@ function hideFilterPanel() {
 function showSearchSuggest() {
     $('.form-search').css('z-index',3);
     $('#js-search-suggest').slideDown(100);
-    overlayOn()
+    overlayOn();
 }
 
 function hideSearchSuggest() {
@@ -466,10 +455,17 @@ function accordionTop() {
     }
 }
 
+function addHrefToOffers() {
+    $('.card-offer').on('click', function(e){
+		if ( ! e.target.classList.contains("btn") ) {
+			window.location.href = $(this).find('.h-card a').attr('href');
+        }
+    });
+}
 
 jQuery(document).ready(function($){
     svg();
-
+    addHrefToOffers();
     sidePanel('#js-btn-menu','#js-menu-main');
     sidePanel('#js-btn-filter','#js-listing-filter','#js-btn-filter-close');
 
