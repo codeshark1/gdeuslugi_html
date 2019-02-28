@@ -1,3 +1,14 @@
+var domain = location.origin + "/";
+if (!window.type) window.type = location.pathname.split('/')[1];
+if (!window.city) window.city = location.pathname.split('/')[3];
+
+function render_modal_items(where, list) {
+    list.forEach(function(item) {
+        if (item.is_parent) var is_parent = 1;else  var is_parent = 0;
+        where.append('<li class="menu-item" data-child="' + is_parent + '" data-slug="' + item.translit_name +'"><a href="' + domain + window.type + '/' + item.translit_name + '/' + window.city + '">' + item.name + '</a><ul class="sub-menu"></ul></li>');
+    });
+}
+
 function navigation_show(button, menu, othermenu, otherbutton) { // глобальная
     $(menu).hide();
     $(button).click(function(){
@@ -61,7 +72,7 @@ function tabs() {
         if($('select').hasClass('tab-select')){
             $('select.tab-select option').prop('selected', false);
             $('select.tab-select option[value="'+tab_id+'"]').prop('selected', true);
-         }   
+        }
         $(this).parents('.nav-tabs-wrapper').find('.tab-selected').text($(this).text());            
     });
     $('.tab-selected').click(function(e){
@@ -202,6 +213,7 @@ function show_pass() {
     function modal_open_close(){
         $('.modal-trigger').click(function(e){
             e.preventDefault();
+
             $('#menu-cities-popup .menu-item').removeClass('active');
             var $dataValue = this.dataset;
 
@@ -221,8 +233,20 @@ function show_pass() {
         });
     } 
     function modal_menu_link_click() {
+
         $('#menu-categs-popup a, #modal-cities a').click(function(e){
-            
+            var menuItem = $(this).parent('.menu-item');
+
+            console.log(menuItem.data('child'));
+
+            if (menuItem.data('child')) {
+                $.get( domain + "api/" + $(this).parent('.menu-item').data('slug'), function( data ) {
+                    var sub = menuItem.find('ul');
+
+                    render_modal_items(sub, data.siblings);
+                });
+            };
+
             var $target_data = "#"+$(this).parents('.modal-container')[0].dataset.triggerid;
     
             var $dataValue = this.dataset;
@@ -243,18 +267,15 @@ function show_pass() {
                 e.preventDefault();
             }
 
-            if( $('#menu-directions').length ) {
-                var linkMasters = $('#menu-directions .masters a').attr('href');
-                var linkMastersTrimmed = linkMasters.replace(/\d+$/g, "");
-                $('#menu-directions .masters a').attr('href', linkMastersTrimmed + $(this).data('value'));
+            if( $('#search_imaster').length ) {
+                var linkMasters = $('#search_imaster').attr('href');
+                console.log(linkMasters);
+                var linkMastersTrimmed = linkMasters.replace(/[a-z\-]+$/g, "");
+                $('#search_imaster').attr('href', linkMastersTrimmed + $(this).data('value'));
 
-                var linkServices = $('#menu-directions .services a').attr('href');
-                var linkServivesTrimmed = linkServices.replace(/\d+$/g, "");
-                $('#menu-directions .services a').attr('href', linkServivesTrimmed + $(this).data('value'));
-                
-                var linkOrders = $('#menu-directions .orders a').attr('href');
-                var linkOrdersTrimmed = linkOrders.replace(/\d+$/g, "");
-                $('#menu-directions .orders a').attr('href', linkOrdersTrimmed + $(this).data('value'));                
+                var linkServices = $('#search_iservice').attr('href');
+                var linkServivesTrimmed = linkServices.replace(/[a-z\-]+$/g, "");
+                $('#search_iservice').attr('href', linkServivesTrimmed + $(this).data('value'));
             }
         });
     }
@@ -313,7 +334,7 @@ function show_pass() {
 /* IMAGE UPLOAD */
     function initDialog(el) {
         $('.img-input').on('change', function (e) {
-            showFile(e, el);            
+            showFile(e, el);
         });
     }
 
@@ -333,7 +354,8 @@ function show_pass() {
             var fr = new FileReader();
 
             fr.onload = (function(theFile) {
-                return function(e) {       
+                return function(e) {
+
                     el.parent().append("<div class='photo' style='background-image:url(" + e.target.result + ")'></div><a href='#' class='link remove-photo'>Удалить</a>");
                     el.parent().addClass('active');
                     el.parents('.photos-uploaded').addClass('chosen');
@@ -503,7 +525,7 @@ jQuery(document).ready(function($){
         var item = document.createElement('li');
         var spanTag = document.createElement('span');
         var link = document.createElement('a');
-        var routeTo = "http://gdeuslugidev.ru/" + entity + "/" + id;
+        var routeTo = domain + entity + "/" + id;
 
         if (tag === 'Категория') {
             item.classList.add('category')
@@ -523,7 +545,7 @@ jQuery(document).ready(function($){
         var searchListContainer = $('.form-search-suggest');
         var listSearchContainer = $(searchListContainer).find('.list-suggest');
         var url = function (searchStr) {
-            return 'http://gdeuslugidev.ru/api/search/' + searchStr;
+            return domain + '/api/search/' + searchStr;
         }
         var searchContext = $('.list-item').find('a');
 
@@ -571,6 +593,20 @@ jQuery(document).ready(function($){
     $('.modal-window').click(function(e){
         e.stopPropagation();
     });
+
+    $('.modal-trigger#trigger-categs-listing').click(function(e){
+        var all = $('#menu-categs-popup ul');
+
+        if (all.find('li').length < 1) {
+            $.get( domain + "api/all", function( data ) {
+                render_modal_items(all, data.siblings);
+
+                modal_menu_link_click();
+                categ_select();
+            });
+        }
+    });
+
     modal_menu_link_click();
     categ_select();    
 
@@ -601,7 +637,6 @@ jQuery(document).ready(function($){
         initDialog(inputChange);
     }); 
 
-    
 
    
     $('body').click(function(){
