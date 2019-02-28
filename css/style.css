@@ -2174,9 +2174,6 @@ body.modal-opened {
   font-weight: bold;
   font-size: 24px;
   margin: 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
   padding-right: 10px; }
 
 .menu-modal-actions {
@@ -2318,7 +2315,7 @@ body.modal-opened {
 
 .img-main {
   margin-bottom: 5px;
-  display: block; }
+  display: inline-block; }
 
 .img-preview-wrapper {
   overflow: auto; }
