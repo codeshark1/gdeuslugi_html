@@ -381,6 +381,7 @@ $sect-mg-neg: 39px;
 	//margin-bottom: 75px;
 }
 .pagination {
+	
 	.page {
 		background: #fff;
 		box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
@@ -396,6 +397,11 @@ $sect-mg-neg: 39px;
 	.current {background: $main; color: #fff}
 	.dots {background: none}
 	path {fill: $gray-text}
+
+	@media (max-width: $screen-xs-max) {
+		.page {display: none;}
+		.back, .forw, .current, .current+.page, .dots {display: inline-block;}
+	}	
 }
 
 /* ==========================================================================

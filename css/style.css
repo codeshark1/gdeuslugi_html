@@ -1499,6 +1499,11 @@ a, svg, path, button {
   background: none; }
 .pagination path {
   fill: #999999; }
+@media (max-width: 575px) {
+  .pagination .page {
+    display: none; }
+  .pagination .back, .pagination .forw, .pagination .current, .pagination .current + .page, .pagination .dots {
+    display: inline-block; } }
 
 /* ==========================================================================
    CONTENT
