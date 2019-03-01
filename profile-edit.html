@@ -93,25 +93,27 @@
             <button type="button" class="btn btn-sub btn-full-mb">Отмена</button>
         </div><!-- /.form-bottom-buttons -->
 
-        <label class="form-row">
-            <span class="lbl">Введите код из СМС</span>
-            <input type="text" placeholder="Код из СМС">            
-        </label>  
+        <div class="form-row">
+            <label class="form-row">
+                <span class="lbl">Введите код из СМС</span>
+                <input type="text" placeholder="Код из СМС">            
+            </label>  
+            <a class="link-input" href="#">Не получили СМС?</a>        
+            <div class="sms-info">
+                <p>Вы сможете запросить новое СМС-сообщение через <span class="time" id="countdown-sms"></span></p>
+            </div>        
+        </div><!-- /.form-row -->
 
-        <a class="link-input" href="#">Не получили СМС?</a>        
-        <div class="sms-info">
-            <p>Вы сможете запросить новое СМС-сообщение через <span class="time">29:25</span></p>
-        </div>        
-
-        <label class="form-row">
-            <span class="lbl">Введите код из email</span>
-            <input type="text" placeholder="Код из email">            
-        </label>  
-
-        <a class="link-input" href="#">Не получили email?</a>        
-        <div class="sms-info">
-            <p>Вы сможете запросить новое email-сообщение через <span class="time">29:25</span></p>
-        </div>               
+        <div class="form-row">
+            <label class="form-row">
+                <span class="lbl">Введите код из email</span>
+                <input type="text" placeholder="Код из email">            
+            </label>  
+            <a class="link-input" href="#">Не получили email?</a>        
+            <div class="sms-info">
+                <p>Вы сможете запросить новое email-сообщение через <span class="time" id="countdown-email"></span></p>
+            </div>
+        </div><!-- /.form-row -->
     </form>
 
 </main><!-- /.container -->
@@ -161,5 +163,27 @@
 </div><!-- /.modal-container -->
 
 <div class="footer-placehodler"></div>
+
+<script>
+    function startCountdown(block, timeleft) {
+        var downloadTimer = setInterval(function(){
+            if (timeleft <= 9) {
+                document.getElementById(block).innerHTML = "00:0"+timeleft;
+            } else {
+                document.getElementById(block).innerHTML = "00:"+timeleft;
+            }
+            timeleft -= 1;
+            if(timeleft < 0){
+                clearInterval(downloadTimer);
+                $("<button class='btn btn-main'>Отправить</button>").insertAfter($("#"+block).parents('.sms-info'));
+            }
+        }, 1000);
+    }
+
+    $(document).ready(function(){
+        startCountdown('countdown-sms', 15);
+        startCountdown('countdown-email', 30);
+    });
+</script>
 </body>
 </html>
