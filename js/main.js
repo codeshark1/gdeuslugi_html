@@ -659,7 +659,7 @@ jQuery(document).ready(function($){
         $('#js-btn-menu').removeClass('active');
     });
  
-/*     new Glide('#js-reviews', {
+    new Glide('#js-reviews', {
         type: 'carousel',
         focusAt: 'center',
         gap: 10,
@@ -715,6 +715,6 @@ jQuery(document).ready(function($){
                 peek: 20
             }
         }
-    }).mount();       */
+    }).mount();      
     
 });
