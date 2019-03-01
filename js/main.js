@@ -659,62 +659,66 @@ jQuery(document).ready(function($){
         $('#js-btn-menu').removeClass('active');
     });
  
-    new Glide('#js-reviews', {
-        type: 'carousel',
-        focusAt: 'center',
-        gap: 10,
-        autoplay: 5000,
-        animationDuration: 800,
-        peek: 100,
-        perView: 3,
-        breakpoints: {
-            1600: {
-                perView: 2,
-                peek: 100,
-            },
-            1250: {
-                perView: 2,
-                peek: 50
-            },
-            1000: {
-                perView: 1,
-                peek:100,
-                autoplay: false
-            },
-            800: {
-                perView: 1,
-                peek: 20
+    if ($('#js-reviews').length) {
+        new Glide('#js-reviews', {
+            type: 'carousel',
+            focusAt: 'center',
+            gap: 10,
+            autoplay: 5000,
+            animationDuration: 800,
+            peek: 100,
+            perView: 3,
+            breakpoints: {
+                1600: {
+                    perView: 2,
+                    peek: 100,
+                },
+                1250: {
+                    perView: 2,
+                    peek: 50
+                },
+                1000: {
+                    perView: 1,
+                    peek:100,
+                    autoplay: false
+                },
+                800: {
+                    perView: 1,
+                    peek: 20
+                }
             }
-        }
-    }).mount();    
+        }).mount();    
+    }
 
-    new Glide('#js-portfolios', {
-        type: 'carousel',
-        focusAt: 'center',
-        gap: 10,
-        autoplay: 5000,
-        animationDuration: 800,
-        peek: 100,
-        perView: 3,
-        breakpoints: {
-            1600: {
-                perView: 2,
-                peek: 100,
-            },
-            1250: {
-                perView: 2,
-                peek: 50
-            },
-            1000: {
-                perView: 1,
-                peek:100,
-                autoplay: false
-            },
-            800: {
-                perView: 1,
-                peek: 20
+    if ($('#js-portfolios').length) {
+        new Glide('#js-portfolios', {
+            type: 'carousel',
+            focusAt: 'center',
+            gap: 10,
+            autoplay: 5000,
+            animationDuration: 800,
+            peek: 100,
+            perView: 3,
+            breakpoints: {
+                1600: {
+                    perView: 2,
+                    peek: 100,
+                },
+                1250: {
+                    perView: 2,
+                    peek: 50
+                },
+                1000: {
+                    perView: 1,
+                    peek:100,
+                    autoplay: false
+                },
+                800: {
+                    perView: 1,
+                    peek: 20
+                }
             }
-        }
-    }).mount();      
+        }).mount();      
+    }
     
 });
