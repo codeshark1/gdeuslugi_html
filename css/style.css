@@ -1638,11 +1638,14 @@ a, svg, path, button {
       columns: 3; } }
 
 .list-portfolios .image-wrap {
-  display: inline-block;
-  margin-bottom: 10px; }
-.list-portfolios .photo {
+  display: block;
+  margin-bottom: 10px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
-  border-radius: 8px; }
+  border-radius: 8px;
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
 
 /* ==========================================================================
    LISTING
@@ -2311,19 +2314,22 @@ body.modal-opened {
   display: flex; }
 
 .order-gallery {
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  text-align: center; }
 
 .img-main img, .img-thumbnail img {
   border-radius: 8px; }
 
 .img-main {
   margin-bottom: 5px;
-  display: inline-block; }
+  display: inline-block;
+  max-height: 350px; }
 
 .img-preview-wrapper {
   overflow: auto; }
   .img-preview-wrapper .img-preview-row {
-    display: flex; }
+    display: flex;
+    margin: 0 auto; }
 
 .img-thumbnail {
   width: 80px;
@@ -2732,13 +2738,12 @@ body.modal-opened {
 .list-carousel .card {
   margin-bottom: 10px; }
 
-.glide__slide {
+#js-reviews .glide__slide {
   opacity: 0.5;
   transition: opacity .2s ease-in; }
-  .glide__slide:hover {
+  #js-reviews .glide__slide:hover {
     opacity: 1; }
-
-.glide__slide--active {
+#js-reviews .glide__slide--active {
   opacity: 1; }
 
 .glide__arrow {

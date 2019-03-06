@@ -350,20 +350,24 @@ function show_pass() {
         var files = e.target.files;               
 
         for (var i = 0, f; f = files[i]; i++) {
-            if (!f.type.match('image.*')) continue;
-            var fr = new FileReader();
-
-            fr.onload = (function(theFile) {
-                return function(e) {
-
-                    el.parent().append("<div class='photo' style='background-image:url(" + e.target.result + ")'></div><a href='#' class='link remove-photo'>Удалить</a>");
-                    el.parent().addClass('active');
-                    el.parents('.photos-uploaded').addClass('chosen');
-                    removeFile(); 
-                };
-            })(f);
-
-            fr.readAsDataURL(f);
+            //if (!f.type.match('image.*')) continue;
+            if (f.type.match('image.*')) {
+                var fr = new FileReader();
+    
+                fr.onload = (function(theFile) {
+                    return function(e) {
+    
+                        el.parent().append("<div class='photo' style='background-image:url(" + e.target.result + ")'></div><a href='#' class='link remove-photo'>Удалить</a>");
+                        el.parent().addClass('active');
+                        el.parents('.photos-uploaded').addClass('chosen');
+                        removeFile(); 
+                    };
+                })(f);
+    
+                fr.readAsDataURL(f);
+            } else {
+                alert("Загружаемый файл должен быть JPG или PNG изображением");
+            }
         }
     }
 /* ----- IMAGE UPLOAD */
@@ -693,15 +697,14 @@ jQuery(document).ready(function($){
     if ($('#js-portfolios').length) {
         new Glide('#js-portfolios', {
             type: 'carousel',
-            focusAt: 'center',
-            gap: 10,
+            gap: 20,
             autoplay: 5000,
             animationDuration: 800,
             peek: 100,
-            perView: 3,
+            perView: 5,
             breakpoints: {
                 1600: {
-                    perView: 2,
+                    perView: 3,
                     peek: 100,
                 },
                 1250: {
@@ -709,11 +712,11 @@ jQuery(document).ready(function($){
                     peek: 50
                 },
                 1000: {
-                    perView: 1,
+                    perView: 2,
                     peek:100,
                     autoplay: false
                 },
-                800: {
+                700: {
                     perView: 1,
                     peek: 20
                 }
