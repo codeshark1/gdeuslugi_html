@@ -666,13 +666,14 @@ $sect-mg-neg: 39px;
 }
 
 .row-main {
-	display: flex;
-	@media (max-width: $screen-md-max) {
+	
+/* 	@media (max-width: $screen-md-max) {
 		flex-direction: column;
 		.col-content {order: 2}
 		.col-sidebar {order: 1}
-	}
+	} */
 	@media (min-width: $screen-lg-min) {
+		display: flex;
 		.col-content {flex-grow: 1}
 		.col-sidebar {width: 262px;flex-grow: 0;flex-shrink: 0; margin-left: 40px;}
 	}
@@ -1019,7 +1020,7 @@ body.modal-opened {overflow: hidden;}
 		.h-modal {
 			background: no-repeat url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 1.41L5.66802 0L0 6L5.66802 12L7 10.59L2.67341 6L7 1.41Z' fill='%23333333'/%3E%3C/svg%3E%0A") 0 50%;
 			cursor: pointer;
-			padding-left: 25px;
+			padding-left: 16px;
 		}
 	}
 
@@ -1075,9 +1076,9 @@ body.modal-opened {overflow: hidden;}
 
 
 .h-modal {font-weight: bold;font-size: 24px; margin: 0;
-	//text-overflow: ellipsis;
-	//white-space: nowrap;
-	//overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 	padding-right: 10px;	
 }
 .menu-modal-actions {

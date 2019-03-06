@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/blueimp-gallery.min.css">
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>     -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>    
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script src="js/blueimp-gallery.min.js"></script>
@@ -219,7 +220,8 @@
                     <div class="modal-content">
                         <p class="h-modal">Константин</p>
                         <p class="tel">+7 987 654-32-12</p>
-                        <button type="button" class="btn btn-text">Скопировать</button>
+                        <p class="email">+7 987 654-32-12</p>
+                        <button type="button" class="btn btn-text js-btn-copy">Скопировать</button>
                         <button type="button" class="btn btn-main">Позвонить</button>
                     </div><!-- modal-content -->
                 </div><!-- /.wrapper -->
@@ -247,5 +249,35 @@
             blueimp.Gallery(links, options);
         };
     </script>    
+
+    <script>
+
+        $('.js-btn-copy').on('click', function(e) {  
+            e.preventDefault();
+
+            // Select the email link anchor text  
+            if ( $(this).siblings('.tel').length ) {
+                var emailLink = $(this).siblings('.tel');
+            } else {
+                var emailLink = $(this).siblings('.email');
+            }
+            var range = document.createRange();              
+            range.selectNode(emailLink);  
+            window.getSelection().addRange(range);  
+
+            try {  
+                // Now that we've selected the anchor text, execute the copy command  
+                var successful = document.execCommand('copy');  
+                var msg = successful ? 'successful' : 'unsuccessful';  
+                console.log('Copy email command was ' + msg);  
+            } catch(err) {  
+                console.log('Oops, unable to copy');  
+            }  
+
+            // Remove the selections - NOTE: Should use
+            // removeRange(range) when it is supported  
+            window.getSelection().removeAllRanges();  
+        });        
+    </script>
 </body>
 </html>
