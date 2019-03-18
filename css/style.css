@@ -1579,6 +1579,8 @@ a, svg, path, button {
     width: 190px;
     flex-shrink: 0; }
 
+.list-categs-xl .menu-item {
+  padding: 0 0 16px 0; }
 @media (min-width: 768px) {
   .list-categs-xl {
     columns: 2;
@@ -1597,6 +1599,9 @@ a, svg, path, button {
   color: #333; }
 .list-categs-xl .number {
   color: #999999; }
+
+.h-page + .list-categs-xl {
+  margin-top: 3rem; }
 
 .list-howitworks {
   text-align: center; }
@@ -2985,7 +2990,7 @@ body.modal-opened {
   display: flex; }
   @media (max-width: 991px) {
     .menus-footer-wrapper {
-      display: none; } }
+      flex-wrap: wrap; } }
 
 .h-footer {
   color: #999;
@@ -2993,10 +2998,11 @@ body.modal-opened {
   font-weight: 400;
   margin: 0 0 20px 0; }
 
+@media (max-width: 991px) {
+  .list-footer {
+    margin-right: 40px; } }
 .list-footer .list-item {
   margin-bottom: 20px; }
-  .list-footer .list-item:last-child {
-    margin-bottom: 0; }
 @media (min-width: 992px) {
   .list-footer.cols {
     columns: 2; } }

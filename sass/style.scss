@@ -476,13 +476,12 @@ $sect-mg-neg: 39px;
 }
 
 .list-categs-xl {
+	.menu-item {padding: 0 0 16px 0;}
 	@media (min-width: $screen-md-min) {
 		columns: 2; margin: 0 -10px;
 		.menu-item {padding: 0 10px 16px 10px;}
 	}
-	@media (min-width: $screen-lg-min) {
-		columns: 3;
-	}
+	@media (min-width: $screen-lg-min) {columns: 3;}
 	.menu-item {
 		word-wrap: none;
 		margin: 0;
@@ -492,6 +491,7 @@ $sect-mg-neg: 39px;
 	a {color: $base-text;}
 	.number {color: $gray-text}
 }
+.h-page + .list-categs-xl {margin-top: 3rem;}
 
 .list-howitworks {
 	text-align: center;
@@ -1785,7 +1785,8 @@ body.modal-opened {overflow: hidden;}
 .menus-footer-wrapper {
 	display: flex;
 	@media (max-width: $screen-md-max) {
-		display: none;
+		flex-wrap: wrap;
+		//display: none;
 	}
 }
 .h-footer {
@@ -1795,9 +1796,12 @@ body.modal-opened {overflow: hidden;}
 	margin: 0 0 20px 0;
 }
 .list-footer {
+	@media (max-width: $screen-md-max) {
+		margin-right: 40px;
+	}
 	.list-item {
 		margin-bottom: 20px;
-		&:last-child {margin-bottom: 0;}
+		//&:last-child {margin-bottom: 0;}
 	}
 	&.cols {
 		@media (min-width: $screen-lg-min) {
