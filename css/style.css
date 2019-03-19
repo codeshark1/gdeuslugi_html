@@ -1073,7 +1073,15 @@ body {
   font-family: Roboto, sans-serif;
   font-size: 16px;
   background: #FCFBFA;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  min-height: 100%; }
+  @media (min-width: 576px) {
+    body {
+      position: relative;
+      padding-bottom: 530px; } }
+  @media (min-width: 768px) {
+    body {
+      padding-bottom: 410px; } }
 
 a {
   color: #47AB2F;
@@ -1602,6 +1610,9 @@ a, svg, path, button {
 
 .h-page + .list-categs-xl {
   margin-top: 3rem; }
+  @media (min-width: 992px) {
+    .h-page + .list-categs-xl {
+      margin-top: 90px; } }
 
 .list-howitworks {
   text-align: center; }
@@ -2971,6 +2982,12 @@ body.modal-opened {
   color: #bababa; }
   .footer-site a {
     color: #fff; }
+  @media (min-width: 576px) {
+    .footer-site {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0; } }
 
 .row-footer {
   padding: 50px 0 25px; }

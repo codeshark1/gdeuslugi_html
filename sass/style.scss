@@ -8,7 +8,15 @@ body {
 	font-family: Roboto, sans-serif;
 	font-size: 16px;
 	background: #FCFBFA;
-	overflow-x: hidden;		
+	overflow-x: hidden;	
+	min-height: 100%;
+	@media (min-width: $screen-sm-min) {
+		position: relative;
+		padding-bottom: 530px;
+	}	
+	@media (min-width: $screen-md-min) {
+		padding-bottom: 410px;
+	}
 }
 
 a {
@@ -491,7 +499,9 @@ $sect-mg-neg: 39px;
 	a {color: $base-text;}
 	.number {color: $gray-text}
 }
-.h-page + .list-categs-xl {margin-top: 3rem;}
+.h-page + .list-categs-xl {margin-top: 3rem;
+	@media (min-width: $screen-lg-min) {margin-top: 90px;}
+}
 
 .list-howitworks {
 	text-align: center;
@@ -1766,6 +1776,11 @@ body.modal-opened {overflow: hidden;}
 	background: #3B464B;	
 	color: #bababa;
 	a {color: #fff}
+
+	@media (min-width: $screen-sm-min) {
+		position: absolute;
+		left: 0;right: 0;bottom: 0;
+	}
 }
 
 .row-footer {
