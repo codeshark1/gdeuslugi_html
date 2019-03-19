@@ -477,11 +477,15 @@ $sect-mg-neg: 39px;
 
 .list-categs-xl {
 	.menu-item {padding: 0 0 16px 0;}
+	@media (max-width: $screen-sm-max) {
+		.hid {visibility: hidden; height: 0; line-height: 0; overflow: hidden;padding: 0;}
+	}
 	@media (min-width: $screen-md-min) {
 		columns: 2; margin: 0 -10px;
 		.menu-item {padding: 0 10px 16px 10px;}
 	}
 	@media (min-width: $screen-lg-min) {columns: 3;}
+
 	.menu-item {
 		word-wrap: none;
 		margin: 0;
@@ -492,6 +496,12 @@ $sect-mg-neg: 39px;
 	.number {color: $gray-text}
 }
 .h-page + .list-categs-xl {margin-top: 3rem;}
+.list-categs-xl-show {
+	@media (min-width: $screen-md-min) {
+		display: none;
+	}
+}
+
 
 .list-howitworks {
 	text-align: center;
@@ -1188,10 +1198,9 @@ body.modal-opened {overflow: hidden;}
 .order-location,.order-categ {font-size: 16px;}
 .order-categ {color: $gray-text;line-height: 14px;display: flex}
 
-.order-gallery {
-	margin-bottom: 30px;
-	text-align: center;
-}
+.order-gallery {margin-bottom: 30px;}
+.order-full .order-gallery {text-align: center;}
+
 .img-main, .img-thumbnail {
 	img {border-radius: 8px;}
 }
