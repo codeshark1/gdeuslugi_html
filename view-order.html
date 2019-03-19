@@ -17,18 +17,22 @@
     <p class="browserupgrade">Вы используете <b>устаревший</b> браузер. Пожалуйста, <a href="http://browsehappy.com/?locale=ru_ru">обновите свой браузер</a> чтобы улучшить опыт работы с сайтом.</p>
 <![endif]-->
     <header class="header-site">
-        <div class="bx-action">
-            <a href="#" class="btn-open-menu">
-                <span class="logo">U</span>
-                <svg data-src="img/arrow-down.svg"></svg>
-            </a>
-        </div><!-- /.bx-action -->
-        
-        <div class="bx-user">
-            <a href="#" class="userpic">
-                А
-            </a>
-        </div><!-- /.bx-user -->
+        <div class="header-level-1">
+            <div class="row-header">
+                <div class="col-logo">
+                    <a href="#" class="logo-site">Где Услуги</a>
+                </div><!-- /.col-logo -->
+
+                <div class="col-actions">
+                    <div class="links d-none d-sm-block">
+                        <a href="#" class="btn-link">Создать услугу</a>
+                        <a href="#" class="btn-link">Войти</a>
+                    </div>
+                    <button class="btn-menu" id="js-btn-menu"><span></span><span></span><span></span></button>                
+                </div><!-- /.col-actions -->
+            </div><!-- /.row-header -->
+        </div><!-- /.level-1 -->
+        <div class="header-level-2"></div><!-- /.level-2 -->
     </header>
 
     <main class="container content-main">    
@@ -88,9 +92,14 @@
                     
 
                     <div class="order-actions">
-                            <button type="button" class="btn btn-main modal-trigger" data-trigger="#modal-tel">Показать телефон</button>
+                        <button type="button" class="btn btn-main modal-trigger" data-trigger="#modal-tel">Показать телефон</button>
                         <button type="button" class="btn btn-dots modal-trigger" data-trigger="#modal-actions">...</button>
                     </div><!-- /.order-actions -->
+                    <div class="order-actions">
+                        <button type="button" class="btn btn-main modal-trigger" data-trigger="#modal-actions-contacts">Показать телефон (не зарегистрирован)</button>
+                        <button type="button" class="btn btn-dots modal-trigger" data-trigger="#modal-actions">...</button>
+                    </div><!-- /.order-actions -->                    
+
                 </article>
             </div><!-- /.col -->
             <aside class="col-md-5 col-lg-4 col-sidebar">
@@ -207,6 +216,19 @@
                         <button type="button" class="btn btn-text">Скопировать</button>
                         <button type="button" class="btn btn-main">Позвонить</button>
                     </div><!-- modal-content -->
+                </div><!-- /.wrapper -->
+            </div><!-- /#modal-window-->    
+        </div><!-- /.modal-bg -->
+    </div><!-- /.modal-container -->
+
+    <div class="modal-container" id="modal-actions-contacts">
+        <div class="modal-bg">
+            <div class="modal-window">
+                <div class="wrapper">
+                    <p class="heading-modal-actions">Войдите или зарегистрируйтесь, чтобы просмотреть контакты</p>
+                    <ul class="menu-modal-actions">
+                        <li class="menu-item"><a href="#" class="close">OK</a></li>
+                    </ul>
                 </div><!-- /.wrapper -->
             </div><!-- /#modal-window-->    
         </div><!-- /.modal-bg -->

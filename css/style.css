@@ -458,7 +458,7 @@ label.checkbox-accept {
   border: 1px solid #d8d8d8;
   border-radius: 3px;
   padding: 8px 10px 6px;
-  line-height: 1; }
+  line-height: 14px; }
   .btn-tag .count {
     font-weight: 400;
     display: inline-block;
@@ -1078,10 +1078,10 @@ body {
   @media (min-width: 576px) {
     body {
       position: relative;
-      padding-bottom: 530px; } }
-  @media (min-width: 768px) {
+      padding-bottom: 560px; } }
+  @media (min-width: 992px) {
     body {
-      padding-bottom: 410px; } }
+      padding-bottom: 470px; } }
 
 a {
   color: #47AB2F;
@@ -1129,7 +1129,7 @@ a, svg, path, button {
   width: 32px;
   height: 32px;
   font-size: 16px;
-  line-height: 32px; }
+  line-height: 28px; }
 
 /* ==========================================================================
    HEADER
@@ -1601,7 +1601,10 @@ a, svg, path, button {
     columns: 2;
     margin: 0 -10px; }
     .list-categs-xl .menu-item {
-      padding: 0 10px 16px 10px; } }
+      padding: 0 10px 16px 10px;
+      -moz-column-break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      column-break-inside: avoid; } }
 @media (min-width: 992px) {
   .list-categs-xl {
     columns: 3; } }
@@ -1630,9 +1633,10 @@ a, svg, path, button {
   .list-howitworks .title {
     margin-top: 8px; }
   .list-howitworks .list-item {
-    margin-bottom: 20px; }
+    margin-bottom: 50px; }
   @media (min-width: 576px) {
     .list-howitworks {
+      margin-top: 50px;
       display: flex;
       justify-content: space-between; }
       .list-howitworks .list-item {
@@ -1700,6 +1704,16 @@ a, svg, path, button {
   @media (min-width: 992px) {
     .row-new .col-content {
       padding: 0 32px 0 0; } }
+
+.row-listing {
+  display: flex; }
+  @media (max-width: 767px) {
+    .row-listing {
+      flex-direction: column; }
+      .row-listing .col-sidebar {
+        order: 1; }
+      .row-listing .col-content {
+        order: 2; } }
 
 .card {
   background: #fff;
@@ -1788,7 +1802,8 @@ a, svg, path, button {
     background-color: #E7E7E7;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    border-radius: 3px 3px 0 0; }
     .img-avatar-wrap .image.no-image {
       background-size: auto; }
   .img-avatar-wrap .userpic {
@@ -2129,6 +2144,7 @@ body.modal-opened {
   background: #fff;
   margin: 0 auto;
   text-align: left;
+  padding-right: 4px;
   /*header*/
   /* content */ }
   @media (min-width: 576px) {
@@ -2150,11 +2166,8 @@ body.modal-opened {
     padding-left: 16px; }
   .modal-window .btn-close {
     position: absolute;
-    right: 16px;
-    top: 36px; }
-    @media (min-width: 576px) {
-      .modal-window .btn-close {
-        top: 46px; } }
+    right: 15px;
+    top: 20px; }
   .modal-window .modal-content {
     overflow: auto;
     padding: 16px;
@@ -2162,7 +2175,7 @@ body.modal-opened {
     max-height: 650px; }
     @media (min-width: 576px) {
       .modal-window .modal-content {
-        padding: 24px;
+        padding: 24px 16px 24px 24px;
         max-height: 520px; } }
   .modal-window .search-field {
     margin-bottom: 24px; }
@@ -2211,8 +2224,17 @@ body.modal-opened {
   overflow: hidden;
   padding-right: 10px; }
 
+.heading-modal-actions {
+  text-align: center;
+  margin: 20px 20px 0 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #F3F3F3;
+  line-height: 1.6; }
+
 .menu-modal-actions {
-  text-align: center; }
+  text-align: center;
+  overflow: hidden;
+  border-radius: 8px; }
   .menu-modal-actions .menu-item {
     border-bottom: 1px solid #F3F3F3; }
     .menu-modal-actions .menu-item:last-child {
@@ -2222,22 +2244,29 @@ body.modal-opened {
       color: #333;
       padding: 16px; }
 
+.heading-modal-actions
 #modal-tel .btn-close, .modal-tel .btn-close {
   top: 24px;
   right: 24px; }
+.heading-modal-actions
 #modal-tel .modal-window, .modal-tel .modal-window {
   text-align: center; }
+.heading-modal-actions
 #modal-tel .h-modal, .modal-tel .h-modal {
   padding: 0;
   margin-bottom: 24px; }
+.heading-modal-actions
 #modal-tel .modal-content, .modal-tel .modal-content {
   padding-top: 60px; }
+.heading-modal-actions
 #modal-tel .tel, .modal-tel .tel {
   font-size: 24px;
   letter-spacing: 3px;
   margin-bottom: 24px; }
+.heading-modal-actions
 #modal-tel .btn-text, .modal-tel .btn-text {
   margin-bottom: 24px; }
+.heading-modal-actions
 #modal-tel .btn-main, .modal-tel .btn-main {
   width: 100%; }
 
@@ -3080,3 +3109,5 @@ body.modal-opened {
 
 .footer-placehodler {
   height: 100px; }
+
+/*# sourceMappingURL=style.css.map */
