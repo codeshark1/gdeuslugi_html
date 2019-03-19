@@ -489,6 +489,18 @@ function addHrefToOffers() {
     });
 }
 
+function hideListCategs() {
+    $('.list-categs-xl').find('.menu-item').slice(8).addClass('hid');
+    var $link = $('<a href="#" class="list-categs-xl-show">Показать все</a>');
+    $link.insertAfter('.list-categs-xl');
+}
+function showListCategs() {
+    $('.list-categs-xl-show').click(function(e){
+        e.preventDefault();
+        $('.list-categs-xl').find('.menu-item').removeClass('hid');
+    });
+}
+
 jQuery(document).ready(function($){
     svg();
     addHrefToOffers();
@@ -724,4 +736,7 @@ jQuery(document).ready(function($){
         }).mount();      
     }
     
+
+    hideListCategs();
+    showListCategs();    
 });
