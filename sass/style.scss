@@ -12,11 +12,14 @@ body {
 	min-height: 100%;
 	@media (min-width: $screen-sm-min) {
 		position: relative;
-		padding-bottom: 530px;
+		padding-bottom: 560px;
 	}	
 	@media (min-width: $screen-md-min) {
-		padding-bottom: 410px;
+		//padding-bottom: 470px;
 	}
+	@media (min-width: $screen-lg-min) {
+		padding-bottom: 470px;
+	}	
 }
 
 a {
@@ -61,7 +64,7 @@ $sect-mg-neg: 39px;
 .userpic-mini {
 	width: 32px;height: 32px;
 	font-size: 16px;
-	line-height: 32px;
+	line-height: 28px;
 }
 /* ==========================================================================
    HEADER
@@ -427,6 +430,7 @@ $sect-mg-neg: 39px;
 	@media (min-width: $screen-lg-min) {
 		margin-bottom: 50px;
 	}
+	//&:last-child {margin-bottom: 0;}
 }
 .h-page { //H1
 	margin: 0 0 20px 0;
@@ -485,11 +489,20 @@ $sect-mg-neg: 39px;
 
 .list-categs-xl {
 	.menu-item {padding: 0 0 16px 0;}
+	@media (max-width: $screen-sm-max) {
+		.hid {visibility: hidden; height: 0; line-height: 0; overflow: hidden;padding: 0;}
+	}
 	@media (min-width: $screen-md-min) {
 		columns: 2; margin: 0 -10px;
-		.menu-item {padding: 0 10px 16px 10px;}
+		.menu-item {
+			padding: 0 10px 16px 10px;
+			-moz-column-break-inside:avoid;
+			-webkit-column-break-inside:avoid;
+			column-break-inside:avoid;			
+		}
 	}
 	@media (min-width: $screen-lg-min) {columns: 3;}
+
 	.menu-item {
 		word-wrap: none;
 		margin: 0;
@@ -502,12 +515,19 @@ $sect-mg-neg: 39px;
 .h-page + .list-categs-xl {margin-top: 3rem;
 	@media (min-width: $screen-lg-min) {margin-top: 90px;}
 }
+.list-categs-xl-show {
+	@media (min-width: $screen-md-min) {
+		display: none;
+	}
+}
+
 
 .list-howitworks {
-	text-align: center;
+	text-align: center;	
 	.title {margin-top: 8px;}
-	.list-item {margin-bottom: 20px;}
+	.list-item {margin-bottom: 50px;}
 	@media (min-width: $screen-sm-min) {
+		margin-top: 50px;
 		display: flex;
 		justify-content: space-between;
 		.list-item {flex: 1 0 0;}
@@ -580,7 +600,14 @@ $sect-mg-neg: 39px;
 		.col-content {padding: 0 32px 0 0;}	
 	}
 }
-
+.row-listing {
+	display: flex;
+	@media (max-width: $screen-sm-max) {
+		flex-direction: column;
+		.col-sidebar {order: 1}
+		.col-content {order: 2}
+	}
+}
 
 .card {
 	background: #fff;
@@ -653,6 +680,7 @@ $sect-mg-neg: 39px;
 		display: flex;
 		justify-content: center;
 		align-items: center;		
+		border-radius: 3px 3px 0 0;
 		&.no-image {
 			background-size: auto;
 		}
@@ -1006,6 +1034,7 @@ body.modal-opened {overflow: hidden;}
 
 	margin: 0 auto;
 	text-align: left;
+	padding-right: 4px;
 	@media (min-width: $screen-sm) {
 		width: 400px;
 		border-radius: 8px;
@@ -1034,8 +1063,8 @@ body.modal-opened {overflow: hidden;}
 		}
 	}
 
-	.btn-close {position: absolute; right: 16px;top: 36px;
-		@media (min-width: $screen-sm) {top: 46px;}
+	.btn-close {position: absolute; right: 15px;top: 20px;
+		//@media (min-width: $screen-sm) {top: 20px;}
 	}		
 
 	/* content */
@@ -1046,7 +1075,7 @@ body.modal-opened {overflow: hidden;}
 		height: 100%;
 		max-height: 650px; //set via JS
 		@media (min-width: $screen-sm) {
-			padding: 24px;
+			padding: 24px 16px 24px 24px;
 			max-height: 520px;
 		}
 	}
@@ -1091,14 +1120,20 @@ body.modal-opened {overflow: hidden;}
 	overflow: hidden;
 	padding-right: 10px;	
 }
+
+.heading-modal-actions {text-align: center; margin: 20px 20px 0 20px; padding-bottom: 20px; border-bottom: 1px solid $gray-light; line-height: 1.6}
 .menu-modal-actions {
 	text-align: center;
+	overflow: hidden;
+	border-radius: 8px;
 	.menu-item {
 		border-bottom: 1px solid $gray-light;
 		&:last-child {border-bottom:none}
 		a {display: block;color: $base-text; padding: 16px ;}
 	}
 }
+.heading-modal-actions 
+
 #modal-tel, .modal-tel {
 	.btn-close {top: 24px;right: 24px;}
 	.modal-window {text-align: center;}
@@ -1198,10 +1233,9 @@ body.modal-opened {overflow: hidden;}
 .order-location,.order-categ {font-size: 16px;}
 .order-categ {color: $gray-text;line-height: 14px;display: flex}
 
-.order-gallery {
-	margin-bottom: 30px;
-	text-align: center;
-}
+.order-gallery {margin-bottom: 30px;}
+.order-full .order-gallery {text-align: center;}
+
 .img-main, .img-thumbnail {
 	img {border-radius: 8px;}
 }

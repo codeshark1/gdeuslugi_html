@@ -1589,6 +1589,13 @@ a, svg, path, button {
 
 .list-categs-xl .menu-item {
   padding: 0 0 16px 0; }
+@media (max-width: 767px) {
+  .list-categs-xl .hid {
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    padding: 0; } }
 @media (min-width: 768px) {
   .list-categs-xl {
     columns: 2;
@@ -1613,6 +1620,10 @@ a, svg, path, button {
   @media (min-width: 992px) {
     .h-page + .list-categs-xl {
       margin-top: 90px; } }
+
+@media (min-width: 768px) {
+  .list-categs-xl-show {
+    display: none; } }
 
 .list-howitworks {
   text-align: center; }
@@ -2332,7 +2343,9 @@ body.modal-opened {
   display: flex; }
 
 .order-gallery {
-  margin-bottom: 30px;
+  margin-bottom: 30px; }
+
+.order-full .order-gallery {
   text-align: center; }
 
 .img-main img, .img-thumbnail img {
@@ -3067,5 +3080,3 @@ body.modal-opened {
 
 .footer-placehodler {
   height: 100px; }
-
-/*# sourceMappingURL=style.css.map */
