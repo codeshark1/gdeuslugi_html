@@ -1729,10 +1729,13 @@ body.modal-opened {overflow: hidden;}
 	@media (min-width: $screen-md-min) {
 		p, ul, ol {line-height: 1.7}
 	}
-	ul, ol {padding-left: 10px;
-		li {margin-bottom: 20px;}
+	p, ul, ol, .btn {margin-bottom: 20px;}
+	ul, ol {
+		li {margin-bottom: 10px;
+			&:last-child {margin-bottom: 0;}
+		}
 	}
-	ul {
+	ul {padding-left: 10px;
 		li {position: relative;}
 		li:before {
 			content: "\2022";  
@@ -1744,6 +1747,7 @@ body.modal-opened {overflow: hidden;}
 			top: 0;			
 		}
 	}
+	ol {padding-left: 20px;}
 }
 .col-accord {
 	.help-content {

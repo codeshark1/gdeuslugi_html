@@ -2932,20 +2932,26 @@ body.modal-opened {
 @media (min-width: 768px) {
   .help-content p, .help-content ul, .help-content ol {
     line-height: 1.7; } }
-.help-content ul, .help-content ol {
+.help-content p, .help-content ul, .help-content ol, .help-content .btn {
+  margin-bottom: 20px; }
+.help-content ul li, .help-content ol li {
+  margin-bottom: 10px; }
+  .help-content ul li:last-child, .help-content ol li:last-child {
+    margin-bottom: 0; }
+.help-content ul {
   padding-left: 10px; }
-  .help-content ul li, .help-content ol li {
-    margin-bottom: 20px; }
-.help-content ul li {
-  position: relative; }
-.help-content ul li:before {
-  content: "\2022";
-  color: #47AB2F;
-  font-weight: bold;
-  display: inline-block;
-  position: absolute;
-  left: -10px;
-  top: 0; }
+  .help-content ul li {
+    position: relative; }
+  .help-content ul li:before {
+    content: "\2022";
+    color: #47AB2F;
+    font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    left: -10px;
+    top: 0; }
+.help-content ol {
+  padding-left: 20px; }
 
 .col-accord .help-content {
   height: 0;
