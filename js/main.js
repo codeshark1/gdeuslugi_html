@@ -663,10 +663,8 @@ jQuery(document).ready(function($){
     });
 
     sidebarFilters(); 
-
     
-    accordionTop();
-    
+    accordionTop();    
 
     $('#overlay-page').click(function(){
         overlayOff();
