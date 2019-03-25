@@ -67,7 +67,7 @@ $container-max-widths: (
     &.centered {align-items: center}
 }
 @mixin link() {
-    color: $link-text;	
+  color: $link-text;	
 	text-decoration: none;
 	&:hover {color: $main-hover !important}
 	&:active {color: $main-active !important}	    

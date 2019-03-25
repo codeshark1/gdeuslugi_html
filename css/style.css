@@ -400,6 +400,14 @@ label.checkbox-accept {
     vertical-align: bottom;
     margin-right: 8px; }
 
+.link-action {
+  color: #47AB2F;
+  text-decoration: none; }
+  .link-action:hover {
+    color: #3C9027 !important; }
+  .link-action:active {
+    color: #307420 !important; }
+
 .btn-picker {
   white-space: nowrap; }
   .btn-picker:after {

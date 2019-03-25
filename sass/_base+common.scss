@@ -322,6 +322,9 @@ label.checkbox-accept {
   &.grayed {color: #6F6F6F}
   .userpic {font-size: 10px; width: 23px;height: 23px; line-height: 17px; vertical-align: bottom; margin-right: 8px;}
 }
+.link-action {
+  @include link();
+}
 
 .btn-picker {
   white-space: nowrap;
