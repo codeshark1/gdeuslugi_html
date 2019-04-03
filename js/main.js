@@ -489,8 +489,14 @@ function accordionTop() {
     }
 }
 function accordionTopHashClick() {
-    var hashVal = document.URL.substr(document.URL.indexOf('#')+1);
-    $(document).find('.'+hashVal).click();
+    var hashVal = document.location.hash.substr(document.location.hash.indexOf('#')+1);
+    if(hashVal.length) {
+        var hashValz = '.'+hashVal;
+        $('body').find(hashValz).each(function(){
+            $(this).click();
+        });
+        
+    }
 }
 
 function addHrefToOffers() {
