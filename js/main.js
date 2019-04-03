@@ -489,9 +489,9 @@ function accordionTop() {
     }
 }
 function accordionTopHashClick() {
-    var hashVal = document.URL.substr(document.URL.indexOf('#'));
-    $(document).find(hashVal).click();
-    window.scrollTo(0, 0);
+    var hashVal = document.URL.substr(document.URL.indexOf('#')+1);
+    var hashValz = '.'+hashVal;
+    $(document).find(hashValz).click();
 }
 
 function addHrefToOffers() {
