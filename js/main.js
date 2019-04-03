@@ -490,8 +490,7 @@ function accordionTop() {
 }
 function accordionTopHashClick() {
     var hashVal = document.URL.substr(document.URL.indexOf('#')+1);
-    var hashValz = '.'+hashVal;
-    $(document).find(hashValz).click();
+    $(document).find('.'+hashVal).click();
 }
 
 function addHrefToOffers() {
