@@ -491,6 +491,7 @@ function accordionTop() {
 function accordionTopHashClick() {
     var hashVal = document.URL.substr(document.URL.indexOf('#'));
     $(document).find(hashVal).click();
+    window.scrollTo(0, 0);
 }
 
 function addHrefToOffers() {
@@ -543,7 +544,7 @@ jQuery(document).ready(function($){
 
     $('#overlay-page').click(function (e) {
         hideSearchSuggest();
-    })
+    });
 
 
 
